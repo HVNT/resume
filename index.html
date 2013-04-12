@@ -1,0 +1,89 @@
+
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+         Remove this if you using .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!-- encoding must be specified within the first 512 bytes www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset -->
+
+    <!-- meta element for compatibility mode needs to be before all elements except title & meta msdn.microsoft.com/en-us/library/cc288325(VS.85).aspx -->
+    <!-- Chrome Frame is only invoked if meta element for compatibility mode is within the first 1K bytes code.google.com/p/chromium/issues/detail?id=23003 -->
+
+
+    <title>Hunter Brennick's Portfolio</title>
+    <meta name="description" content="His portfolio.">
+    <meta name="author" content="Hunter Brennick's Portfolio">
+
+    <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="images/falcons.ico">
+
+
+    <!-- CSS : implied media="all" -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div id="container">
+
+    <div class="center">
+        <div id="circle">
+            <p>HUNTER BRENNICK</p>
+            <!--SEO Purposes-->
+            <h2>cs student & curious learner</h2>
+        </div>
+        <canvas id="nodes" width="600" height="400"></canvas>
+
+
+
+        <ul id="navigation" class="buttons" style="display: none">
+            <li><img src="images/haley_and_mom.png" alt="Well shit, a picture was supposed to be here"></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="resume.html">My Resume</a></li>
+            <li><a href="mailto:hunterbrennick@gmail.com" target="_self">Contact Me</a></li>
+        </ul>
+    </div>
+
+</div> <!--! end of #container -->
+
+
+<!-- Javascript at the bottom to help with load time -->
+
+<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<!-- scripts concatenated and minified via ant build script-->
+<!--<script src="js/random_bg_gradient.js"></script>-->
+<script src="js/script.js"></script>
+<!-- end concatenated and minified scripts-->
+
+<!-- google analytics-->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39754055-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>
