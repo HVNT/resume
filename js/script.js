@@ -36,7 +36,7 @@ $(document).ready(function() {
         var c_width = ctx.canvas.width;
         var c_height = ctx.canvas.height;
         var node = {cx:     Math.round(Math.random() * c_width),
-            cy:    Math.round(Math.random() * c_height),
+            cy:     Math.round(Math.random() * c_height),
             dx:    Math.round(Math.random() * c_width),
             dy:    Math.round(Math.random() * c_height),
             speed: Math.round(min_speed + Math.random() * nodes_speed * 10),
@@ -173,6 +173,7 @@ $(document).ready(function() {
             fadeToNodes(100);
         }
     });
+
 
     function switchNavigation(from, to) {
         from.animate({'opacity': 0}, 250).hide();
