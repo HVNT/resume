@@ -6,7 +6,6 @@
  * To change this template use File | Settings | File Templates.
  */
 $(document).ready(function() {
-
     function isiPhone(){
         return (
             (navigator.platform.indexOf("iPhone") != -1) ||
