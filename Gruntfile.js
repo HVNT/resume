@@ -199,7 +199,7 @@ module.exports = function (grunt) {
         compress: {
             build: {
                 options: {
-                    archive: 'mozart-build.zip'
+                    archive: 'resume-build.zip'
                 },
                 files: [
                     {
@@ -211,15 +211,15 @@ module.exports = function (grunt) {
         http_upload: {
             dev: {
                 options: {
-                    url: 'https://deploy:0071E7D1-7876-479C-889B-3C5FFBD73DBD@dev.landinglion.com/Catcher/SaveIt.ashx',
+                    url: '',
                     method: 'POST',
                     rejectUnauthorized: false,
                     onComplete: function(data) {
                         console.log('Response: ' + data);
                     }
                 },
-                src: 'mozart-build.zip',
-                dest: 'mozart-build'
+                src: 'resume-build.zip',
+                dest: 'resume-build'
             }
         }
     });

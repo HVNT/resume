@@ -1,9 +1,11 @@
 @import "compass";
 @import 'compass/reset';
-@import 'reset.scss';
 @import 'variables.scss';
+@import 'reset.scss';
 @import 'helpers.scss';
+@import 'mixins.scss';
 @import 'placeholders.scss';
+@import 'coats.scss';
 @import 'structure.scss';
 @import 'typography.scss';
 @import 'buttons.scss';

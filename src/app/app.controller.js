@@ -11,6 +11,8 @@ angular.module('hb.app')
                   BioStates, ProjectsStates) {
             var app = this;
 
+            $scope.hello = 'hello';
+
             $scope.$state = $state;
             $scope.initialized = true;
 
@@ -44,10 +46,10 @@ angular.module('hb.app')
 
             $scope.mainLogo = {};
 
-            $scope.navBlocks = [
-                [navStates.bio],
-                [navStates.resume],
-                [navStates.projects]
+            $scope.navs = [
+                navStates.bio,
+                navStates.resume,
+                navStates.projects
             ];
 
             //hotkeys.bindTo($scope)

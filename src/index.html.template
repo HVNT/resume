@@ -18,11 +18,7 @@
     <link rel="icon" type="image/png" href="/assets/img/favicons/favicon.ico">
 
 
-    <!-- build:css(src) /assets/css/build.css -->
-    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/vendor/angular-loading-bar/build/loading-bar.css"/>
-    <link rel="stylesheet" href="/core/styles/styles.css"/>
-    <!-- endbuild -->
+
 
     <!-- ClickJacking Defense end -->
     <base href="/">
@@ -30,17 +26,19 @@
 <body>
 
 <!-- build:css(src) /assets/css/build.css -->
+<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="/vendor/angular-hotkeys/build/hotkeys.min.css"/>
-<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
-<!--<link rel="stylesheet" href="/styles/main.css"/>-->
-
-<link rel="stylesheet" href="/styles/core/core.css"/>
+<link rel="stylesheet" href="/vendor/angular-loading-bar/build/loading-bar.css"/>
+<link rel="stylesheet" href="/core/styles/styles.css"/>
+<!--<link rel="stylesheet" href="/styles/core/core.css"/>-->
 
 <!--/TODO-->
 <!--<link rel="stylesheet" href="/styles/app/campaigns.css"/>-->
 <!--<link rel="stylesheet" href="/styles/app/dashboard.css"/>-->
 <!--<link rel="stylesheet" href="/styles/app/templates.css"/>-->
 <!--<link rel="stylesheet" href="/styles/app/reports.css"/>-->
+
+<!-- endbuild -->
 
 <div ui-view class="view a-fade">
     <div loader></div>

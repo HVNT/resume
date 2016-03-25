@@ -2,7 +2,7 @@ angular.module('hb.app').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('/app/app.html',
-    "<div id=contain fill-height><div hb-s-row><div ng-repeat=\"nav in navBlocks\"><span hb-t-font=\"h4 small-caps\">{{::nav.title}}</span></div></div><div ui-view></div></div>"
+    "<div id=\"view contain\"><div hb-s-row hb-t-font=center><span ng-repeat=\"nav in navs\" hb-s-pr=4><span hb-c-text=mono hb-t-font=\"link h4 small-caps\">{{::nav.title}}</span></span></div><div ui-view class=contain fill-height></div></div>"
   );
 
 
