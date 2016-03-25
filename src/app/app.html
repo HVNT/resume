@@ -1,26 +1,23 @@
 <!--TODO view-->
-<div class="view">
-    <div id="container">
+<div id="contain" fill-height>
 
-        <div class="center">
-            <div id="circle">
-                <p>HUNTER BRENNICK</p>
-                <!--SEO Purposes-->
-                <h2>curious learner</h2>
-            </div>
-            <div class="canvas-container">
-                <canvas id="nodes" width="600" height="400"></canvas>
-            </div>
+    <div hb-s-row>
+        <div ng-repeat="nav in navBlocks">
+            <span hb-t-font="h4 small-caps">{{::nav.title}}</span>
         </div>
+    </div>
 
-        <div class="center center-text nav-links">
-            <a class="nav-link" href="aboutme.html">bio</a>
-            <a class="nav-link" href="resume.html">resume</a>
-            <a class="nav-link" href="projects.html">projects</a>
-            <a class="nav-link" href="mailto:hunterbrennick@gmail.com" target="_self">contact</a>
-        </div>
 
-    </div> <!--! end of #container -->
-
+    <!--<div class="center">-->
+    <!--<div id="circle">-->
+    <!--<p>HUNTER BRENNICK</p>-->
+    <!--&lt;!&ndash;SEO Purposes&ndash;&gt;-->
+    <!--<h2>curious learner</h2>-->
+    <!--</div>-->
+    <!--<div class="canvas-container">-->
+    <!--<canvas id="nodes" width="600" height="400"></canvas>-->
+    <!--</div>-->
+    <!--</div>-->
     <div ui-view></div>
 </div>
+

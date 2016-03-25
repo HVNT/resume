@@ -7,7 +7,8 @@
  */
 angular.module('hb.app')
     .controller('AppCtrl',
-        function ($scope, $state, $timeout, $rootScope, $filter, $location, hotkeys) {
+        function ($scope, $state, $timeout, $rootScope, $filter, $location, hotkeys,
+                  BioStates, ProjectsStates) {
             var app = this;
 
             $scope.$state = $state;
@@ -27,79 +28,35 @@ angular.module('hb.app')
             };
 
             var navStates = {
-                dashboard: {
-                    title: 'Home',
-                    //state: DashboardStates.root,
-                    //includes: DashboardStates.root,
-                    icon: 'fa fa-home fa-lg',
-                    savedState: null
+                bio: {
+                    title: 'Bio',
+                    state: BioStates.root
+                },
+                resume: {
+                    title: 'Resume',
+                    state: null
+                },
+                projects: {
+                    title: 'Projects',
+                    state: ProjectsStates.root
                 }
             };
-
-            //
-            //$scope.openMainSidebar = function () {
-            //    $scope.isMainSidebarActive = true;
-            //};
-            //
-            //$scope.closeMainSidebar = function () {
-            //    $scope.isMainSidebarActive = false;
-            //};
 
             $scope.mainLogo = {};
 
-            $scope.activeNav = null;
-
             $scope.navBlocks = [
-                [navStates.dashboard]
+                [navStates.bio],
+                [navStates.resume],
+                [navStates.projects]
             ];
 
-            $scope.navigateTo = function (nav) {
-                $scope.closeMainSidebar();
-
-                $timeout(function () {
-                    if (nav == $scope.activeNav) {
-                        $state.go(nav.state);
-                    } else if (nav.savedState) {
-                        $state.go(nav.savedState, nav.savedStateParams);
-                    } else {
-                        $state.go(nav.state);
-                    }
-                }, 400);
-            };
-
-            $scope.setActiveNav = function (key) {
-                $scope.activeNav = navStates[key];
-            };
-
-            $scope.setSavedState = function (navSection, state, stateParams) {
-                $scope.activeNav = navStates[navSection];
-
-                if ($scope.activeNav) {
-                    $scope.activeNav.savedState = state;
-                    $scope.activeNav.savedStateParams = stateParams;
-                }
-            };
-
-            $scope.$on('$stateChangeSuccess', function (e, toState, toStateParams, fromState, fromStateParams) {
-                var navSection = toState.name.split('.')[1];
-                $scope.setSavedState(navSection, toState.name, toStateParams);
-            });
-
-            //$scope.goTemplates = function (stateName, stateParams) {
-            //    $state.go(TemplatesStates[stateName] || TemplatesStates.root, stateParams);
-            //};
-            //
-            //$scope.goCampaigns = function (state, params) {
-            //    $state.go(CampaignsStates[state] || CampaignsStates.list, params);
-            //};
-
-            hotkeys.bindTo($scope)
-                .add({
-                    combo: ['esc'],
-                    description: 'Close main sidebar',
-                    callback: function (event) {
-                        event.preventDefault();
-                        $scope.closeMainSidebar();
-                    }
-                })
+            //hotkeys.bindTo($scope)
+            //    .add({
+            //        combo: ['esc'],
+            //        description: 'Close main sidebar',
+            //        callback: function (event) {
+            //            event.preventDefault();
+            //            $scope.closeMainSidebar();
+            //        }
+            //    })
         });

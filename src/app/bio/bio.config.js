@@ -16,4 +16,10 @@ angular.module('hb.app')
                 templateUrl: '/app/bio/views/bio.html',
                 controller: 'BioCtrl'
             });
+    })
+    .service('BioStates', function (BaseState) {
+
+        return {
+            root: BaseState + '.projects'
+        }
     });

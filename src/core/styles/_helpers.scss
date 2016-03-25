@@ -1,0 +1,133 @@
+@import 'variables.scss';
+
+.noselect {
+  @extend %noselect;
+}
+
+.cursor-ns {
+  cursor: ns-resize !important;
+}
+
+.cursor-ew {
+  cursor: ew-resize !important;
+}
+
+.cursor-grab {
+  @extend %grab;
+}
+
+.cursor-text {
+  @extend %cursor-text;
+}
+
+.cursor-move {
+  @extend %cursor-move;
+}
+
+.cursor-col-resize {
+  @extend %cursor-col-resize;
+}
+
+.z1 {
+  position: relative;
+  z-index: $z1 !important;
+}
+
+.z2 {
+  position: relative;
+  z-index: $z2 !important;
+}
+
+.z3 {
+  position: relative;
+  z-index: $z3 !important;
+}
+
+.top-z1-shadow {
+  @include box-shadow($top-z1-shadow);
+}
+
+.top-z2-shadow {
+  @include box-shadow($top-z2-shadow);
+}
+
+.inset-z1-shadow {
+  @include box-shadow($inset-z1-shadow);
+}
+
+.inset-z2-shadow {
+  @include box-shadow($inset-z2-shadow);
+}
+
+.top-z1-shadow {
+  @include box-shadow($top-z1-shadow);
+}
+
+.top-z2-shadow {
+  @include box-shadow($top-z2-shadow);
+}
+
+.z0-shadow {
+  @include box-shadow($z0-shadow)
+}
+
+.z1-shadow {
+  @include box-shadow($z1-shadow)
+}
+
+.z2-shadow {
+  @include box-shadow($z2-shadow)
+}
+
+.z3-shadow {
+  @include box-shadow($z3-shadow)
+}
+
+.z4-shadow {
+  @include box-shadow($z4-shadow)
+}
+
+.z5-shadow {
+  @include box-shadow($z5-shadow)
+}
+
+.circle {
+  @include border-radius(50%);
+}
+
+.rotate-45 {
+  @include transform(rotate(45deg));
+}
+
+.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+[fill-height], [max-height] {
+  display: block;
+  overflow: auto;
+}
+
+.valign-contain {
+  height: 100%;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+.valign-middle {
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.valign-bottom {
+  width: 100%;
+  display: inline-block;
+  vertical-align: bottom;
+}

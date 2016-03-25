@@ -1,41 +1,21 @@
-$ns: 'nd-';
+$ns: 'rv-';
+$white: #f9f7f6;
 
-$gutter-base: 8px;
-
-$white: #F7F9F9;
-
-// Brand colors
-// -------------------------
-$brand-primary: #62a9b3 !default;
+$brand-primary: #4B9EB2 !default;
 $brand-accent: #4d577b !default;
-$brand-success: #a7d2a3 !default; //9ccc65
-$brand-warning: #edcc3e !default;
+$brand-success: #9ccc65 !default;
+$brand-warning: #E9B049 !default;
 $brand-danger: #ef5c48 !default;
-$brand-info: #B0DDF2 !default;
+$brand-info: #67a5d9 !default;
+$brand-alert: #e68122 !default;
 $link-color: #0c5e86 !default;
+$brand-pink: #d946b9 !default;
 
+$brand-secondary: #4F3D33;
+$brand-secondary-highlight: #B4825B;
 
-// active color
-$brand-active: #F6E9A6 !default;
-$brand-active-shadow: darken(adjust_hue($brand-active, 6%), 15%) !default;
+$brand-highlight: #343434;
 
-// category colors
-$brand-science: #B9A8C6 !default;
-$brand-science-shadow: darken(adjust_hue($brand-science, 6%), 15%) !default;
-$brand-health: #C36D74 !default;
-$brand-health-shadow: darken(adjust_hue($brand-health, 6%), 15%) !default;
-$brand-economy: #A7D2A3 !default;
-$brand-economy-shadow: darken(adjust_hue($brand-economy, 6%), 15%) !default;
-$brand-world: #87A5C8 !default;
-$brand-world-shadow: darken(adjust_hue($brand-world, 6%), 15%) !default;
-
-// twitter & facebook colors
-$brand-twitter: #55ACEE !default;
-$brand-facebook: #395489 !default;
-$brand-twitter-shadow: darken(adjust_hue($brand-twitter, 6%), 15%) !default;
-$brand-facebook-shadow: darken(adjust_hue($brand-facebook, 6%), 15%) !default;
-
-$brand-fallback: #7d5c45;
 // brown
 $mono-darker: #302b27;
 $mono-dark: #5c5854;
@@ -69,6 +49,7 @@ $brand-primary-200: lighten(saturate(adjust_hue($brand-primary, -6%), 10%), 40%)
 **/
 
 $base-font-family:  'Open Sans', sans-serif !important;
+$heading-font-family:  'Francois One', sans-serif !important;
 $small-caps-multiplier: .75;
 
 // Font Sizes
@@ -113,40 +94,6 @@ $h6-small-caps-line-height: floor($h6-small-caps * 1.5);
 
 $small-line-height: floor($base-line-height * .75);
 
-
-// Standard Shadows
-$z0-shadow: 0 0 1px rgba(0, 0, 0, 0.12), 0 0 1px rgba(0, 0, 0, 0.24);
-$z1-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-$z2-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-$z3-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-$z4-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-$z5-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
-
-// Top shadows (for "bottom" positioned elements)
-$top-z1-shadow: 0  -1px 3px rgba(0, 0, 0, 0.12), 0  -1px 2px rgba(0, 0, 0, 0.24);
-$top-z2-shadow: 0  -3px 6px rgba(0, 0, 0, 0.16), 0  -3px 6px rgba(0, 0, 0, 0.23);
-$top-z3-shadow: 0 -10px 20px rgba(0, 0, 0, 0.19), 0  -6px 6px rgba(0, 0, 0, 0.23);
-$top-z4-shadow: 0 -14px 28px rgba(0, 0, 0, 0.25), 0 -10px 10px rgba(0, 0, 0, 0.22);
-$top-z5-shadow: 0 -19px 38px rgba(0, 0, 0, 0.30), 0 -15px 12px rgba(0, 0, 0, 0.22);
-
-// Shadows for full size "side" elements (using spread to make corners look right)
-$side-z1-shadow: 0 0 3px 0.75px rgba(0, 0, 0, 0.12), 0 0 2px 0.5px rgba(0, 0, 0, 0.24);
-$side-z2-shadow: 0 0 6px 1.5px rgba(0, 0, 0, 0.16), 0 0 6px 1.5px rgba(0, 0, 0, 0.23);
-$side-z3-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.19), 0 0 6px 1.5px rgba(0, 0, 0, 0.23);
-$side-z4-shadow: 0 0 28px 7px rgba(0, 0, 0, 0.25), 0 0 10px 2.5px rgba(0, 0, 0, 0.22);
-$side-z5-shadow: 0 0 38px 9.5px rgba(0, 0, 0, 0.30), 0 0 12px 3px rgba(0, 0, 0, 0.22);
-
-// Raised button shadow (this in an approximation from  http://material-design.storage.googleapis.com/images/components-buttons-states-for-mocks-2a_large_mdpi.png)
-$raised-button-normal-shadow: 1px 2px 3px rgba(0, 0, 0, 0.17), 0 1px 4px rgba(0, 0, 0, 0.16);
-$raised-button-hover-shadow: 0 1px 3px rgba(0, 0, 0, 0.13), 0 1px 4px rgba(0, 0, 0, 0.16);
-$raised-button-focused-shadow: 0 5px 6px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.16);
-$raised-button-pressed-shadow: 0 6px 5px rgba(0, 0, 0, 0.09), 0 7px 6px rgba(0, 0, 0, 0.16);
-
-
-$inset-z1-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12), inset 0 1px 2px rgba(0, 0, 0, 0.24);
-$inset-z2-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), inset 0 3px 6px rgba(0, 0, 0, 0.23);
-
-
 // Spacing Units
 
 $base-spacing-unit: 5px;
@@ -170,10 +117,6 @@ $pad-sm: $pad-y-sm $pad-x-sm;
 $pad-md: $pad-y-md $pad-x-md;
 $pad-lg: $pad-y-lg $pad-x-lg;
 
-$num-cols: 12;
-$num-rows: 6;
-$num-spacing-units: 12;
-
 // Browsers take floor of line-height, as opposed to round for width / height
 $dimensions-xs: ($pad-y-xs*2) + $small-line-height;
 $dimensions-sm: ($pad-y-sm*2) + $h6-small-caps-line-height;
@@ -185,12 +128,85 @@ $bordered-dimensions-sm: $dimensions-sm + ($base-border-width*2);
 $bordered-dimensions-md: $dimensions-md + ($base-border-width*2);
 $bordered-dimensions-lg: $dimensions-lg + ($base-border-width*2);
 
-.noselect {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+$num-cols: 12;
+$num-rows: 6;
+$num-spacing-units: 16;
+
+// Patterns
+
+$interact-border: $base-border-width solid $mono;
+$interact-border-thick: $base-border-width*2 solid $mono;
+
+$z0: 100;
+$z1: 110;
+$z2: 120;
+$z3: 130;
+$z4: 140;
+$z5: 150;
+$z6: 160;
+$z7: 170;
+$z8: 180;
+$z9: 190;
+$z10: 200;
+
+$z100: 1000;
+$z110: 1100;
+$z120: 1200;
+$z130: 1300;
+$z140: 1400;
+$z150: 1500;
+$z160: 1600;
+$z170: 1700;
+$z180: 1800;
+$z190: 1900;
+$z200: 2000;
+
+$z1000: 10000;
+$z1100: 11000;
+$z1200: 12000;
+$z1300: 13000;
+$z1400: 14000;
+$z1500: 15000;
+$z1600: 16000;
+$z1700: 17000;
+$z1800: 18000;
+$z1900: 19000;
+$z2000: 20000;
+
+// Standard Shadows
+$z0-shadow: 0 0 1px rgba(0, 0, 0, 0.12), 0 0 1px rgba(0, 0, 0, 0.24);
+$z1-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$z2-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$z3-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+$z4-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+$z5-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+$right-z0-shadow: 1px 0 1.5px rgba(0, 0, 0, 0.06), 1px 0 1px rgba(0, 0, 0, 0.12);
+$right-z1-shadow: 1px 0 3px rgba(0, 0, 0, 0.12), 1px 0 2px rgba(0, 0, 0, 0.24);
+$right-z2-shadow: 3px 0 6px rgba(0, 0, 0, 0.16), 3px 0 6px rgba(0, 0, 0, 0.23);
+$right-z3-shadow: 10px 0 20px rgba(0, 0, 0, 0.19), 6px 0 6px rgba(0, 0, 0, 0.23);
+
+// Top shadows (for "bottom" positionned elements)
+$top-z1-shadow: 0  -1px 3px rgba(0, 0, 0, 0.12), 0  -1px 2px rgba(0, 0, 0, 0.24);
+$top-z2-shadow: 0  -3px 6px rgba(0, 0, 0, 0.16), 0  -3px 6px rgba(0, 0, 0, 0.23);
+$top-z3-shadow: 0 -10px 20px rgba(0, 0, 0, 0.19), 0  -6px 6px rgba(0, 0, 0, 0.23);
+$top-z4-shadow: 0 -14px 28px rgba(0, 0, 0, 0.25), 0 -10px 10px rgba(0, 0, 0, 0.22);
+$top-z5-shadow: 0 -19px 38px rgba(0, 0, 0, 0.30), 0 -15px 12px rgba(0, 0, 0, 0.22);
+
+// Shadows for full size "side" elements (using spread to make corners look right)
+$side-z1-shadow: 0 0 3px 0.75px rgba(0, 0, 0, 0.12), 0 0 2px 0.5px rgba(0, 0, 0, 0.24);
+$side-z2-shadow: 0 0 6px 1.5px rgba(0, 0, 0, 0.16), 0 0 6px 1.5px rgba(0, 0, 0, 0.23);
+$side-z3-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.19), 0 0 6px 1.5px rgba(0, 0, 0, 0.23);
+$side-z4-shadow: 0 0 28px 7px rgba(0, 0, 0, 0.25), 0 0 10px 2.5px rgba(0, 0, 0, 0.22);
+$side-z5-shadow: 0 0 38px 9.5px rgba(0, 0, 0, 0.30), 0 0 12px 3px rgba(0, 0, 0, 0.22);
+
+// Raised button shadow (this in an approximation from  http://material-design.storage.googleapis.com/images/components-buttons-states-for-mocks-2a_large_mdpi.png)
+$raised-button-normal-shadow: 1px 2px 3px rgba(0, 0, 0, 0.17), 0 1px 4px rgba(0, 0, 0, 0.16);
+$raised-button-hover-shadow: 0 1px 3px rgba(0, 0, 0, 0.13), 0 1px 4px rgba(0, 0, 0, 0.16);
+$raised-button-focused-shadow: 0 5px 6px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.16);
+$raised-button-pressed-shadow: 0 6px 5px rgba(0, 0, 0, 0.09), 0 7px 6px rgba(0, 0, 0, 0.16);
+
+$inset-z0-shadow: inset 0 0 1px rgba(0, 0, 0, 0.12), inset 0 0 1px rgba(0, 0, 0, 0.24);
+$inset-z1-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12), inset 0 1px 2px rgba(0, 0, 0, 0.24);
+$inset-z2-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), inset 0 3px 6px rgba(0, 0, 0, 0.23);
 

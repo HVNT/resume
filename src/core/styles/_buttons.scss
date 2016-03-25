@@ -1,7 +1,13 @@
+/**
+*
+*  Regular Buttons
+*
+**/
+
 @mixin btn-color($color, $color-shadow: adjust_hue(darken($color, 7%), 8%), $text-color: $white) {
   background: $color;
   color: $text-color;
-  border: 2px solid $color-shadow;
+  border: $base-border-width solid $color-shadow;
   text-shadow: 0 -1px 0 $color;
   //  @include btn-shadow($color-shadow);
   @include box-shadow(#{0 1px $color-shadow, $raised-button-normal-shadow});
@@ -9,7 +15,7 @@
   &:hover:not([disabled="disabled"]) {
     background: lighten($color, 3%);
     //    box-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.16), 0 1px 1px $color-shadow;
-    text-shadow: 0 -1px 0 $color-shadow;
+    //    text-shadow: 0 -1px 0 $color-shadow;
     @include box-shadow(#{ 0 1px $color-shadow, $raised-button-hover-shadow});
   }
 
@@ -32,11 +38,12 @@
 }
 
 %btn {
-  @extend .noselect;
+  @extend %noselect;
   cursor: pointer;
   outline: 0;
   text-align: center;
   display: inline-block;
+  word-break: break-all;
   @include translate3d(0, -1px, 0);
 
   &:hover, &:active {
@@ -68,39 +75,6 @@
   @include btn-color($brand-accent, $brand-accent-shadow);
 }
 
-
-// category btns
-.#{$ns}btn-science {
-  @extend %btn;
-  @include btn-color($brand-science, $brand-science-shadow);
-}
-
-.#{$ns}btn-health {
-  @extend %btn;
-  @include btn-color($brand-health, $brand-health-shadow);
-}
-
-.#{$ns}btn-economy {
-  @extend %btn;
-  @include btn-color($brand-economy, $brand-economy-shadow);
-}
-
-.#{$ns}btn-world {
-  @extend %btn;
-  @include btn-color($brand-world, $brand-world-shadow);
-}
-
-// twitter & facebook btn
-.#{$ns}btn-twitter {
-  @extend %btn;
-  @include btn-color($brand-twitter, $brand-twitter-shadow);
-}
-
-.#{$ns}btn-facebook {
-  @extend %btn;
-  @include btn-color($brand-facebook, $brand-facebook-shadow);
-}
-
 .#{$ns}btn-success {
   @extend %btn;
   @include btn-color($brand-success, $brand-success-shadow);
@@ -125,13 +99,6 @@
   @extend %btn;
   @include btn-color($white, $mono, $mono);
 }
-
-.#{$ns}btn-active {
-  @extend %btn;
-  @include btn-color($brand-active, $brand-active-shadow);
-}
-
-
 
 /**
 *
@@ -158,21 +125,19 @@ $btn-outlined-namespace: "o";
 }
 
 %btn-outlined {
-  @extend .noselect;
+  @extend %noselect;
   text-align: center;
   background: transparent;
   cursor: pointer;
   outline: 0;
   display: inline-block;
-
-  &:hover, &:active {
-    @include transition(all 0.07s ease-in-out);
-  }
+  word-break: break-all;
 
   &[disabled="disabled"] {
     border: 2px solid rgba($mono-light, .60);
     color: rgba($mono-light, .60);
     cursor: default;
+    pointer-events: none;
   }
 
   & > i + a,
@@ -253,7 +218,7 @@ $btn-naked-namespace: "n";
 }
 
 %btn-naked {
-  @extend .noselect;
+  @extend %noselect;
   text-align: center;
   cursor: pointer;
   outline: 0;
@@ -343,6 +308,10 @@ $btn-naked-namespace: "n";
 .#{$ns}btn--circle {
   border-radius: 50%;
   padding: 0 !important;
+}
+
+.#{$ns}btn--dashed {
+  border-style: dashed !important;
 }
 
 .#{$ns}btn--rounded {

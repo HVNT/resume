@@ -16,4 +16,10 @@ angular.module('hb.app')
                 templateUrl: '/app/projects/views/projects.html',
                 controller: 'ProjectsCtrl'
             });
+    })
+    .service('ProjectsStates', function (BaseState) {
+
+        return {
+            root: BaseState + '.projects'
+        }
     });

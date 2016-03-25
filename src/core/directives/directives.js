@@ -6,6 +6,38 @@
  * File:
  */
 angular.module('hb.directives', [])
+    .factory('hbFillHeight', function ($position, $window) {
+        return function (property, element, offset) {
+            element.css(property, ($window.innerHeight - $position.offset(element).top - (offset || 0)) + 'px');
+        }
+    })
+    .directive('fillHeight', function (hbFillHeight, $window, $rootScope, $timeout) {
+        return {
+            restrict: 'AC',
+            priority: 0,
+            link: function (scope, element, attrs) {
+                var window = angular.element($window),
+                    offset = scope.$eval(attrs.fillHeight) || 0,
+                    property = attrs.fillHeightMax ? 'max-height' : 'height';
+
+                function fillHeight () {
+                    hbFillHeight(property, element, offset);
+                }
+
+                window.on('resize', _.debounce(fillHeight, 10));
+                $rootScope.$on('$includeContentLoaded', fillHeight);
+                $rootScope.$on('$stateEnterTransitionComplete', fillHeight);
+
+                fillHeight();
+
+                scope.$watch(function () {
+                    return element[0].offsetTop;
+                }, fillHeight);
+
+                $timeout(fillHeight, 0)
+            }
+        }
+    })
     .directive('fillBackground', function () {
         return {
             scope: {
