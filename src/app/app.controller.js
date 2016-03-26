@@ -7,53 +7,74 @@
  */
 angular.module('hb.app')
     .controller('AppCtrl',
-        function ($scope, $state, $document, $timeout, $rootScope, $filter, $location, hotkeys,
+        function ($scope, $state, $window, $document, $timeout, $rootScope, $filter, $location, hotkeys,
                   BioStates, ProjectsStates, BaseViews) {
 
+            $scope.BaseViews = BaseViews;
             $scope.isIphone = (navigator.platform.indexOf("iPhone") != -1) ||
                 (navigator.platform.indexOf("iPod") != -1);
 
             $scope.hello = {
                 me: 'Hi, I\'m Hunter.',
                 img: 'assets/img/bucket-prof.png',
-                msg: 'I like designing and building things for the internet.'
+                msg: 'I like designing and building things.'
             };
 
-            $scope.BaseViews = BaseViews;
-
             $scope.glitching = false;
-            var helloMeDelay = $scope.hello.me.length * 75 + 150;
-            var helloMsgDelay = 2000 + $scope.hello.msg.length * 50;
+
+            $scope.helloMeDone = false;
+            $scope.helloMsgDone = false;
+            $scope.firstGlitchDone = false;
+
+            var baseTransDelay = 500;
+            var helloMeDelay = ($scope.hello.me.length * 75) + baseTransDelay;
+            var helloMsgDelay = (2000 + $scope.hello.msg.length * 50) + baseTransDelay * 4;
+            var firstGlitchDelay = helloMsgDelay + 150;
 
             $timeout(function () {
                 $scope.helloMeDone = true;
+            }, helloMeDelay);
+
+            $timeout(function () {
+                $scope.helloMsgDone = true;
                 $scope.glitching = true;
             }, helloMsgDelay);
+
+            $timeout(function () {
+                $scope.glitching = false;
+                $scope.firstGlitchDone = true;
+            }, firstGlitchDelay);
 
             var navStates = {
                 bio: {
                     title: 'Bio',
                     state: BioStates.root,
+                    navigate: function () {
+                        $state.go(this.state);
+                    },
                     initialDelay: helloMsgDelay + 400
                 },
                 projects: {
                     title: 'Projects',
                     state: ProjectsStates.root,
+                    navigate: function () {
+                        $state.go(this.state);
+                    },
                     initialDelay: helloMsgDelay + 550
                 },
                 resume: {
                     title: 'Resume',
                     state: null,
+                    href: 'assets/resume.pdf',
                     initialDelay: helloMsgDelay + 950
                 },
                 contact: {
                     title: 'Contact',
                     state: null,
-                    initialDelay: helloMsgDelay + 1350,
-                    href: 'href="mailto:hunterbrennick@gmail.com"'
+                    href: 'mailto:hunterbrennick@gmail.com',
+                    initialDelay: helloMsgDelay + 1350
                 }
             };
-
 
             $scope.$state = $state;
             $scope.initialized = true;
@@ -71,7 +92,6 @@ angular.module('hb.app')
                 updateOn: 'blur default'
             };
 
-
             $scope.mainLogo = {};
 
             $scope.navs = [
@@ -85,64 +105,60 @@ angular.module('hb.app')
 
 
 
-
-
-
-
-            function isiPhone(){
-                return (
-                    (navigator.platform.indexOf("iPhone") != -1) ||
-                    (navigator.platform.indexOf("iPod") != -1)
-                );
-            }
-
-
-
             /* Canvas */
-            var mouse_e = {pageX: 0, pageY: 0};
+            //TODO beafin up directive version then gut this shit
+            var mouse_e = {
+                pageX: 0,
+                pageY: 0
+            };
+
             var canvas = document.getElementById('nodes');
             var ctx = canvas.getContext('2d');
 
-            var fps = isiPhone() ? 10 : 30;
-            var total_nodes = isiPhone() ? 25 : 50;
+            var fps = $scope.isIphone ? 10 : 30;
+            var total_nodes = $scope.isIphone ? 25 : 75;
             var min_speed = 10;
             var nodes_speed = 7;
             var nodes = [];
             var min_dist = 100;
             var move = true;
             var draw_to_mouse = false;
-            var gather_nodes = false;
             var circle_radius = 100;
             var line_opacity = 1;
 
-            var lowMargin = 110;
 
-            // Init nodes
-            for(var i = 0; i < total_nodes; i++) {
-                var c_width = ctx.canvas.width;
-                var c_height = ctx.canvas.height;
+            $timeout(function () {
+                ctx.canvas.width = $(canvas).parent().outerWidth() - 40; // -40 for padding
+            }, firstGlitchDelay);
 
-                var node = {cx:     Math.round(Math.random() * c_width),
-                    cy:     Math.round(Math.random() * c_height),
-                    dx:    Math.round(Math.random() * c_width),
-                    dy:    Math.round(Math.random() * c_height),
+            $timeout(function () {
+                $scope.canvasPrepped = true;
+            }, firstGlitchDelay);
+
+
+            /* Init nodes */
+            for (var i = 0; i < total_nodes; i++) {
+                nodes.push({
+                    cx: Math.round(Math.random() * ctx.canvas.width),
+                    cy: Math.round(Math.random() * ctx.canvas.height),
+                    dx: Math.round(Math.random() * ctx.canvas.width),
+                    dy: Math.round(Math.random() * ctx.canvas.height),
                     speed: Math.round(min_speed + Math.random() * nodes_speed * 10),
                     gather: false
-                };
-                nodes.push(node);
+                });
             }
 
-            frame = function() {
+            frame = function () {
                 var c_width = ctx.canvas.width;
                 var c_height = ctx.canvas.height;
 
-                if(move) {
+                if (move) {
                     // Redraw
                     ctx.clearRect(0, 0, c_width, c_height);
 
-                    for(var i = 0; i < total_nodes; i++) {
-
+                    for (var i = 0; i < total_nodes; i++) {
                         var node = nodes[i];
+
                         node.cx += (node.dx - node.cx) / node.speed;
                         node.cy += (node.dy - node.cy) / node.speed;
 
@@ -152,19 +168,18 @@ angular.module('hb.app')
                         ctx.closePath();
                         ctx.fill();
 
-                        if((node.cx >= node.dx - 1) &&
+                        if ((node.cx >= node.dx - 1) &&
                             (node.cx <= node.dx + 1) &&
                             (node.cy >= node.dy - 1) &&
                             (node.cy <= node.dy + 1)) {
 
-                            if(!node.gather) {
+                            if (!node.gather) {
                                 node.dx = Math.round(Math.random() * c_width);
                                 node.dy = Math.round(Math.random() * c_height);
                             } else {
                                 var radian = ((Math.random() * 360) / 180) * Math.PI;
                                 node.dx = (c_width / 2) + (Math.cos(radian) * circle_radius);
                                 node.dy = (c_height / 2) - (Math.sin(radian) * circle_radius);
-                                node.dy += lowMargin;
                             }
                         }
                     }
@@ -173,17 +188,17 @@ angular.module('hb.app')
                 }
 
                 // Keep playing
-                setTimeout(function() {
+                setTimeout(function () {
                     frame();
                 }, 1000 / fps);
             };
 
             frame();
 
-            function webNodes() {
-                for(a = 0; a < total_nodes; a++) {
+            function webNodes () {
+                for (a = 0; a < total_nodes; a++) {
 
-                    if(draw_to_mouse && !nodes[a].gather) {
+                    if (draw_to_mouse && !nodes[a].gather) {
                         mouse_x = mouse_e.pageX - $('#nodes').offset().left;
                         mouse_y = mouse_e.pageY - $('#nodes').offset().top;
                         x_dist = nodes[a].cx - mouse_x;
@@ -192,20 +207,20 @@ angular.module('hb.app')
                         drawLine(nodes[a].cx + 1, nodes[a].cy + 1, mouse_x, mouse_y, (min_dist - dist) / 100);
                     }
 
-                    for(b = a + 1; b < total_nodes; b++){
+                    for (b = a + 1; b < total_nodes; b++) {
 
                         x_dist = nodes[a].cx - nodes[b].cx;
                         y_dist = nodes[a].cy - nodes[b].cy;
                         dist = Math.sqrt(Math.pow(x_dist, 2) + Math.pow(y_dist, 2));
 
-                        if(dist <= min_dist) {
+                        if (dist <= min_dist) {
                             drawLine(nodes[a].cx + 1, nodes[a].cy + 1, nodes[b].cx + 1, nodes[b].cy + 1, (min_dist - dist) / 100);
                         }
                     }
                 }
             }
 
-            function drawLine(x1, y1, x2, y2, alpha) {
+            function drawLine (x1, y1, x2, y2, alpha) {
                 ctx.strokeStyle = 'rgba(0, 0, 0, ' + (alpha * line_opacity) + ')';
                 ctx.beginPath();
                 ctx.moveTo(x1, y1);
@@ -213,72 +228,4 @@ angular.module('hb.app')
                 ctx.stroke();
             }
 
-            function releaseNodes() {
-                for(a = 0; a < total_nodes; a++) {
-                    nodes[a].gather = false;
-                    nodes[a].dx = Math.round(Math.random() * c_width);
-                    nodes[a].dy = Math.round(Math.random() * c_height);
-                }
-            }
-
-            function gatherNodes() {
-                for(a = 0; a < total_nodes; a++) {
-                    nodes[a].gather = true;
-
-                    var radian = ((Math.random() * 360) / 180) * Math.PI;
-                    nodes[a].dx = (c_width / 2) + (Math.cos(radian) * circle_radius);
-                    nodes[a].dy = (c_height / 2) - (Math.sin(radian) * circle_radius);
-
-                    nodes[a].dy += toggled ? lowMargin : 0;
-                }
-            }
-
-            function fadeToNodes(from) {
-                line_opacity = from / 100;
-                if(from > 0) {
-                    setTimeout(function() {
-                        fadeToNodes(from - 1);
-                    }, 5);
-                }
-            }
-
-            function fadeToLines(from) {
-                line_opacity = from / 100;
-                if(from < 100) {
-                    setTimeout(function() {
-                        fadeToLines(from + 1);
-                    }, 100);
-                }
-            }
-
-            // Main Circle
-            var toggled = false;
-            $('#circle').click(function() {
-                if($('#circle').hasClass('clicked')) {
-                    toggled = false;
-                    $('#circle').removeClass('clicked');
-                    $('#circle').removeClass('low');
-                    hideNavigation();
-                    releaseNodes();
-                    fadeToLines(0);
-                } else {
-                    toggled = true;
-                    $('#circle').addClass('clicked');
-                    $('#circle').addClass('low');
-                    showNavigation();
-                    gatherNodes();
-                    fadeToNodes(100);
-                }
-            });
-
-
-            function switchNavigation(from, to) {
-                from.animate({'opacity': 0}, 250)
-                    .hide();
-
-                to.css('opacity', 0)
-                    .show()
-                    .animate({'opacity': 1}, 250)
-                    .delay(250);
-            }
         });

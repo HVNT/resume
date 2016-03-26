@@ -20,6 +20,6 @@ angular.module('hb.app')
     .service('BioStates', function (BaseState) {
 
         return {
-            root: BaseState + '.projects'
+            root: BaseState + '.bio'
         }
     });

@@ -1,25 +1,35 @@
 <!--TODO view-->
 <div id="view contain">
-    <div class="main-left">
-        <div hb-s-row ng-show="">
-            <div hb-s-col="12">
-                <canvas id="nodes" width="200px" fill-height></canvas>
+    <!--HEADER-->
+    <div class="main-header">
+        <div hb-s-row  ng-show="helloMsgDone && firstGlitchDone">
+            <div hb-s-col="12" rv-s-pxy="4">
+                <div class="canvas-mask-left"></div>
+                <canvas id="nodes" width="800px" height="150px"
+                        class="main-header__canvas"
+                        ng-class="{'visible': canvasPrepped}"></canvas>
+                <div class="canvas-mask-right"></div>
             </div>
         </div>
     </div>
 
     <!--BODY-->
-    <div class="main-right" hb-s-px="4">
-        <!--GREETING-->
-        <div ng-include="BaseViews.greeting"></div>
+    <div class="main-body" hb-s-px="2">
+        <div class="main-body__left">
+            <!--GREETING-->
+            <div ng-show="!helloMsgDone" ng-include="BaseViews.greeting"></div>
 
+            <!--NAV-->
+            <div ng-show="helloMsgDone && firstGlitchDone" ng-include="BaseViews.nav"></div>
+        </div>
 
-        <!--NAV-->
-        <div ng-include="BaseViews.nav"></div>
+        <div class="main-body__right">
+
+        </div>
     </div>
 
-
     <div ui-view class="contain"></div>
+
+    <div class="glitch-mask" ng-show="glitching"></div>
 </div>
 
-<!--<div class="hb-glitch-mask"></div>-->

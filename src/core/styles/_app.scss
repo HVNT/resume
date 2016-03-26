@@ -1,5 +1,6 @@
-$main-top: 150px;
-$main-left-width: 300px;
+$main-left: 100px;
+$main-header-height: 160px;
+$main-body-left-width: 500px;
 
 .hb-glitch-mask {
   position: absolute;
@@ -15,20 +16,38 @@ $main-left-width: 300px;
   }
 }
 
-.main-left {
+.main-header {
   position: absolute;
   top: 0;
   left: 0;
-  width: $main-left-width;
+  right: 0;
+  height: $main-header-height;
   bottom: 0;
 }
 
-.main-right {
+.main-body {
   position: absolute;
-  top: $main-top;
-  left: $main-left-width;
+  top: $main-header-height;
+  left: $main-left;
   right: 0;
   bottom: 0;
+
+  .main-body__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $main-body-left-width;
+    bottom: 0;
+  }
+
+  .main-body__right {
+    position: absolute;
+    top: 0;
+    left: $main-body-left-width;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+  }
 }
 
 .main__greeting {
@@ -55,9 +74,54 @@ $main-left-width: 300px;
 
 .main-nav {
   position: relative;
-  top: $main-top;
+  top: $main-header-height;
+
+  .nav-anchor {
+    opacity: 0;
+
+    &.visible {
+      opacity: 1;
+    }
+
+    @include transition(opacity 1s ease-out);
+  }
+
+  a.nav-title {
+
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
 }
 
-#nodes {
-  width: $main-left-width;
+
+.main-header__canvas {
+  opacity: 0;
+
+  &.visible {
+    opacity: 1;
+  }
+
+  @include transition(opacity 1s ease-out);
+}
+
+.canvas-mask-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: $main-header-height;
+  opacity: .9;
+  background: WHITE;
+}
+
+
+.canvas-mask-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: $main-header-height;
+  opacity: .9;
+  background: WHITE;
 }

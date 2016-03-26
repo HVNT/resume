@@ -309,10 +309,10 @@ angular.module('hb.directives', [])
             restrict: "A"
         });
     })
-    .directive('hbGlitchMask', function ($compile, $timeout) {
+    .directive('glitchMask', function ($compile, $timeout) {
         return {
-            require: 'hbGlitchMask',
             restrict: 'AC',
+            require: 'glitchMask',
             controller: function () {
                 var glitchColors = {
                     white: '#F9FAF4',
@@ -326,10 +326,6 @@ angular.module('hb.directives', [])
                 };
                 var glitchColorKeys = _.keys(glitchColors);
 
-                function styleBar () {
-
-                }
-
                 this.bars = [];
 
                 this.addBar = function (bar) {
@@ -339,8 +335,10 @@ angular.module('hb.directives', [])
                 };
             },
             link: function (scope, element, attrs, ctrl) {
-                var glitchTpl = '<div>\n    <div class="glitch-mask-bar"></div>\n    <div class="glitch-mask-bar"></div>\n    <div class="glitch-mask-bar"></div>\n    <div class="glitch-mask-bar"></div>\n    <div class="glitch-mask-bar"></div>\n    <div class="glitch-mask-bar"></div>\n    <div class="glitch-mask-bar"></div>\n</div>';
-                element.append($compile(glitchTpl)(scope));
+                var glitchTpl = '<div class="glitch-mask-bar"></div>\n<div class="glitch-mask-bar"></div>\n<div class="glitch-mask-bar"></div>\n<div class="glitch-mask-bar"></div>\n<div class="glitch-mask-bar"></div>\n<div class="glitch-mask-bar"></div>\n<div class="glitch-mask-bar"></div>';
+                var glitchEl = angular.element(glitchTpl);
+                element.append(glitchEl);
+                $compile(glitchEl)(scope);
 
                 //$timeout(function () {
                 //    scope.glitching = false;
@@ -351,7 +349,7 @@ angular.module('hb.directives', [])
     .directive('glitchMaskBar', function ($timeout) {
         return {
             restrict: 'AC',
-            require: ['^hbGlitchMask', 'glitchMaskBar'],
+            require: ['^glitchMask', 'glitchMaskBar'],
             controller: function ($scope, $element) {
 
                 this.setBackgroundColor = function (color) {
@@ -362,7 +360,7 @@ angular.module('hb.directives', [])
             },
             link: function (scope, element, attrs, ctrls) {
                 var GlitchMaskCtrl = ctrls[0];
-                var GlitchMaskBarCtrl = ctrls[0];
+                var GlitchMaskBarCtrl = ctrls[1];
                 var barWidth = attrs.width || '14.275%'; // 100 / 7 = default value
                 var barHeight = attrs.height || '200px';
 
@@ -378,18 +376,18 @@ angular.module('hb.directives', [])
         }
     })
     .directive('typewrite', function ($timeout) {
-        function linkFunction (scope, iElement, iAttrs) {
+        function linkFunction (scope, elem, attrs) {
             var timer = null,
-                initialDelay = iAttrs.initialDelay ? getTypeDelay(iAttrs.initialDelay) : 200,
-                typeDelay = iAttrs.typeDelay ? getTypeDelay(iAttrs.typeDelay) : 200,
-                blinkDelay = iAttrs.blinkDelay ? getAnimationDelay(iAttrs.blinkDelay) : false,
-                cursor = iAttrs.cursor ? iAttrs.cursor : '|',
-                blinkCursor = iAttrs.blinkCursor ? iAttrs.blinkCursor === "true" : true,
+                initialDelay = attrs.initialDelay ? getTypeDelay(attrs.initialDelay) : 200,
+                typeDelay = attrs.typeDelay ? getTypeDelay(attrs.typeDelay) : 200,
+                blinkDelay = attrs.blinkDelay ? getAnimationDelay(attrs.blinkDelay) : false,
+                cursor = attrs.cursor ? attrs.cursor : '|',
+                blinkCursor = attrs.blinkCursor ? attrs.blinkCursor === "true" : true,
                 auxStyle;
 
-            if (iAttrs.text) {
+            if (attrs.text) {
                 timer = $timeout(function () {
-                    updateIt(iElement, 0, iAttrs.text);
+                    updateIt(elem, 0, attrs.text);
                 }, initialDelay);
             }
 
@@ -398,9 +396,8 @@ angular.module('hb.directives', [])
                     element.html(text.substring(0, i) + cursor);
                     i++;
                     timer = $timeout(function () {
-                        updateIt(iElement, i, text);
+                        updateIt(elem, i, text);
                     }, typeDelay);
-                    return;
                 } else {
                     if (blinkCursor) {
                         if (blinkDelay) {
@@ -442,12 +439,12 @@ angular.module('hb.directives', [])
             scope: false
         };
     })
-    .directive('trippyNodes', function () {
+    .directive('nohdes', function ($compile) {
         return {
             restrict: 'A',
             link: function (scope, elem, attrs) {
-                var canvasTpl = '<canvas id="nodes" width="600" height="400"></canvas>';
-                var canvasEl = angular.element('<canvas id="nodes" width="600" height="400"></canvas>');
+                var canvasTpl = '<canvas id="nodes" width="800px" height="150px"></canvas>';
+                var canvasEl = angular.element(canvasTpl);
                 elem.append(canvasEl);
 
                 function isiPhone () {
@@ -457,9 +454,13 @@ angular.module('hb.directives', [])
                     );
                 }
 
+
                 /* Canvas */
-                var mouse_e = {pageX: 0, pageY: 0};
-                var canvas = canvasEl;
+                var mouse_e = {
+                    pageX: 0,
+                    pageY: 0
+                };
+                var canvas = document.getElementById('nodes');
                 var ctx = canvas.getContext('2d');
 
                 var fps = isiPhone() ? 10 : 30;
@@ -531,6 +532,7 @@ angular.module('hb.directives', [])
                     // Keep playing
                     setTimeout(function () {
                         frame();
+                        scope.$apply();
                     }, 1000 / fps);
                 }
 
@@ -640,29 +642,6 @@ angular.module('hb.directives', [])
                     $('#circle').click();
                     switchNavigation($('#navigation'), $('#' + to));
                 }
-
-                // Navigation
-                $('#navigation').css({'opacity': 0});
-                function showNavigation () {
-                    $('.buttons').hide();
-                    $('#navigation').show();
-                    $('#navigation').animate({'opacity': 1}, 500);
-                }
-
-                function hideNavigation () {
-                    $('.buttons').animate({'opacity': 0}, 1000);
-                }
-
-                $('a').each(function (i, el) {
-                    var $el = $(el);
-                    if ($el.attr('href').match(/#!/g)) {
-                        var to = $el.attr('href').match(/(#!)\/(.+)/i)[2];
-
-                        $el.click(function () {
-                            switchNavigation($el.parent().parent(), $('#' + to));
-                        });
-                    }
-                });
             }
         }
     });
