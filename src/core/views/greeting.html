@@ -1,0 +1,23 @@
+<div class="main__greeting" hb-s-py="4">
+    <div hb-s-row>
+        <div hb-s-col="4">
+            <h1 typewrite
+                type-delay="75" blink-cursor="false"
+                cursor="_" text="{{hello.me}}"
+                hb-t-font="h1"></h1>
+        </div>
+        <div hb-s-col="8">
+            <span class="main__img" ng-class="{'visible': helloMeDone}">
+                <img ng-src="{{hello.img}}" height="43px" hb-s-pr="3" hb-s-pt="1">
+                <i class="fa fa-hand-o-left"></i>
+                <span rv-t-font="p" hb-s-px="2">me</span>
+            </span>
+        </div>
+    </div>
+    <div hb-s-row hb-s-pt="7">
+        <h2 typewrite
+            initial-delay="2250" type-delay="40" blink-cursor="false"
+            cursor="_" text="{{hello.msg}}"
+            hb-c-text="mono" hb-t-font="h2"></h2>
+    </div>
+</div>

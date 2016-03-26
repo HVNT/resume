@@ -1,0 +1,63 @@
+$main-top: 150px;
+$main-left-width: 300px;
+
+.hb-glitch-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: darken($mono-darker, 8%);
+  color: $white;
+
+  .glitch-mask-bar {
+    position: relative;
+  }
+}
+
+.main-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $main-left-width;
+  bottom: 0;
+}
+
+.main-right {
+  position: absolute;
+  top: $main-top;
+  left: $main-left-width;
+  right: 0;
+  bottom: 0;
+}
+
+.main__greeting {
+  position: relative;
+  opacity: 1;
+
+  &.finished {
+    opacity: 0;
+  }
+
+  .main__img {
+    opacity: 0;
+
+    &.visible {
+      opacity: 1;
+    }
+
+    @include transition(opacity 1s ease-out);
+  }
+
+  @include transition(opacity 1s ease-out);
+}
+
+
+.main-nav {
+  position: relative;
+  top: $main-top;
+}
+
+#nodes {
+  width: $main-left-width;
+}

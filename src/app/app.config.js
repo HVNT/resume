@@ -90,4 +90,11 @@ angular.module('hb.app')
                 //restore all query string parameters back to $location.search
                 $log.error("$stateChangeError", error, event, toState, toParams, fromState, fromParams);
             });
+    })
+    .service('BaseViews', function () {
+        return {
+            greeting: 'core/views/greeting.html',
+            nav: 'core/views/nav.html',
+            nodes: 'core/views/nodes.html'
+        }
     });
