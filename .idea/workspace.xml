@@ -4,13 +4,7 @@
     <list default="true" id="d75133b5-c512-4d46-91f9-d4b6950fe349" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.controller.js" afterPath="$PROJECT_DIR$/src/app/app.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.html" afterPath="$PROJECT_DIR$/src/app/app.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.templates.js" afterPath="$PROJECT_DIR$/src/app/app.templates.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/bio/bio.controller.js" afterPath="$PROJECT_DIR$/src/app/bio/bio.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/projects/projects.controller.js" afterPath="$PROJECT_DIR$/src/app/projects/projects.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/directives/directives.js" afterPath="$PROJECT_DIR$/src/core/directives/directives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/styles/_app.scss" afterPath="$PROJECT_DIR$/src/core/styles/_app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/styles/styles.css" afterPath="$PROJECT_DIR$/src/core/styles/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/views/nav.html" afterPath="$PROJECT_DIR$/src/core/views/nav.html" />
     </list>
     <ignored path="resume.iws" />
@@ -44,11 +38,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="app.controller.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="app.controller.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/app/app.controller.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="76" column="14" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
+                <state vertical-scroll-proportion="0.39786857">
+                  <caret line="56" column="27" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -126,11 +120,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_app.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="_app.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/core/styles/_app.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.32061762">
-                  <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+                <state vertical-scroll-proportion="-9.0">
+                  <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -150,11 +144,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="nav.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/core/views/nav.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-18.56">
-                  <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+                <state vertical-scroll-proportion="0.36330608">
+                  <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
                   <folding>
                     <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                   </folding>
@@ -182,11 +176,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_typography.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="_typography.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/core/styles/_typography.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5095368">
-                  <caret line="156" column="24" selection-start-line="156" selection-start-column="24" selection-end-line="156" selection-end-column="24" />
+                <state vertical-scroll-proportion="-24.36">
+                  <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -268,9 +262,9 @@
         <option value="$PROJECT_DIR$/src/app/projects/projects.controller.js" />
         <option value="$PROJECT_DIR$/src/app/bio/bio.controller.js" />
         <option value="$PROJECT_DIR$/src/app/app.html" />
+        <option value="$PROJECT_DIR$/src/core/styles/_app.scss" />
         <option value="$PROJECT_DIR$/src/app/app.controller.js" />
         <option value="$PROJECT_DIR$/src/core/views/nav.html" />
-        <option value="$PROJECT_DIR$/src/core/styles/_app.scss" />
       </list>
     </option>
   </component>
@@ -1023,29 +1017,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="14" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/styles/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.68">
           <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/views/nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.56">
-          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1059,17 +1035,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/styles/_app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32061762">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+        <state vertical-scroll-proportion="-9.0">
+          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/styles/_typography.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5095368">
-          <caret line="156" column="24" selection-start-line="156" selection-start-column="24" selection-end-line="156" selection-end-column="24" />
+        <state vertical-scroll-proportion="-24.36">
+          <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39786857">
+          <caret line="56" column="27" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/views/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36330608">
+          <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

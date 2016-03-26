@@ -66,6 +66,7 @@ angular.module('hb.app')
                     title: 'Resume',
                     state: null,
                     href: 'assets/resume.pdf',
+                    download: 'resume.pdf',
                     initialDelay: helloMsgDelay + 1100
                 },
                 contact: {
