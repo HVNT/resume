@@ -28,7 +28,7 @@ angular.module('hb.app')
 
             var baseTransDelay = 500;
             var helloMeDelay = ($scope.hello.me.length * 75) + baseTransDelay;
-            var helloMsgDelay = (2000 + $scope.hello.msg.length * 50) + baseTransDelay * 4;
+            var helloMsgDelay = (2000 + $scope.hello.msg.length * 50) + baseTransDelay * 3;
             var firstGlitchDelay = helloMsgDelay + 150;
 
             $timeout(function () {
@@ -52,7 +52,7 @@ angular.module('hb.app')
                     navigate: function () {
                         $state.go(this.state);
                     },
-                    initialDelay: helloMsgDelay + 400
+                    initialDelay: helloMsgDelay + 550
                 },
                 projects: {
                     title: 'Projects',
@@ -60,28 +60,23 @@ angular.module('hb.app')
                     navigate: function () {
                         $state.go(this.state);
                     },
-                    initialDelay: helloMsgDelay + 550
+                    initialDelay: helloMsgDelay + 700
                 },
                 resume: {
                     title: 'Resume',
                     state: null,
                     href: 'assets/resume.pdf',
-                    initialDelay: helloMsgDelay + 950
+                    initialDelay: helloMsgDelay + 1100
                 },
                 contact: {
                     title: 'Contact',
                     state: null,
                     href: 'mailto:hunterbrennick@gmail.com',
-                    initialDelay: helloMsgDelay + 1350
+                    initialDelay: helloMsgDelay + 1500
                 }
             };
 
             $scope.$state = $state;
-            $scope.initialized = true;
-
-            $timeout(function () {
-                $scope.isLoaded = true;
-            }, 500);
 
             $scope.stopContext = function (evt) {
                 evt.preventDefault();
@@ -100,6 +95,12 @@ angular.module('hb.app')
                 navStates.resume,
                 navStates.contact
             ];
+
+            $scope.setActiveNav = function (navKey) {
+                $scope.activeNav = (navKey && navStates[navKey])
+                    ? navStates[navKey]
+                    : $scope.activeNav;
+            };
 
 
 

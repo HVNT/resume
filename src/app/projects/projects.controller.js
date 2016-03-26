@@ -6,6 +6,9 @@
  * File:
  */
 angular.module('hb.app')
-    .controller('ProjectsCtrl', function () {
+    .controller('ProjectsCtrl',
+        function ($scope, ProjectsStates) {
 
-    });
+            $scope.setActiveNav('projects');
+
+        });

@@ -2,7 +2,7 @@ $main-left: 100px;
 $main-header-height: 160px;
 $main-body-left-width: 500px;
 
-.hb-glitch-mask {
+.glitch-mask {
   position: absolute;
   top: 0;
   left: 0;
@@ -12,7 +12,9 @@ $main-body-left-width: 500px;
   color: $white;
 
   .glitch-mask-bar {
+    display: inline-block;
     position: relative;
+    margin-right: -0.5%;
   }
 }
 
@@ -75,22 +77,27 @@ $main-body-left-width: 500px;
 .main-nav {
   position: relative;
   top: $main-header-height;
+}
 
-  .nav-anchor {
-    opacity: 0;
+.nav-anchor {
+  opacity: 0;
 
-    &.visible {
-      opacity: 1;
-    }
-
-    @include transition(opacity 1s ease-out);
+  &.visible {
+    opacity: 1;
   }
 
-  a.nav-title {
+  @include transition(opacity 1s ease-out);
+}
 
-    &:hover {
-      text-decoration: underline !important;
-    }
+.nav__title {
+
+  &.nav__title--active {
+    @extend .semi-bold;
+    color: $brand-primary !important;
+  }
+
+  &:hover {
+    text-decoration: underline !important;
   }
 }
 

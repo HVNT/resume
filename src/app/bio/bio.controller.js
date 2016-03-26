@@ -6,6 +6,9 @@
  * File:
  */
 angular.module('hb.app')
-    .controller('BioCtrl', function () {
+    .controller('BioCtrl', function ($scope, BioStates) {
+
+
+        $scope.setActiveNav('bio');
 
     });

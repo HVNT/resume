@@ -316,29 +316,37 @@ angular.module('hb.directives', [])
             controller: function () {
                 var glitchColors = {
                     white: '#F9FAF4',
-                    yellow: '#DADA78',
+                    yellow: '#E0E569',
                     cyan: '#6CD4D3',
                     green: '#37C437',
                     pink: '#B045AF',
                     red: '#8F1B1B',
                     blue: '#0D1C77',
+                    darkBlue: '#120F28',
+                    darkerBlue: '#101E2F',
                     black: '#0F0F0D'
                 };
                 var glitchColorKeys = _.keys(glitchColors);
 
                 this.bars = [];
 
-                this.addBar = function (bar) {
+                this.addBar = function (bar, barColor) {
                     var glitchColorIdx = this.bars.length;
-                    bar.setBackgroundColor(glitchColors[glitchColorKeys[glitchColorIdx]]);
+                    var bc = barColor && glitchColors[barColor]
+                        ? glitchColors[barColor]
+                        : glitchColors[glitchColorKeys[glitchColorIdx]];
+
+                    bar.setBackgroundColor(bc);
                     this.bars.push(bar);
                 };
             },
             link: function (scope, element, attrs, ctrl) {
-                var glitchTpl = '<div class="glitch-mask-bar"></div>\n<div class="glitch-mask-bar"></div>\n<div class="glitch-mask-bar"></div>\n<div class="glitch-mask-bar"></div>\n<div class="glitch-mask-bar"></div>\n<div class="glitch-mask-bar"></div>\n<div class="glitch-mask-bar"></div>';
+                var glitchTpl = '<div class="glitch-mask-bar" height="60%"></div>\n<div class="glitch-mask-bar" height="60%"></div>\n<div class="glitch-mask-bar" height="60%"></div>\n<div class="glitch-mask-bar" height="60%"></div>\n<div class="glitch-mask-bar" height="60%"></div>\n<div class="glitch-mask-bar" height="60%"></div>\n<div class="glitch-mask-bar" height="60%"></div>\n\n<!--second row-->\n<div class="glitch-mask-bar" height="10%" color="blue"></div>\n<div class="glitch-mask-bar" height="10%" color="black"></div>\n<div class="glitch-mask-bar" height="10%" color="pink"></div>\n<div class="glitch-mask-bar" height="10%" color="black"></div>\n<div class="glitch-mask-bar" height="10%" color="cyan"></div>\n<div class="glitch-mask-bar" height="10%" color="black"></div>\n<div class="glitch-mask-bar" height="10%" color="white"></div>\n\n<!--third row-->\n<div class="glitch-mask-bar" width="16.6%" height="30%" color="darkerBlue"></div>\n<div class="glitch-mask-bar" width="16.6%" height="30%" color="white"></div>\n<div class="glitch-mask-bar" width="16.6%" height="30%" color="darkBlue"></div>\n<div class="glitch-mask-bar" width="16.6%" height="30%" color="black"></div>\n<div class="glitch-mask-bar" width="16.6%" height="30%" color="cyan"></div>\n<div class="glitch-mask-bar" width="16.6%" height="30%" color="pink"></div>';
                 var glitchEl = angular.element(glitchTpl);
                 element.append(glitchEl);
                 $compile(glitchEl)(scope);
+
+
 
                 //$timeout(function () {
                 //    scope.glitching = false;
@@ -361,10 +369,11 @@ angular.module('hb.directives', [])
             link: function (scope, element, attrs, ctrls) {
                 var GlitchMaskCtrl = ctrls[0];
                 var GlitchMaskBarCtrl = ctrls[1];
-                var barWidth = attrs.width || '14.275%'; // 100 / 7 = default value
+                var barWidth = attrs.width || '14.2%'; // 100 / 7 = default value
                 var barHeight = attrs.height || '200px';
+                var barColor = attrs.color || null;
 
-                GlitchMaskCtrl.addBar(GlitchMaskBarCtrl);
+                GlitchMaskCtrl.addBar(GlitchMaskBarCtrl, barColor);
 
                 $timeout(function () {
                     element.css({

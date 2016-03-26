@@ -2,7 +2,7 @@
 <div id="view contain">
     <!--HEADER-->
     <div class="main-header">
-        <div hb-s-row  ng-show="helloMsgDone && firstGlitchDone">
+        <div hb-s-row ng-show="helloMsgDone && firstGlitchDone">
             <div hb-s-col="12" rv-s-pxy="4">
                 <div class="canvas-mask-left"></div>
                 <canvas id="nodes" width="800px" height="150px"
@@ -23,13 +23,11 @@
             <div ng-show="helloMsgDone && firstGlitchDone" ng-include="BaseViews.nav"></div>
         </div>
 
-        <div class="main-body__right">
-
+        <div class="main-body__right" hb-s-pt="12">
+            <div ui-view class="contain" ng-show="helloMsgDone && firstGlitchDone"></div>
         </div>
     </div>
-
-    <div ui-view class="contain"></div>
-
-    <div class="glitch-mask" ng-show="glitching"></div>
 </div>
+
+<div class="glitch-mask" ng-show="glitching"></div>
 
