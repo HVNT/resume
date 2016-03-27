@@ -29,7 +29,7 @@ angular.module('hb.app')
             var baseTransDelay = 500;
             var helloMeDelay = ($scope.hello.me.length * 75) + baseTransDelay;
             var helloMsgDelay = (2000 + $scope.hello.msg.length * 50) + baseTransDelay * 3;
-            var firstGlitchDelay = helloMsgDelay + 150;
+            var firstGlitchDelay = helloMsgDelay + 300;
 
             $timeout(function () {
                 $scope.helloMeDone = true;
@@ -66,7 +66,7 @@ angular.module('hb.app')
                     title: 'Resume',
                     state: null,
                     href: 'assets/resume.pdf',
-                    download: 'resume.pdf',
+                    download: 'resume_hunterbrennick.pdf',
                     initialDelay: helloMsgDelay + 1100
                 },
                 contact: {
@@ -118,7 +118,7 @@ angular.module('hb.app')
             var ctx = canvas.getContext('2d');
 
             var fps = $scope.isIphone ? 10 : 30;
-            var total_nodes = $scope.isIphone ? 25 : 75;
+            var total_nodes = $scope.isIphone ? 25 : 100;
             var min_speed = 10;
             var nodes_speed = 7;
             var nodes = [];
@@ -129,13 +129,19 @@ angular.module('hb.app')
             var line_opacity = 1;
 
 
+            $scope.$watch(function () {
+                return $(canvas).parent().width()
+            }, function () {
+                ctx.canvas.width = $(canvas).parent().width();
+            });
+
             $timeout(function () {
-                ctx.canvas.width = $(canvas).parent().outerWidth() - 40; // -40 for padding
+                ctx.canvas.width = $(canvas).parent().width(); // -40 for padding
             }, firstGlitchDelay);
 
             $timeout(function () {
                 $scope.canvasPrepped = true;
-            }, firstGlitchDelay);
+            }, firstGlitchDelay + 2000);
 
 
             /* Init nodes */

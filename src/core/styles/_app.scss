@@ -1,59 +1,15 @@
 $main-left: 100px;
 $main-header-height: 160px;
-$main-body-left-width: 500px;
+$main-body-left-width: 300px;
+$main-body-top-height: 59px;
 
-.glitch-mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: darken($mono-darker, 8%);
-  color: $white;
-
-  .glitch-mask-bar {
-    display: inline-block;
-    position: relative;
-    margin-right: -0.5%;
-  }
-}
-
-.main-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: $main-header-height;
-  bottom: 0;
-}
-
-.main-body {
-  position: absolute;
+//MASKS
+.greeting-mask {
+  position: fixed;
   top: $main-header-height;
-  left: $main-left;
+  left: 0;
   right: 0;
   bottom: 0;
-
-  .main-body__left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: $main-body-left-width;
-    bottom: 0;
-  }
-
-  .main-body__right {
-    position: absolute;
-    top: 0;
-    left: $main-body-left-width;
-    right: 0;
-    bottom: 0;
-    overflow: auto;
-  }
-}
-
-.main__greeting {
-  position: relative;
   opacity: 1;
 
   &.finished {
@@ -72,6 +28,66 @@ $main-body-left-width: 500px;
 
   @include transition(opacity 1s ease-out);
 }
+
+.glitch-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: darken($mono-darker, 8%);
+  color: $white;
+
+  .glitch-mask-bar {
+    display: inline-block;
+    position: relative;
+    margin-right: -0.5%;
+  }
+}
+
+
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $main-header-height;
+  bottom: 0;
+}
+
+.main-body {
+  position: absolute;
+  top: $main-header-height;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  .main-body__top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $main-body-top-height;
+  }
+
+  .main-body__left {
+    position: absolute;
+    top: $main-body-top-height;
+    left: 0;
+    width: $main-body-left-width;
+    bottom: 0;
+  }
+
+  .main-body__right {
+    position: absolute;
+    top: $main-body-top-height;
+    left: $main-body-left-width;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+  }
+}
+
 
 
 .main-nav {

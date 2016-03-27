@@ -3,24 +3,25 @@
     <!--HEADER-->
     <div class="main-header">
         <div hb-s-row ng-show="helloMsgDone && firstGlitchDone">
-            <div hb-s-col="12" rv-s-pxy="4">
-                <div class="canvas-mask-left"></div>
-                <canvas id="nodes" width="800px" height="150px"
+            <div hb-s-col="12" hb-s-pxy="4">
+                <!--<div class="canvas-mask-left"></div>-->
+                <canvas id="nodes" width="1000px" height="150px"
                         class="main-header__canvas"
                         ng-class="{'visible': canvasPrepped}"></canvas>
-                <div class="canvas-mask-right"></div>
+                <!--<div class="canvas-mask-right"></div>-->
             </div>
         </div>
     </div>
 
     <!--BODY-->
     <div class="main-body" hb-s-px="2">
-        <div class="main-body__left">
-            <!--GREETING-->
-            <div ng-show="!helloMsgDone" ng-include="BaseViews.greeting"></div>
-
-            <!--NAV-->
+        <!--PRIMARY NAV-->
+        <div class="main-body__top">
             <div ng-show="helloMsgDone && firstGlitchDone" ng-include="BaseViews.nav"></div>
+        </div>
+        <!--SECONDARY NAV-->
+        <div class="main-body__left">
+
         </div>
 
         <div class="main-body__right" hb-s-pt="12">
@@ -29,5 +30,9 @@
     </div>
 </div>
 
+<!--GREETING MASK-->
+<div ng-include="BaseViews.greeting" ng-show="!helloMsgDone"></div>
+
+<!--GLITCH MASK-->
 <div class="glitch-mask" ng-show="glitching"></div>
 

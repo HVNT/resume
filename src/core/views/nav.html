@@ -1,31 +1,26 @@
-<div hb-s-row hb-s-pt="12"
-     ng-init="isHoveringNav = {};">
-    <div ng-repeat="nav in navs" hb-s-row hb-s-pb="4">
-        <div hb-s-row hb-c-text="mono" hb-t-font="h5 small-caps" hb-s-pl="4">
-            <div hb-s-col="1" hb-s-px="4">
-                <span hb-s-pull="right"
-                      class="nav-anchor"
-                      ng-class="{'visible': helloMsgDone}"
-                      ng-show="helloMsgDone">{{isHoveringNav[$index] ? '_' : '.' }}</span>
-            </div>
-            <div hb-s-col="11">
-                <a typewrite
-                   hb-c-text="mono"
-                   hb-t-font="link"
-                   style="text-decoration: none;"
-                   class="nav__title"
-                   ng-class="{'nav__title--active': activeNav.state === nav.state}"
-                   ng-mouseenter="isHoveringNav[$index] = true"
-                   ng-mouseleave="isHoveringNav[$index] = false"
-                   initial-delay="{{::nav.initialDelay}}"
-                   type-delay="50"
-                   blink-cursor="false"
-                   cursor="_"
-                   ng-click="nav.navigate()"
-                   text="{{::nav.title}}"
-                   download="{{::nav.download}}"
-                   ng-href="{{::nav.href}}" target="_blank"></a>
-            </div>
+<div hb-s-row hb-s-pt="6" ng-init="isHoveringNav = {};">
+    <div class="inline-block" ng-repeat="nav in navs" hb-s-col="3" hb-t-font="center">
+        <div hb-c-text="mono" hb-t-font="h5 small-caps" hb-s-pl="4">
+            <span hb-s-px="4"
+                  class="nav-anchor"
+                  ng-class="{'visible': helloMsgDone}"
+                  ng-show="helloMsgDone">{{isHoveringNav[$index] ? '_' : '.' }}</span>
+
+            <a typewrite
+               hb-c-text="mono"
+               hb-t-font="link"
+               style="text-decoration: none;"
+               class="nav__title"
+               ng-class="{'nav__title--active': activeNav.state === nav.state}"
+               ng-mouseenter="isHoveringNav[$index] = true"
+               ng-mouseleave="isHoveringNav[$index] = false"
+               initial-delay="{{::nav.initialDelay}}"
+               type-delay="50"
+               blink-cursor="false"
+               cursor="_"
+               ng-click="nav.navigate()"
+               text="{{::nav.title}}"
+               ng-href="{{::nav.href}}" target="_blank"></a>
         </div>
     </div>
 </div>
