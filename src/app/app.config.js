@@ -31,7 +31,11 @@ angular.module('hb.app')
                 url: '/app',
                 controller: 'AppCtrl as app',
                 templateUrl: '/app/app.html',
-                resolve: {}
+                resolve: {
+                    Projects: function (Project) {
+                        return new Project().query();
+                    }
+                }
             });
 
         cfpLoadingBarProvider.includeSpinner = false;

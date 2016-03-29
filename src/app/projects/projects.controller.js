@@ -7,77 +7,101 @@
  */
 angular.module('hb.app')
     .controller('ProjectsCtrl',
-        function ($scope, ProjectsStates) {
-
-            //TODO add pipelined processor
-            //TODO dateBegin dateEnd
-            var projectsNav = {
-                assetManager: {
-                    key: 'assetManager',
-                    title: 'Asset Manager'
-                },
-                fileAttacher: {
-                    key: 'fileAttacher',
-                    title: 'File Attacher'
-                },
-                visualizations: {
-                    key: 'visualizations',
-                    title: 'Visualizations'
-                },
-                analytics: {
-                    key: 'analytics',
-                    title: 'Analytics Reports'
-                },
-                reliableTransferSuite: {
-                    key: 'reliableTransferSuite',
-                    title: 'Reliable Transfer Suite'
-                },
-                jos: {
-                    key: 'jos',
-                    title: 'JOS'
-                },
-                geoNews: {
-                    key: 'geoNews',
-                    title: 'Geo News'
-                },
-                toma: {
-                    key: 'toma',
-                    title: 'TOMA' //Trackable Offline Marketing Automation
-                },
-                mentalDisorders: {
-                    key: 'mentalDisorders',
-                    title: 'mentaldisorders.com'
-                },
-                backpack: {
-                    key: 'backpack',
-                    title: 'Backpack'
-                }
-            };
-
-            $scope.projects = [
-                projectsNav.assetManager,
-                projectsNav.visualizations,
-                projectsNav.analytics,
-                projectsNav.toma,
-                projectsNav.fileAttacher,
-                projectsNav.mentalDisorders
-            ];
-
-            $scope.schoolProjects = [
-                projectsNav.jos,
-                projectsNav.reliableTransferSuite,
-                projectsNav.geoNews,
-                projectsNav.backpack
-            ];
+        function ($scope) {
 
             $scope.setActiveNav('projects');
 
         })
     .controller('ProjectsListCtrl',
-        function () {
+        function ($scope, $state, ProjectsStates) {
+
+            //TODO add pipelined processor
+            //TODO dateBegin dateEnd
+            var projectsNav = {
+                'asset-manager': {
+                    key: 'assetManager',
+                    state: 'asset-manager',
+                    title: 'Asset Manager'
+                },
+                'file-attacher': {
+                    key: 'fileAttacher',
+                    state: 'file-attacher',
+                    title: 'File Attacher'
+                },
+                visualizations: {
+                    key: 'visualizations',
+                    state: 'visualizations',
+                    title: 'Visualizations'
+                },
+                analytics: {
+                    key: 'analytics',
+                    state: 'analytics',
+                    title: 'Analytics Reports'
+                },
+                'reliable-transfer-suite': {
+                    key: 'reliableTransferSuite',
+                    state: 'reliable-transfer-suite',
+                    title: 'Reliable Transfer Suite'
+                },
+                jos: {
+                    key: 'jos',
+                    state: 'jos',
+                    title: 'JOS'
+                },
+                'geo-news': {
+                    key: 'geoNews',
+                    state: 'geo-news',
+                    title: 'Geo News'
+                },
+                toma: {
+                    key: 'toma',
+                    state: 'toma',
+                    title: 'TOMA' //Trackable Offline Marketing Automation
+                },
+                'mental-disorders': {
+                    key: 'mentalDisorders',
+                    state: 'mental-disorders',
+                    title: 'mentaldisorders.com'
+                },
+                backpack: {
+                    key: 'backpack',
+                    state: 'backpack',
+                    title: 'Backpack'
+                }
+            };
+
+            $scope.projects = [
+                projectsNav['analytics'],
+                projectsNav['visualizations'],
+                projectsNav['asset-manager'],
+                projectsNav['toma'],
+                projectsNav['file-attacher'],
+                projectsNav['mental-disorders']
+            ];
+
+            $scope.schoolProjects = [
+                projectsNav['jos'],
+                projectsNav['reliable-transfer-suite'],
+                projectsNav['geo-news'],
+                projectsNav['backpack']
+            ];
+
+            $scope.goProject = function (project) {
+                if (project) {
+                    $scope.activeProject = project;
+                    $state.go(ProjectsStates.project, {projectKey: project.state});
+                }
+            };
+
+            $scope.setActiveProject = function (project) {
+                $scope.activeProject = project && projectsNav[project.state]
+                    ? project : $scope.activeProject;
+            };
 
         })
     .controller('ProjectsListProjectCtrl',
-        function () {
+        function ($scope, $stateParams) {
+
+            $scope.setActiveProject($stateParams.projectKey)
 
         });

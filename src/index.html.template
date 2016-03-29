@@ -67,6 +67,7 @@
 <!--CORE-->
 <script src="/core/core.js"></script>
 <script src="/core/services/services.js"></script>
+<script src="/core/services/project.js"></script>
 <script src="/core/directives/directives.js"></script>
 <script src="/core/filters/filters.js"></script>
 <script src="/core/animations/animations.js"></script>

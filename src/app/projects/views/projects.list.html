@@ -4,7 +4,10 @@
         <div hb-s-row hb-s-pb="4">
             <h5 hb-t-font="h5 small-caps" hb-s-pb="3">Work</h5>
             <div hb-s-row ng-repeat="project in projects" hb-s-pl="1" hb-s-pb="2">
-                <h6 hb-c-text="mono" hb-t-font="link h6 small-caps">{{::project.title}}</h6>
+                <h6 ng-click="goProject(project)"
+                    hb-c-text="mono"
+                    ng-class="{'nav__title--active': activeProject.state === project.state}"
+                    hb-t-font="link h6 small-caps">{{::project.title}}</h6>
             </div>
         </div>
         <!---->
@@ -12,7 +15,10 @@
         <div hb-s-row>
             <h5 hb-t-font="h5 small-caps" hb-s-pb="3">School</h5>
             <div hb-s-row ng-repeat="schoolProject in schoolProjects" hb-s-pl="1" hb-s-pb="2">
-                <h6 hb-c-text="mono" hb-t-font="link h6 small-caps">{{::schoolProject.title}}</h6>
+                <h6 ng-click="goProject(schoolProject)"
+                    hb-c-text="mono"
+                    ng-class="{'nav__title--active': activeProject.state === schoolProject.state}"
+                    hb-t-font="link h6 small-caps">{{::schoolProject.title}}</h6>
             </div>
         </div>
         <!---->

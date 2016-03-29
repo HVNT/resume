@@ -29,10 +29,11 @@ angular.module('hb.app')
             });
     })
     .service('ProjectsStates', function (BaseState) {
+        var root = BaseState + '.projects';
 
         return {
-            root: BaseState + '.projects',
-            list: this.root + '.list',
-            project: this.list + '.project'
+            root: root,
+            list: root + '.list',
+            project: root + '.list.project'
         }
     });

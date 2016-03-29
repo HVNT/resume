@@ -29,7 +29,7 @@ angular.module('hb.app')
             var baseTransDelay = 500;
             var helloMeDelay = ($scope.hello.me.length * 75) + baseTransDelay;
             var helloMsgDelay = (2000 + $scope.hello.msg.length * 50) + baseTransDelay * 3;
-            var firstGlitchDelay = helloMsgDelay + 300;
+            var firstGlitchDelay = helloMsgDelay + 200;
 
             $timeout(function () {
                 $scope.helloMeDone = true;

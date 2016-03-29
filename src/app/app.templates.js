@@ -2,7 +2,7 @@ angular.module('hb.app').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('/app/app.html',
-    "<div id=\"view contain\"><div class=main-header><div hb-s-row ng-show=\"helloMsgDone && firstGlitchDone\"><div hb-s-col=12 hb-s-pxy=4><canvas id=nodes width=1000px height=150px class=main-header__canvas ng-class=\"{'visible': canvasPrepped}\"></canvas></div></div></div><div class=main-body hb-s-px=2><div class=main-body__top><div ng-show=\"helloMsgDone && firstGlitchDone\" ng-include=BaseViews.nav></div></div><div class=main-body__bottom><div ui-view class=contain ng-show=\"helloMsgDone && firstGlitchDone\"></div></div></div></div><div ng-include=BaseViews.greeting ng-show=!helloMsgDone></div><div class=glitch-mask ng-show=glitching></div>"
+    "<div id=\"view contain\"><div class=main-header><div hb-s-row ng-show=\"helloMsgDone && firstGlitchDone\"><div hb-s-col=12 hb-s-pxy=4><canvas id=nodes width=1000px height=150px class=main-header__canvas ng-class=\"{'visible': canvasPrepped}\"></canvas></div></div></div><div class=main-body hb-s-px=2><div class=main-body__top><div ng-show=\"helloMsgDone && firstGlitchDone\" ng-include=BaseViews.nav></div></div><div class=main-body__bottom><div ui-view ng-show=\"helloMsgDone && firstGlitchDone\"></div></div></div></div><div ng-include=BaseViews.greeting ng-show=!helloMsgDone></div><div class=glitch-mask ng-show=glitching></div>"
   );
 
 
@@ -17,12 +17,12 @@ angular.module('hb.app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('/app/projects/views/projects.list.html',
-    "<div class=projects__left><div hb-s-row hb-s-pxy=8><div hb-s-row hb-s-pb=4><h5 hb-t-font=\"h5 small-caps\" hb-s-pb=3>Work</h5><div hb-s-row ng-repeat=\"project in projects\" hb-s-pl=1 hb-s-pb=2><h6 hb-c-text=mono hb-t-font=\"link h6 small-caps\">{{::project.title}}</h6></div></div><div hb-s-row><h5 hb-t-font=\"h5 small-caps\" hb-s-pb=3>School</h5><div hb-s-row ng-repeat=\"schoolProject in schoolProjects\" hb-s-pl=1 hb-s-pb=2><h6 hb-c-text=mono hb-t-font=\"link h6 small-caps\">{{::schoolProject.title}}</h6></div></div></div></div><div class=projects__right><div ui-view></div></div>"
+    "<div class=projects__left><div hb-s-row hb-s-pxy=8><div hb-s-row hb-s-pb=4><h5 hb-t-font=\"h5 small-caps\" hb-s-pb=3>Work</h5><div hb-s-row ng-repeat=\"project in projects\" hb-s-pl=1 hb-s-pb=2><h6 ng-click=goProject(project) hb-c-text=mono ng-class=\"{'nav__title--active': activeProject.state === project.state}\" hb-t-font=\"link h6 small-caps\">{{::project.title}}</h6></div></div><div hb-s-row><h5 hb-t-font=\"h5 small-caps\" hb-s-pb=3>School</h5><div hb-s-row ng-repeat=\"schoolProject in schoolProjects\" hb-s-pl=1 hb-s-pb=2><h6 ng-click=goProject(schoolProject) hb-c-text=mono ng-class=\"{'nav__title--active': activeProject.state === schoolProject.state}\" hb-t-font=\"link h6 small-caps\">{{::schoolProject.title}}</h6></div></div></div></div><div class=projects__right><div ui-view></div></div>"
   );
 
 
   $templateCache.put('/app/projects/views/projects.list.project.html',
-    ""
+    "{{activeProject.title}}"
   );
 
 

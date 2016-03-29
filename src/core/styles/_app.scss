@@ -3,6 +3,8 @@ $main-header-height: 160px;
 $main-body-left-width: 300px;
 $main-body-top-height: 69px;
 
+$projects-left-width: 300px;
+
 //MASKS
 .greeting-mask {
   position: fixed;
@@ -100,11 +102,21 @@ $main-body-top-height: 69px;
 
 
 .projects__left {
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $projects-left-width;
+  bottom: 0;
+  overflow-y: auto;
 }
 
 .projects__right {
-
+  position: absolute;
+  top: 0;
+  left: $projects-left-width;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
 }
 
 
@@ -125,17 +137,15 @@ $main-body-top-height: 69px;
 }
 
 .nav__title {
-
-  &.nav__title--active {
-    @extend .semi-bold;
-    color: $brand-primary !important;
-  }
-
   &:hover {
     text-decoration: underline !important;
   }
 }
 
+.nav__title--active {
+  @extend .semi-bold;
+  color: $brand-primary !important;
+}
 
 .main-header__canvas {
   opacity: 0;

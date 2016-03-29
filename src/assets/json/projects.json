@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Analytics Reports",
+    "for": "Landing Lion",
+    "forLogoUrl": "/assets/logos/landinglion.png",
+    "involved": [],
+    "dateBegin": "2015-12-24T18:57:52Z",
+    "dateEnd": "2015-12-24T18:57:52Z",
+    "body": "",
+    "isActive": true
+  },
+  {
+    "title": "Visualizations",
+    "for": "reverb.io",
+    "forLogoUrl": "/assets/logos/reverb-io.png",
+    "involved": [],
+    "dateBegin": "2015-12-24T18:57:52Z",
+    "dateEnd": "2015-12-24T18:57:52Z",
+    "body": "",
+    "isActive": true
+  },
+  {
+    "title": "Asset Manager",
+    "for": "reverb.io",
+    "forLogoUrl": "/assets/logos/reverb-io.png",
+    "involved": [],
+    "dateBegin": "2015-12-24T18:57:52Z",
+    "dateEnd": "2015-12-24T18:57:52Z",
+    "body": "",
+    "isActive": true
+  },
+  {
+    "title": "Trackable Offline Marketing Automation (TOMA)",
+    "for": "reverb.io",
+    "forLogoUrl": "/assets/logos/reverb-io.png",
+    "involved": ["Craig McCown"],
+    "dateBegin": "2015-12-24T18:57:52Z",
+    "dateEnd": "2015-12-24T18:57:52Z",
+    "body": "",
+    "isActive": true
+  },
+  {
+    "title": "Mental Disorders",
+    "for": "mentaldisorders.com",
+    "forLogoUrl": "/assets/logos/mentaldisorders.png",
+    "involved": ["Craig McCown"],
+    "dateBegin": "2015-12-24T18:57:52Z",
+    "dateEnd": "2015-12-24T18:57:52Z",
+    "body": "",
+    "isActive": true
+  },
+  {
+    "title": "File Attacher",
+    "for": "OneCare",
+    "forLogoUrl": "/assets/logos/onecare.png",
+    "involved": [],
+    "dateBegin": "2015-12-24T18:57:52Z",
+    "dateEnd": "2015-12-24T18:57:52Z",
+    "body": "",
+    "isActive": true
+  },
+  {
+    "title": "Reliable Transfer Suite",
+    "for": "Georgia Tech",
+    "forLogoUrl": "/assets/logos/georgia-tech.png",
+    "involved": ["Sherman Mathews"],
+    "dateBegin": "2015-12-24T18:57:52Z",
+    "dateEnd": "2015-12-24T18:57:52Z",
+    "body": "",
+    "isActive": true
+  },
+  {
+    "title": "JOS",
+    "for": "Georgia Tech",
+    "forLogoUrl": "/assets/logos/georgia-tech.png",
+    "involved": [],
+    "dateBegin": "2015-12-24T18:57:52Z",
+    "dateEnd": "2015-12-24T18:57:52Z",
+    "body": "",
+    "isActive": true
+  },
+  {
+    "title": "Geo News",
+    "for": "Georgia Tech",
+    "forLogoUrl": "/assets/logos/georgia-tech.png",
+    "involved": ["Dylan Jones, Sherman Mathews, Andrew Ford, Devon Cryts"],
+    "dateBegin": "2015-12-24T18:57:52Z",
+    "dateEnd": "2015-12-24T18:57:52Z",
+    "body": "",
+    "isActive": true
+  },
+  {
+    "title": "Visualizations",
+    "for": "reverb.io",
+    "forLogoUrl": "/assets/logos/reverb-io.png",
+    "involved": [],
+    "dateBegin": "2015-12-24T18:57:52Z",
+    "dateEnd": "2015-12-24T18:57:52Z",
+    "body": "",
+    "isActive": true
+  },
+]
