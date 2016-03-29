@@ -18,7 +18,7 @@ angular.module('hb.app')
             $scope.hello = {
                 me: 'Hi, I\'m Hunter.',
                 img: 'assets/img/bucket-prof.png',
-                msg: 'I like designing and building things.'
+                msg: 'I am a Software Engineer that specializes in designing and building products for the web.'
             };
 
             $scope.glitching = false;
@@ -28,8 +28,8 @@ angular.module('hb.app')
             $scope.firstGlitchDone = false;
 
             var baseTransDelay = 500;
-            var helloMeDelay = ($scope.hello.me.length * 75) + baseTransDelay;
-            var helloMsgDelay = (2000 + $scope.hello.msg.length * 50) + baseTransDelay * 3;
+            var helloMeDelay = ($scope.hello.me.length * 60) + baseTransDelay;
+            var helloMsgDelay = (2000 + $scope.hello.msg.length * 30) + baseTransDelay * 3;
             var firstGlitchDelay = helloMsgDelay + 200;
 
             $timeout(function () {

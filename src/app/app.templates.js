@@ -17,7 +17,7 @@ angular.module('hb.app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('/app/projects/views/projects.list.html',
-    "<div class=projects__left><div hb-s-row hb-s-pxy=8><div hb-s-row hb-s-pb=4><h5 hb-t-font=\"h5 small-caps\" hb-s-pb=3>Work</h5><div hb-s-row ng-repeat=\"project in projects\" hb-s-pl=1 hb-s-pb=2><h6 ng-click=goProject(project) hb-c-text=mono ng-class=\"{'nav__title--active': activeProjectNav.state === project.state}\" hb-t-font=\"link h6 small-caps\">{{::project.title}}</h6></div></div><div hb-s-row><h5 hb-t-font=\"h5 small-caps\" hb-s-pb=3>School</h5><div hb-s-row ng-repeat=\"schoolProject in schoolProjects\" hb-s-pl=1 hb-s-pb=2><h6 ng-click=goProject(schoolProject) hb-c-text=mono ng-class=\"{'nav__title--active': activeProjectNav.state === schoolProject.state}\" hb-t-font=\"link h6 small-caps\">{{::schoolProject.title}}</h6></div></div></div></div><div class=projects__right><div ui-view></div></div>"
+    "<div class=projects__left><div hb-s-row hb-s-pr=4 hb-s-pl=8 hb-s-py=8><div hb-s-row hb-s-pb=4><h5 hb-t-font=\"h5 small-caps\" hb-s-pb=3>Work</h5><div hb-s-row ng-repeat=\"project in projects\" hb-s-pl=1 hb-s-pb=2><h6 ng-click=goProject(project) hb-c-text=mono ng-class=\"{'nav__title--active': activeProjectNav.state === project.state}\" hb-t-font=\"link h6 small-caps\">{{::project.title}}</h6></div></div><div hb-s-row><h5 hb-t-font=\"h5 small-caps\" hb-s-pb=3>School</h5><div hb-s-row ng-repeat=\"schoolProject in schoolProjects\" hb-s-pl=1 hb-s-pb=2><h6 ng-click=goProject(schoolProject) hb-c-text=mono ng-class=\"{'nav__title--active': activeProjectNav.state === schoolProject.state}\" hb-t-font=\"link h6 small-caps\">{{::schoolProject.title}}</h6></div></div></div></div><div class=projects__right><div ui-view></div></div>"
   );
 
 
@@ -27,7 +27,7 @@ angular.module('hb.app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('/core/views/greeting.html',
-    "<div class=greeting-mask><div hb-s-row><div hb-s-col-offset=4 hb-s-col=4><h1 typewrite type-delay=75 blink-cursor=false cursor=_ text={{hello.me}} hb-t-font=h1></h1></div><div hb-s-col=4><span class=main__img ng-class=\"{'visible': helloMeDone}\"><i class=\"fa fa-hand-o-right\"></i> <img ng-src={{hello.img}} height=43px hb-s-pr=3 hb-s-pt=1></span></div></div><div hb-s-row hb-s-pt=7><div hb-s-col-offset=4 hb-s-col=10><h2 typewrite initial-delay=2250 type-delay=40 blink-cursor=false cursor=_ text={{hello.msg}} hb-c-text=mono hb-t-font=h2></h2></div></div></div>"
+    "<div class=greeting-mask><div hb-s-row><div hb-s-col-offset=3 hb-s-col=4><h1 typewrite type-delay=60 blink-cursor=false cursor=_ text={{hello.me}} hb-t-font=h1></h1></div><div hb-s-col=4><span class=main__img ng-class=\"{'visible': helloMeDone}\"><i class=\"fa fa-hand-o-right\" hb-s-pr=1></i> <img ng-src={{hello.img}} height=43px hb-s-pr=3 hb-s-pt=1></span></div></div><div hb-s-row hb-s-pt=7><div hb-s-col-offset=3 hb-s-col=8><h2 typewrite initial-delay=2250 type-delay=30 blink-cursor=false cursor=_ text={{hello.msg}} hb-c-text=mono hb-t-font=h2></h2></div></div></div>"
   );
 
 
