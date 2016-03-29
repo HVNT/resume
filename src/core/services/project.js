@@ -10,11 +10,14 @@ angular.module('hb.core')
         return function (data) {
             data = data || {};
 
-            this.title = data.title || 'Untitle Project';
             this.key = data.key || null;
-            this.for = data.for || null;
-            this.school =
-
+            this.title = data.title || 'Untitle Project';
+            this.body = data.body || '';
+            this.for = data.for || '';
+            this.forLogoUrl = data.forLogoUrl || '';
+            this.involved = data.involved || '';
+            this.dateBegin = data.dateBegin || '';
+            this.dateEnd = data.dateEnd || '';
 
             this.$$projects = {};
 
@@ -23,6 +26,7 @@ angular.module('hb.core')
             angular.extend(this, {
                 query: _prototype.query
             });
+
 
             function prototype () {
                 return {

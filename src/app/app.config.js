@@ -32,8 +32,25 @@ angular.module('hb.app')
                 controller: 'AppCtrl as app',
                 templateUrl: '/app/app.html',
                 resolve: {
-                    Projects: function (Project) {
-                        return new Project().query();
+                    Projects: function ($http, $q, Project) {
+                        var defer = $q.defer();
+                        var projects = {};
+
+                        $http.get('/assets/json/projects.json')
+                            .then(function (response) {
+                                var data = response ? response.data : [];
+                                if (data.length) {
+                                    for (var i = 0; i < data.length; i++) {
+                                        projects[data[i].key] = new Project(data[i]);
+                                    }
+                                }
+                                
+                                defer.resolve(projects);
+                            }, function (err) {     // TODO handle
+                                defer.reject(err);
+                            });
+
+                        return defer.promise;
                     }
                 }
             });

@@ -18,6 +18,16 @@ angular.module('hb.app')
             //TODO add pipelined processor
             //TODO dateBegin dateEnd
             var projectsNav = {
+                visualizations: {
+                    key: 'visualizations',
+                    state: 'visualizations',
+                    title: 'Visualizations'
+                },
+                analytics: {
+                    key: 'analytics',
+                    state: 'analytics',
+                    title: 'Analytics Reports'
+                },
                 'asset-manager': {
                     key: 'assetManager',
                     state: 'asset-manager',
@@ -28,15 +38,15 @@ angular.module('hb.app')
                     state: 'file-attacher',
                     title: 'File Attacher'
                 },
-                visualizations: {
-                    key: 'visualizations',
-                    state: 'visualizations',
-                    title: 'Visualizations'
+                toma: {
+                    key: 'toma',
+                    state: 'toma',
+                    title: 'TOMA' //Trackable Offline Marketing Automation
                 },
-                analytics: {
-                    key: 'analytics',
-                    state: 'analytics',
-                    title: 'Analytics Reports'
+                'mental-disorders': {
+                    key: 'mentalDisorders',
+                    state: 'mental-disorders',
+                    title: 'mentaldisorders.com'
                 },
                 'reliable-transfer-suite': {
                     key: 'reliableTransferSuite',
@@ -52,16 +62,6 @@ angular.module('hb.app')
                     key: 'geoNews',
                     state: 'geo-news',
                     title: 'Geo News'
-                },
-                toma: {
-                    key: 'toma',
-                    state: 'toma',
-                    title: 'TOMA' //Trackable Offline Marketing Automation
-                },
-                'mental-disorders': {
-                    key: 'mentalDisorders',
-                    state: 'mental-disorders',
-                    title: 'mentaldisorders.com'
                 },
                 backpack: {
                     key: 'backpack',
@@ -88,20 +88,29 @@ angular.module('hb.app')
 
             $scope.goProject = function (project) {
                 if (project) {
-                    $scope.activeProject = project;
-                    $state.go(ProjectsStates.project, {projectKey: project.state});
+                    $scope.setActiveProject(project.state);
+                    $state.go(ProjectsStates.project, {projectState: project.state});
                 }
             };
 
-            $scope.setActiveProject = function (project) {
-                $scope.activeProject = project && projectsNav[project.state]
-                    ? project : $scope.activeProject;
+            $scope.setActiveProject = function (projectState) {
+                $scope.activeProjectNav = projectState && projectsNav[projectState]
+                    ? projectsNav[projectState]
+                    : $scope.activeProjectNav;
+
+                $scope.activeProject = $scope.activeProjectNav
+                    ? $scope.Projects[$scope.activeProjectNav.key]
+                    : $scope.activeProject;
+                
+                console.log($scope.activeProject);
             };
 
         })
     .controller('ProjectsListProjectCtrl',
         function ($scope, $stateParams) {
+            if (!$scope.activeProject) {
+                $scope.setActiveProject($stateParams.projectState);
+            }
 
-            $scope.setActiveProject($stateParams.projectKey)
 
         });

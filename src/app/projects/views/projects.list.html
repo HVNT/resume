@@ -6,7 +6,7 @@
             <div hb-s-row ng-repeat="project in projects" hb-s-pl="1" hb-s-pb="2">
                 <h6 ng-click="goProject(project)"
                     hb-c-text="mono"
-                    ng-class="{'nav__title--active': activeProject.state === project.state}"
+                    ng-class="{'nav__title--active': activeProjectNav.state === project.state}"
                     hb-t-font="link h6 small-caps">{{::project.title}}</h6>
             </div>
         </div>
@@ -17,7 +17,7 @@
             <div hb-s-row ng-repeat="schoolProject in schoolProjects" hb-s-pl="1" hb-s-pb="2">
                 <h6 ng-click="goProject(schoolProject)"
                     hb-c-text="mono"
-                    ng-class="{'nav__title--active': activeProject.state === schoolProject.state}"
+                    ng-class="{'nav__title--active': activeProjectNav.state === schoolProject.state}"
                     hb-t-font="link h6 small-caps">{{::schoolProject.title}}</h6>
             </div>
         </div>

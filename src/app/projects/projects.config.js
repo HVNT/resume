@@ -23,7 +23,7 @@ angular.module('hb.app')
                 controller: 'ProjectsListCtrl'
             })
             .state('app.projects.list.project', {
-                url: '/:projectKey',
+                url: '/:projectState',
                 templateUrl: '/app/projects/views/projects.list.project.html',
                 controller: 'ProjectsListProjectCtrl'
             });
