@@ -101,8 +101,6 @@ angular.module('hb.app')
                 $scope.activeProject = $scope.activeProjectNav
                     ? $scope.Projects[$scope.activeProjectNav.key]
                     : $scope.activeProject;
-                
-                console.log($scope.activeProject);
             };
 
         })

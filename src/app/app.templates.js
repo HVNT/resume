@@ -22,7 +22,7 @@ angular.module('hb.app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('/app/projects/views/projects.list.project.html',
-    "<div hb-s-row hb-s-pxy=8><div hb-s-row><div class=project></div><div hb-s-pull=left><img class=inline-block ng-src={{activeProject.forLogoUrl}} height=50px hb-s-pr=3 hb-s-pt=1></div><div hb-s-pull=left hb-s-px=2><div hb-s-row hb-s-py=1><h4 hb-t-font=h4>{{activeProject.title}}</h4></div><div hb-s-row><h6 hb-c-text=mono hb-t-font=h6>{{activeProject.subtitle}}</h6></div></div></div><div hb-s-row></div></div>"
+    "<div hb-s-row hb-s-pxy=8><div hb-s-row><div class=project></div><div hb-s-pull=left><img class=inline-block ng-src={{activeProject.forLogoUrl}} width=60px hb-s-pr=3 hb-s-pt=1></div><div hb-s-pull=left hb-s-px=2><div hb-s-row hb-s-py=.5><h4 hb-t-font=h4>{{activeProject.title}}</h4></div><div hb-s-row><h6 hb-c-text=mono hb-t-font=h6>{{activeProject.subtitle}}</h6></div></div></div><div hb-s-row></div></div>"
   );
 
 
