@@ -4,6 +4,7 @@ $main-body-left-width: 300px;
 $main-body-top-height: 69px;
 
 $projects-left-width: 250px;
+$project-header-left-width: 100px;
 
 //MASKS
 .greeting-mask {
@@ -117,6 +118,14 @@ $projects-left-width: 250px;
   right: 0;
   bottom: 0;
   overflow-y: auto;
+}
+
+.project__header-left {
+
+}
+
+.project__header-right {
+
 }
 
 
