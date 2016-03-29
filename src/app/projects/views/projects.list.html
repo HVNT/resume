@@ -1,0 +1,24 @@
+<div class="projects__left">
+    <div hb-s-row hb-s-pxy="8">
+        <!--PROJECTS NAV-->
+        <div hb-s-row hb-s-pb="4">
+            <h5 hb-t-font="h5 small-caps" hb-s-pb="3">Work</h5>
+            <div hb-s-row ng-repeat="project in projects" hb-s-pl="1" hb-s-pb="2">
+                <h6 hb-c-text="mono" hb-t-font="link h6 small-caps">{{::project.title}}</h6>
+            </div>
+        </div>
+        <!---->
+        <!--SCHOOL PROJECTS NAV-->
+        <div hb-s-row>
+            <h5 hb-t-font="h5 small-caps" hb-s-pb="3">School</h5>
+            <div hb-s-row ng-repeat="schoolProject in schoolProjects" hb-s-pl="1" hb-s-pb="2">
+                <h6 hb-c-text="mono" hb-t-font="link h6 small-caps">{{::schoolProject.title}}</h6>
+            </div>
+        </div>
+        <!---->
+    </div>
+</div>
+<div class="projects__right">
+    <div ui-view></div>
+</div>
+

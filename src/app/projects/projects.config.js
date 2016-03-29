@@ -14,12 +14,25 @@ angular.module('hb.app')
             .state('app.projects', {
                 url: '/projects',
                 templateUrl: '/app/projects/views/projects.html',
+                abstract: true,
                 controller: 'ProjectsCtrl'
+            })
+            .state('app.projects.list', {
+                url: '',
+                templateUrl: '/app/projects/views/projects.list.html',
+                controller: 'ProjectsListCtrl'
+            })
+            .state('app.projects.list.project', {
+                url: '/:projectKey',
+                templateUrl: '/app/projects/views/projects.list.project.html',
+                controller: 'ProjectsListProjectCtrl'
             });
     })
     .service('ProjectsStates', function (BaseState) {
 
         return {
-            root: BaseState + '.projects'
+            root: BaseState + '.projects',
+            list: this.root + '.list',
+            project: this.list + '.project'
         }
     });

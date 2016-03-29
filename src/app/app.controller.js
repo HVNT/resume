@@ -56,7 +56,7 @@ angular.module('hb.app')
                 },
                 projects: {
                     title: 'Projects',
-                    state: ProjectsStates.root,
+                    state: ProjectsStates.list,
                     navigate: function () {
                         $state.go(this.state);
                     },

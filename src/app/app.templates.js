@@ -2,7 +2,7 @@ angular.module('hb.app').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('/app/app.html',
-    "<div id=\"view contain\"><div class=main-header><div hb-s-row ng-show=\"helloMsgDone && firstGlitchDone\"><div hb-s-col=12 hb-s-pxy=4><canvas id=nodes width=1000px height=150px class=main-header__canvas ng-class=\"{'visible': canvasPrepped}\"></canvas></div></div></div><div class=main-body hb-s-px=2><div class=main-body__top><div ng-show=\"helloMsgDone && firstGlitchDone\" ng-include=BaseViews.nav></div></div><div class=main-body__left></div><div class=main-body__right hb-s-pt=12><div ui-view class=contain ng-show=\"helloMsgDone && firstGlitchDone\"></div></div></div></div><div ng-include=BaseViews.greeting ng-show=!helloMsgDone></div><div class=glitch-mask ng-show=glitching></div>"
+    "<div id=\"view contain\"><div class=main-header><div hb-s-row ng-show=\"helloMsgDone && firstGlitchDone\"><div hb-s-col=12 hb-s-pxy=4><canvas id=nodes width=1000px height=150px class=main-header__canvas ng-class=\"{'visible': canvasPrepped}\"></canvas></div></div></div><div class=main-body hb-s-px=2><div class=main-body__top><div ng-show=\"helloMsgDone && firstGlitchDone\" ng-include=BaseViews.nav></div></div><div class=main-body__bottom><div ui-view class=contain ng-show=\"helloMsgDone && firstGlitchDone\"></div></div></div></div><div ng-include=BaseViews.greeting ng-show=!helloMsgDone></div><div class=glitch-mask ng-show=glitching></div>"
   );
 
 
@@ -12,7 +12,17 @@ angular.module('hb.app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('/app/projects/views/projects.html',
-    "<div>PROJECTS</div><div>HIII</div>"
+    "<div ui-view></div>"
+  );
+
+
+  $templateCache.put('/app/projects/views/projects.list.html',
+    "<div class=projects__left><div hb-s-row hb-s-pxy=8><div hb-s-row hb-s-pb=4><h5 hb-t-font=\"h5 small-caps\" hb-s-pb=3>Work</h5><div hb-s-row ng-repeat=\"project in projects\" hb-s-pl=1 hb-s-pb=2><h6 hb-c-text=mono hb-t-font=\"link h6 small-caps\">{{::project.title}}</h6></div></div><div hb-s-row><h5 hb-t-font=\"h5 small-caps\" hb-s-pb=3>School</h5><div hb-s-row ng-repeat=\"schoolProject in schoolProjects\" hb-s-pl=1 hb-s-pb=2><h6 hb-c-text=mono hb-t-font=\"link h6 small-caps\">{{::schoolProject.title}}</h6></div></div></div></div><div class=projects__right><div ui-view></div></div>"
+  );
+
+
+  $templateCache.put('/app/projects/views/projects.list.project.html',
+    ""
   );
 
 
@@ -22,7 +32,7 @@ angular.module('hb.app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('/core/views/nav.html',
-    "<div hb-s-row hb-s-pt=6 ng-init=\"isHoveringNav = {};\"><div class=inline-block ng-repeat=\"nav in navs\" hb-s-col=3 hb-t-font=center><div hb-c-text=mono hb-t-font=\"h5 small-caps\" hb-s-pl=4><span hb-s-px=4 class=nav-anchor ng-class=\"{'visible': helloMsgDone}\" ng-show=helloMsgDone>{{isHoveringNav[$index] ? '_' : '.' }}</span> <a typewrite hb-c-text=mono hb-t-font=link style=\"text-decoration: none\" class=nav__title ng-class=\"{'nav__title--active': activeNav.state === nav.state}\" ng-mouseenter=\"isHoveringNav[$index] = true\" ng-mouseleave=\"isHoveringNav[$index] = false\" initial-delay={{::nav.initialDelay}} type-delay=50 blink-cursor=false cursor=_ ng-click=nav.navigate() text={{::nav.title}} ng-href={{::nav.href}} target=_blank></a></div></div></div>"
+    "<div hb-s-row hb-s-pt=10 ng-init=\"isHoveringNav = {};\"><div class=inline-block ng-repeat=\"nav in navs\" hb-s-col=3><div hb-s-row hb-c-text=mono hb-t-font=\"h5 small-caps\" hb-s-pl=4><div hb-s-col=2 hb-s-pr=2><span hb-s-px=4 class=nav-anchor ng-class=\"{'visible': helloMsgDone}\" ng-show=helloMsgDone>{{isHoveringNav[$index] ? '_' : '.' }}</span></div><div hb-s-col=10><a typewrite hb-c-text=mono hb-t-font=link style=\"text-decoration: none\" class=nav__title ng-class=\"{'nav__title--active': activeNav.state === nav.state}\" ng-mouseenter=\"isHoveringNav[$index] = true\" ng-mouseleave=\"isHoveringNav[$index] = false\" initial-delay={{::nav.initialDelay}} type-delay=50 blink-cursor=false cursor=_ ng-click=nav.navigate() text={{::nav.title}} ng-href={{::nav.href}} target=_blank></a></div></div></div></div>"
   );
 
 

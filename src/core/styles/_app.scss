@@ -1,7 +1,7 @@
 $main-left: 100px;
 $main-header-height: 160px;
 $main-body-left-width: 300px;
-$main-body-top-height: 59px;
+$main-body-top-height: 69px;
 
 //MASKS
 .greeting-mask {
@@ -60,6 +60,7 @@ $main-body-top-height: 59px;
   top: $main-header-height;
   left: 0;
   right: 0;
+  width: 100%;
   bottom: 0;
 
   .main-body__top {
@@ -68,6 +69,14 @@ $main-body-top-height: 59px;
     left: 0;
     right: 0;
     height: $main-body-top-height;
+  }
+
+  .main-body__bottom {
+    position: absolute;
+    top: $main-body-top-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 
   .main-body__left {
@@ -86,6 +95,16 @@ $main-body-top-height: 59px;
     bottom: 0;
     overflow: auto;
   }
+}
+
+
+
+.projects__left {
+
+}
+
+.projects__right {
+
 }
 
 
