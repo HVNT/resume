@@ -1,6 +1,6 @@
 <!--HEADER-->
 <div class="project__header">
-    <div class="project__header-left" hb-s-pt="4.5">
+    <div class="project__header-left" hb-s-pt="4.5" hb-s-pl="2">
         <img hb-t-font="interact"
              ng-click="goForUrl(activeProject)"
              ng-src="{{activeProject.forLogoUrl}}" width="60px">
@@ -29,8 +29,14 @@
 </div>
 <!---->
 <!--BODY-->
-<div class="project__body" hb-s-pl="4" hb-s-pt="4" hb-s-pr="6">
-    <div hb-s-row ng-if="activeProject.bodyImgUrl.length">
+<div class="project__body" hb-s-pl="4"  hb-s-pr="6">
+    <div hb-s-pt="2" ng-if="activeProject.software.length">
+        <span hb-t-font="h5 semi-bold small-caps">Technologies used:</span>
+        <span ng-repeat="software in activeProject.software">
+            <span hb-c-text="mono" hb-t-font="h6 small-caps semi-bold">{{software}}<span ng-if="!$last" hb-s-pr="1">,</span></span>
+        </span>
+    </div>
+    <div hb-s-pt="4" hb-s-row ng-if="activeProject.bodyImgUrl.length">
         <img ng-src="{{activeProject.bodyImgUrl}}">
     </div>
 
