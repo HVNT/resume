@@ -8,10 +8,9 @@
 angular.module('hb.app')
     .controller('AppCtrl',
         function ($scope, $state, $window, $document, $timeout, $rootScope, $filter, $location, hotkeys,
-                  BioStates, ProjectsStates, Projects, BaseViews) {
+                  BioStates, ProjectsStates, Projects) {
 
             $scope.Projects = Projects;
-            $scope.BaseViews = BaseViews;
             $scope.isIphone = (navigator.platform.indexOf("iPhone") != -1) ||
                 (navigator.platform.indexOf("iPod") != -1);
 
