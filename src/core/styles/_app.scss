@@ -116,7 +116,7 @@ $main-max-width: 1200px;
     left: 0;
     right: 0;
     height: $main-body-top-height;
-    @include box-shadow($z1-shadow);
+    //@include box-shadow($z0-shadow);
   }
 
   .main-body__bottom {

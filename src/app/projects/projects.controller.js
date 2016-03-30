@@ -43,6 +43,11 @@ angular.module('hb.app')
                     state: 'toma',
                     title: 'TOMA' //Trackable Offline Marketing Automation
                 },
+                'hunter-brennick': {
+                    key: 'hunterBrennick',
+                    state: 'hunter-brennick',
+                    title: 'hunterbrennick.com'
+                },
                 'mental-disorders': {
                     key: 'mentalDisorders',
                     state: 'mental-disorders',
@@ -71,6 +76,7 @@ angular.module('hb.app')
                 projectsNav['asset-manager'],
                 projectsNav['toma'],
                 projectsNav['file-attacher'],
+                projectsNav['hunter-brennick'],
                 projectsNav['mental-disorders']
             ];
 
