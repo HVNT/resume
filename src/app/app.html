@@ -50,9 +50,7 @@
             </div>
         </div>
         <!--SECONDARY NAV-->
-        <div class="main-body__bottom"
-             ng-show="doneHelloMsg && doneGlitchFirst"
-             ui-view></div>
+        <div class="main-body__bottom" ng-class="{'visible': doneNav}" ng-show="doneNav" ui-view></div>
         <!---->
     </div>
 </div>
@@ -93,7 +91,7 @@
 </div>
 
 
-<div class="greeting-footer" hb-s-px="2" ng-class="{'visible': doneHelloMsg && doneGlitchFirst}">
+<div class="greeting-footer" hb-s-px="2" ng-class="{'visible': doneNav}">
     <div hb-s-row hb-t-font="center">
         <span hb-t-font="small">Want to reach out or want to know more about a particular project? Feel free to
             <span hb-t-font="link" ng-click="goUrl(navContact.href)"

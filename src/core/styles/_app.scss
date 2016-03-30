@@ -197,6 +197,14 @@ $project-header-left-width: 110px;
     right: 0;
     bottom: 0;
     overflow: auto;
+
+    opacity: 0;
+
+    &.visible {
+      opacity: 1;
+    }
+
+    @include transition(opacity 1s ease-out);
   }
 
   .main-body__left {
