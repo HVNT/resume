@@ -62,11 +62,6 @@ angular.module('hb.app')
                     key: 'geoNews',
                     state: 'geo-news',
                     title: 'Geo News'
-                },
-                backpack: {
-                    key: 'backpack',
-                    state: 'backpack',
-                    title: 'Backpack'
                 }
             };
 

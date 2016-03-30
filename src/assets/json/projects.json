@@ -3,6 +3,7 @@
     "key": "analytics",
     "title": "Analytics Reports",
     "subtitle": "Analytical reports for Landing Lion's clients' marketing campaigns.",
+    "repoUrl": "",
     "for": "Landing Lion",
     "forUrl": "landinglion.com",
     "forLogoUrl": "/assets/img/logos/landinglion.png",
@@ -10,13 +11,13 @@
     "dateBegin": "2015-08-01T04:00:00.000Z",
     "dateEnd": "",
     "body": "The goal of the reports are to provide. Providing deep analytical exploration and discovery.",
-    "repoUrl": "",
     "isActive": true
   },
   {
     "key": "visualizations",
     "title": "Visualizations",
     "subtitle": "Interactive charts.",
+    "repoUrl": "",
     "for": "reverb.io",
     "forUrl": "reverb.io",
     "forLogoUrl": "/assets/img/logos/reverb-io.png",
@@ -29,6 +30,8 @@
   {
     "key": "assetManager",
     "title": "Asset Manager",
+    "subtitle": "",
+    "repoUrl": "",
     "for": "reverb.io",
     "forUrl": "reverb.io",
     "forLogoUrl": "/assets/img/logos/reverb-io.png",
@@ -42,6 +45,7 @@
     "key": "toma",
     "title": "TOMA",
     "subtitle": "Trackable Offline Marketing Automation",
+    "repoUrl": "",
     "for": "reverb.io",
     "forUrl": "reverb.io",
     "forLogoUrl": "/assets/img/logos/reverb-io.png",
@@ -54,6 +58,7 @@
   {
     "key": "mentalDisorders",
     "title": "Mental Disorders",
+    "repoUrl": "",
     "for": "mentaldisorders.com",
     "forUrl": "mentaldisorders.com",
     "forLogoUrl": "/assets/img/logos/mentaldisorders.png",
@@ -66,6 +71,8 @@
   {
     "key": "fileAttacher",
     "title": "File Attacher",
+    "subtitle": "",
+    "repoUrl": "",
     "for": "OneCare",
     "forUrl": "onecare.me",
     "forLogoUrl": "/assets/img/logos/onecare.png",
@@ -78,6 +85,8 @@
   {
     "key": "reliableTransferSuite",
     "title": "Reliable Transfer Suite",
+    "subtitle": "",
+    "repoUrl": "",
     "for": "Georgia Tech",
     "forUrl": "http://www.gatech.edu/",
     "forLogoUrl": "/assets/img/logos/georgia-tech.png",
@@ -90,38 +99,32 @@
   {
     "key": "jos",
     "title": "JOS",
+    "subtitle": "JOS is an MIT teaching Operating System with a mico-kernel architecture.",
+    "repoUrl": "",
     "for": "Georgia Tech",
     "forUrl": "http://www.gatech.edu/",
     "forLogoUrl": "/assets/img/logos/georgia-tech.png",
     "involved": [],
     "dateBegin": "2016-01-01T04:00:00.000Z",
     "dateEnd": "2016-05-01T04:00:00.000Z",
-    "body": "",
+    "body": "This project was completed for an Operating Systems class at Georgia Tech.",
     "isActive": true
   },
   {
     "key": "geoNews",
     "title": "Geo News",
+    "subtitle": "Existing news sites are flat, biased, and cluttered. People just want to know what's happening and where. Geo News does just that.",
+    "repoUrl": "",
+    "software": ["angularJS", "nodeJS", "expressJS", "grunt", "SASS"],
     "for": "Georgia Tech",
     "forUrl": "http://www.gatech.edu/",
+    "bodyImgUrl": "/assets/img/geo-news__main.png",
+    "bodyImgCaption": "",
     "forLogoUrl": "/assets/img/logos/georgia-tech.png",
     "involved": ["Dylan Jones, Sherman Mathews, Andrew Ford, Devon Cryts"],
     "dateBegin": "2015-09-01T04:00:00.000Z",
     "dateEnd": "2015-12-01T04:00:00.000Z",
-    "body": "",
-    "isActive": true
-  },
-  {
-    "key": "backpack",
-    "title": "Backpack",
-    "subtitle": "Niche online marketplace for college students to buy and sell their used textbooks specific to a given school.",
-    "for": "Georgia Tech",
-    "forUrl": "http://www.gatech.edu/",
-    "forLogoUrl": "/assets/img/logos/georgia-tech.png",
-    "involved": [],
-    "dateBegin": "2012-09-01T04:00:00.000Z",
-    "dateEnd": "2012-12-01T04:00:00.000Z",
-    "body": "",
+    "body": "Geo News is targeted for people with a demanding schedule and that can't seem find time to stay up on current events, but still want to be in the loop. Geo News lets people quickly know whats happening and where. Geo News' articles are aggregated from a variety of major news sources. To filter out the noise and show news that matters the we interfaced with facebook and twitter to get social impact metrics. Articles over a certain social impact threshold where funneled through an ETL geo-locating system to be properly placed on the map.",
     "isActive": true
   }
 ]

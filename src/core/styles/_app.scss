@@ -1,15 +1,26 @@
 $main-left: 100px;
-$main-header-height: 160px;
+$main-header-height: 100px;
 $main-body-left-width: 300px;
-$main-body-top-height: 69px;
+$main-body-top-height: 49px;
 
 $bio-left-width: 220px;
 $bio-top-height: 230px;
 
 $projects-left-width: 220px;
+
+$project-header-height: 120px;
 $project-header-left-width: 60px;
 
 
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  bottom: 0;
+}
 
 // MASKS
 .greeting-mask {
@@ -92,6 +103,7 @@ $project-header-left-width: 60px;
   right: 0;
   width: 100%;
   bottom: 0;
+  overflow: auto;
 
   .main-body__top {
     position: absolute;
@@ -107,6 +119,7 @@ $project-header-left-width: 60px;
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: auto;
   }
 
   .main-body__left {
@@ -225,7 +238,6 @@ $project-header-left-width: 60px;
   left: 0;
   width: $projects-left-width;
   bottom: 0;
-  overflow-y: auto;
 }
 
 .projects__right {
@@ -234,19 +246,37 @@ $project-header-left-width: 60px;
   left: $projects-left-width;
   right: 0;
   bottom: 0;
-  overflow-y: auto;
+  overflow: auto;
 }
 
-.project__header-left {
+.project__header {
   position: absolute;
   top: 0;
   left: 0;
-  width: $project-header-left-width;
+  right: 0;
+  height: $project-header-height;
+
+  .project__header-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $project-header-left-width;
+  }
+
+  .project__header-right {
+    position: absolute;
+    top: 0;
+    left: $project-header-left-width;
+    right: 0;
+  }
 }
 
-.project__header-right {
+.project__body {
   position: absolute;
-  top: 0;
-  left: $project-header-left-width;
+  top: $project-header-height;
+  left: 0;
   right: 0;
+  overflow-y: auto;
+  max-width: 900px;
+  //@include box-shadow($inset-z1-shadow);
 }

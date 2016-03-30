@@ -101,6 +101,7 @@ angular.module('hb.app')
                 $scope.activeNav = (navKey && navStates[navKey])
                     ? navStates[navKey]
                     : $scope.activeNav;
+                console.log(navKey, $scope.activeNav);
             };
 
 
@@ -118,7 +119,7 @@ angular.module('hb.app')
             var ctx = canvas.getContext('2d');
 
             var fps = $scope.isIphone ? 10 : 30;
-            var total_nodes = $scope.isIphone ? 25 : 100;
+            var total_nodes = $scope.isIphone ? 25 : 80;
             var min_speed = 10;
             var nodes_speed = 7;
             var nodes = [];

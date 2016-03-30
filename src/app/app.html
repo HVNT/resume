@@ -3,9 +3,9 @@
     <!--HEADER-->
     <div class="main-header">
         <div hb-s-row ng-show="helloMsgDone && firstGlitchDone">
-            <div hb-s-col="12" hb-s-pxy="4">
+            <div hb-s-col="12">
                 <!--<div class="canvas-mask-left"></div>-->
-                <canvas id="nodes" width="1000px" height="150px"
+                <canvas id="nodes" width="1000px" height="100px"
                         class="main-header__canvas"
                         ng-class="{'visible': canvasPrepped}"></canvas>
                 <!--<div class="canvas-mask-right"></div>-->
@@ -18,7 +18,7 @@
         <!--PRIMARY NAV-->
         <div class="main-body__top">
             <div ng-show="helloMsgDone && firstGlitchDone">
-                <div hb-s-row hb-s-pt="10" ng-init="isHoveringNav = {};">
+                <div hb-s-row hb-s-pt="4" ng-init="isHoveringNav = {};">
                     <div class="inline-block" ng-repeat="nav in navs" hb-s-col="3">
                         <div hb-s-row hb-c-text="mono" hb-t-font="h5 small-caps" hb-s-pl="4">
                             <div hb-s-col="2" hb-s-pr="2">
@@ -50,10 +50,10 @@
             </div>
         </div>
         <!--SECONDARY NAV-->
-        <div class="main-body__bottom">
-            <div ui-view ng-show="helloMsgDone && firstGlitchDone"></div>
-        </div>
-
+        <div class="main-body__bottom"
+             ng-show="helloMsgDone && firstGlitchDone"
+             ui-view></div>
+        <!---->
     </div>
 </div>
 
@@ -71,7 +71,7 @@
                 <span class="main__img"
                       ng-if="!helloMsgDone"
                       ng-class="{'visible': helloMeDone}">
-                    <i class="fa fa-hand-o-right" hb-s-pr="1"></i>
+                    <!--<i class="fa fa-hand-o-right" hb-s-pr="1"></i>-->
                     <img ng-src="{{hello.img}}" height="43px" hb-s-pr="3" hb-s-pt="1">
                     <!--<span hb-t-font="p" hb-s-px="2">me</span>-->
                 </span>
@@ -90,30 +90,6 @@
 
 <!--GLITCH MASK-->
 <div ng-if="glitching">
-    <div class="glitch-mask">
-        <div hb-s-row>
-            <div hb-s-col-offset="3" hb-s-col="4">
-                <h1 typewrite
-                    type-delay="60" blink-cursor="false"
-                    cursor="_" text="{{hello.me}}"
-                    hb-t-font="h1"></h1>
-            </div>
-            <div hb-s-col="4">
-            <span class="main__img" ng-class="{'visible': helloMeDone}">
-                <i class="fa fa-hand-o-right" hb-s-pr="1"></i>
-                <img ng-src="{{hello.img}}" height="43px" hb-s-pr="3" hb-s-pt="1">
-                <!--<span hb-t-font="p" hb-s-px="2">me</span>-->
-             </span>
-            </div>
-        </div>
-        <div hb-s-row hb-s-pt="7">
-            <div hb-s-col-offset="3" hb-s-col="8">
-                <h2 typewrite
-                    initial-delay="2250" type-delay="30" blink-cursor="false"
-                    cursor="_" text="{{hello.msg}}"
-                    hb-c-text="mono" hb-t-font="h2"></h2>
-            </div>
-        </div>
-    </div>
+    <div class="glitch-mask"></div>
 </div>
 

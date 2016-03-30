@@ -13,13 +13,18 @@ angular.module('hb.core')
             this.key = data.key || null;
             this.title = data.title || 'Untitled Project';
             this.subtitle = data.subtitle || '';
-            this.body = data.body || '';
+            this.repoUrl = data.repoUrl || '';
+            this.software = data.software || [];
             this.for = data.for || '';
             this.forUrl = data.forUrl || '';
+            this.bodyImgUrl = data.bodyImgUrl || '';
+            this.bodyImgCaption = data.bodyImgCaption || '';
             this.forLogoUrl = data.forLogoUrl || '';
-            this.involved = data.involved || '';
+            this.involved = data.involved || [];
             this.dateBegin = data.dateBegin || '';
             this.dateEnd = data.dateEnd || '';
+            this.body = data.body || '';
+            this.isActive = !!data.isActive;
 
             var self = this;
             var _prototype = prototype();

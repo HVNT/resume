@@ -22,9 +22,9 @@ angular.module('hb.app')
         hotkeysProvider.template = '<div class="cheatsheet fade" ng-class="{in: helpVisible}" style="display: none;">\n    <div class="cheatsheet__close close" ng-click="toggleCheatSheet()" rv-s-pxy="md">\n        <i class="fa fa-times fa-lg" rv-t-font="h2"></i>\n    </div>\n    <div class="cheatsheet__cell">\n        <h4 rv-t-font="h2 small-caps bold center" rv-c-text="i1" rv-s-mb="8">{{ title }}</h4>\n        <table rv-s-col="12">\n            <tbody>\n            <tr ng-repeat="hotkey in hotkeys | filter:{ description: \'!$$undefined$$\' }">\n                <td rv-s-pxy="2" rv-s-col="6" rv-t-font="right" rv-s-mb="4">\n                    <span ng-repeat="key in hotkey.format() track by $index" rv-s-pxy="3" class="cheatsheet__key">\n                        <span rv-c-text="1" rv-t-font="h4 small-caps">{{ key }}</span>\n                    </span>\n                </td>\n                <td rv-t-font="p" rv-c-text="i1" rv-s-pxy="2" rv-s-col="6" rv-s-mb="4">{{ hotkey.description }}</td>\n            </tr>\n            </tbody>\n        </table>\n    </div>\n</div>'
 
         $urlRouterProvider
-            .when('/', '/app')
-            .when('', '/app')
-            .otherwise('/app');
+            .when('/', '/app/bio')
+            .when('', '/app/bio')
+            .otherwise('/app/bio');
 
         $stateProvider
             .state('app', {
