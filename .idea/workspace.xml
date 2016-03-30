@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d75133b5-c512-4d46-91f9-d4b6950fe349" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.templates.js" afterPath="$PROJECT_DIR$/src/app/app.templates.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/bio/views/bio.html" afterPath="$PROJECT_DIR$/src/app/bio/views/bio.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/projects/views/projects.list.project.html" afterPath="$PROJECT_DIR$/src/app/projects/views/projects.list.project.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/json/projects.json" afterPath="$PROJECT_DIR$/src/assets/json/projects.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/services/project.js" afterPath="$PROJECT_DIR$/src/core/services/project.js" />
     </list>
     <ignored path="resume.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -119,9 +115,11 @@
           <file leaf-file-name="projects.list.project.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/app/projects/views/projects.list.project.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5812897">
-                  <caret line="40" column="66" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
-                  <folding />
+                <state vertical-scroll-proportion="0.7992734">
+                  <caret line="55" column="102" selection-start-line="55" selection-start-column="102" selection-end-line="55" selection-end-column="102" />
+                  <folding>
+                    <element signature="n#style#0;n#span#3;n#div#2;n#div#1;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -1079,9 +1077,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/projects/views/projects.list.project.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5812897">
-          <caret line="40" column="66" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
-          <folding />
+        <state vertical-scroll-proportion="0.7992734">
+          <caret line="55" column="102" selection-start-line="55" selection-start-column="102" selection-end-line="55" selection-end-column="102" />
+          <folding>
+            <element signature="n#style#0;n#span#3;n#div#2;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

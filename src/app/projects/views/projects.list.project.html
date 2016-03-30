@@ -51,7 +51,11 @@
             {{activeProject.repoUrl}}
         </span>
         <span hb-c-text="danger" hb-t-font="h5 small-caps bold"
-              ng-if="!activeProject.repoUrl">private</span><span hb-s-pl="2" hb-s-pb="1" hb-c-text="mono-light" hb-t-font="small small-caps">:(</span>
+              ng-if="!activeProject.repoUrl">private</span><span hb-s-pl="2"
+                                                                 hb-s-pb="1"
+                                                                 style="position: relative; top: -2px;"
+                                                                 hb-c-text="mono-light"
+                                                                 hb-t-font="small small-caps">:(</span>
     </div>
 
     <div hb-s-row ng-if="activeProject.bodyTexts.length" hb-s-pt="8">
