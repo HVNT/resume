@@ -30,29 +30,34 @@
 <!---->
 <!--BODY-->
 <div class="project__body" hb-s-pl="4" hb-s-pr="6">
-    <div hb-s-pt="2" ng-if="activeProject.software.length">
-        <span hb-t-font="h5 semi-bold small-caps" hb-s-pr="2">Technologies used: </span>
+    <div hb-s-row hb-s-pt="2" ng-if="activeProject.software.length">
+        <span hb-t-font="h5 semi-bold small-caps" hb-s-pr="3">Primary technologies used:</span>
         <span ng-repeat="software in activeProject.software">
-            <span hb-c-text="mono" hb-t-font="h6 small-caps semi-bold">{{software}}<span ng-if="!$last" hb-s-pr="1">,</span></span>
+            <span hb-c-text="mono" hb-t-font="h6 small-caps semi-bold">{{software}}<span ng-if="!$last"
+                                                                                         hb-s-pr="1">,</span></span>
         </span>
     </div>
-    <div hb-s-pt="2">
-        <span hb-t-font="h5 semi-bold small-caps">Repository: </span>
+    <div hb-s-row hb-s-pt="2">
+        <span hb-t-font="h5 semi-bold small-caps" hb-s-pr="3">Currently active:
+        <span hb-c-text="{{activeProject.isActive
+                ? 'success' : 'danger'}}">{{activeProject.isActive ? 'yes' : 'no'}}</span></span>
+    </div>
+    <div hb-s-row hb-s-pt="2">
+        <span hb-t-font="h5 semi-bold small-caps" hb-s-pr="3">Repository URL:</span>
         <span ng-if="activeProject.repoUrl"
-              hb-t-font="small link"
+              hb-t-font="link"
               hb-c-text="primary"
               ng-click="goUrl(activeProject.repoUrl)">
             {{activeProject.repoUrl}}
         </span>
-        <span hb-c-text="danger" hb-s-pl="2" hb-t-font="h5 small-caps bold"
-              ng-if="!activeProject.repoUrl">private</span>
-    </div>
-    <div hb-s-pt="4" hb-s-row ng-if="activeProject.bodyImgUrl.length">
-        <img ng-src="{{activeProject.bodyImgUrl}}">
+        <span hb-c-text="danger" hb-t-font="h5 small-caps bold"
+              ng-if="!activeProject.repoUrl">private</span><span hb-s-pl="2" hb-s-pb="1" hb-c-text="mono-light" hb-t-font="small small-caps">:(</span>
     </div>
 
-    <div hb-s-row hb-s-py="4">
-        <span hb-t-font="p">{{activeProject.body}}</span>
+    <div hb-s-row ng-if="activeProject.bodyTexts.length" hb-s-pt="8">
+        <div hb-s-row hb-s-pb="4" ng-repeat="bodyText in activeProject.bodyTexts">
+            <span hb-c-text="mono" hb-t-font="h6">{{bodyText}}</span>
+        </div>
     </div>
 </div>
 <!---->
