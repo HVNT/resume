@@ -111,10 +111,4 @@ angular.module('hb.app')
                 $scope.setActiveProject($stateParams.projectState);
             }
 
-
-            $scope.goUrl = function (url) {
-                if (url && url.length) {
-                    $window.open(url, '_blank')
-                }
-            };
         });

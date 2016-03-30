@@ -1,8 +1,8 @@
 <!--TODO view-->
-<div id="view contain">
+<div id="view" class="contain">
     <!--HEADER-->
     <div class="main-header">
-        <div hb-s-row ng-show="helloMsgDone && firstGlitchDone">
+        <div hb-s-row ng-show="doneHelloMsg && doneGlitchFirst">
             <div hb-s-col="12">
                 <!--<div class="canvas-mask-left"></div>-->
                 <canvas id="nodes" width="1000px" height="100px"
@@ -17,33 +17,33 @@
     <div class="main-body" hb-s-px="2">
         <!--PRIMARY NAV-->
         <div class="main-body__top">
-            <div ng-show="helloMsgDone && firstGlitchDone">
+            <div ng-show="doneHelloMsg && doneGlitchFirst">
                 <div hb-s-row hb-s-pt="4" ng-init="isHoveringNav = {};" style="max-width: 1200px;">
-                    <div class="inline-block" ng-repeat="nav in navs" hb-s-col="3">
+                    <div class="inline-block" ng-repeat="nav in navs" hb-s-col="4" hb-t-font="center">
                         <div hb-s-row hb-c-text="mono" hb-t-font="h5 small-caps" hb-s-pl="4">
-                            <div hb-s-col="2" hb-s-pr="2">
-                                <span hb-s-px="4"
-                                      class="nav-anchor"
-                                      ng-class="{'visible': helloMsgDone}"
-                                      ng-show="helloMsgDone">{{isHoveringNav[$index] ? '_' : '.' }}</span>
-                            </div>
-                            <div hb-s-col="10">
-                                <a typewrite
-                                   hb-c-text="mono"
-                                   hb-t-font="link"
-                                   style="text-decoration: none;"
-                                   class="nav__title"
-                                   ng-class="{'nav__title--active': activeNav.state === nav.state}"
-                                   ng-mouseenter="isHoveringNav[$index] = true"
-                                   ng-mouseleave="isHoveringNav[$index] = false"
-                                   initial-delay="{{::nav.initialDelay}}"
-                                   type-delay="50"
-                                   blink-cursor="false"
-                                   cursor="_"
-                                   ng-click="nav.navigate()"
-                                   text="{{::nav.title}}"
-                                   ng-href="{{::nav.href}}" target="_blank"></a>
-                            </div>
+                            <!--<div hb-s-col="1" hb-s-pr="2">-->
+                            <!--<span hb-s-px="4"-->
+                            <!--class="nav-anchor"-->
+                            <!--ng-class="{'visible': doneHelloMsg}"-->
+                            <!--ng-show="doneHelloMsg">{{isHoveringNav[$index] ? '_' : '.' }}</span>-->
+                            <!--</div>-->
+                            <!--<div hb-s-col="10">-->
+                            <a typewrite
+                               hb-c-text="mono"
+                               hb-t-font="link"
+                               style="text-decoration: none;"
+                               class="nav__title"
+                               ng-class="{'nav__title--active': activeNav.state === nav.state}"
+                               ng-mouseenter="isHoveringNav[$index] = true"
+                               ng-mouseleave="isHoveringNav[$index] = false"
+                               initial-delay="{{::nav.initialDelay}}"
+                               type-delay="50"
+                               blink-cursor="false"
+                               cursor="|"
+                               ng-click="nav.navigate()"
+                               text="{{::nav.title}}"
+                               ng-href="{{::nav.href}}" target="_blank"></a>
+                            <!--</div>-->
                         </div>
                     </div>
                 </div>
@@ -51,16 +51,14 @@
         </div>
         <!--SECONDARY NAV-->
         <div class="main-body__bottom"
-             ng-show="helloMsgDone && firstGlitchDone"
+             ng-show="doneHelloMsg && doneGlitchFirst"
              ui-view></div>
         <!---->
     </div>
-
-    <div class="main-footer" hb-s-px="2"></div>
 </div>
 
 <!--GREETING MASK-->
-<div ng-if="!helloMsgDone">
+<div ng-if="!doneHelloMsg">
     <div class="greeting-mask">
         <div hb-s-row hb-s-pt="16">
             <div hb-s-col-offset="3" hb-s-col="4">
@@ -69,18 +67,17 @@
                     cursor="_" text="{{hello.me}}"
                     hb-t-font="h1"></h1>
             </div>
-            <div hb-s-col="4">
+            <div hb-s-col="2">
                 <span class="main__img"
-                      ng-if="!helloMsgDone"
-                      ng-class="{'visible': helloMeDone}">
-                    <!--<i class="fa fa-hand-o-right" hb-s-pr="1"></i>-->
+                      hb-s-pull="right"
+                      ng-if="!doneHelloMsg"
+                      ng-class="{'visible': doneHelloMe}">
                     <img ng-src="{{hello.img}}" height="43px" hb-s-pr="3" hb-s-pt="1">
-                    <!--<span hb-t-font="p" hb-s-px="2">me</span>-->
                 </span>
             </div>
         </div>
         <div hb-s-row hb-s-pt="7">
-            <div hb-s-col-offset="3" hb-s-col="8">
+            <div hb-s-col-offset="3" hb-s-col="7">
                 <h2 typewrite
                     initial-delay="2250" type-delay="30" blink-cursor="false"
                     cursor="_" text="{{hello.msg}}"
@@ -91,7 +88,15 @@
 </div>
 
 <!--GLITCH MASK-->
-<div ng-if="glitching">
+<div ng-if="isGlitching">
     <div class="glitch-mask"></div>
 </div>
 
+
+<div class="greeting-footer" hb-s-px="2" ng-class="{'visible': doneHelloMsg && doneGlitchFirst}">
+    <div hb-s-row hb-t-font="center">
+        <span hb-t-font="small">Want to reach out or want to know more about a particular project? Feel free to
+            <span hb-t-font="link" ng-click="goUrl(navContact.href)"
+                  target="_blank">contact me</span> at hunterbrennick@gmail.com</span>
+    </div>
+</div>

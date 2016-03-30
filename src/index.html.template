@@ -34,7 +34,7 @@
 
 <!-- endbuild -->
 
-<div ui-view class="view a-fade">
+<div ui-view class="view container a-fade">
     <div loader></div>
 </div>
 
