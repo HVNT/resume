@@ -50,7 +50,9 @@
             </div>
         </div>
         <!--SECONDARY NAV-->
-        <div class="main-body__bottom" ng-class="{'visible': doneNav}" ng-show="doneNav" ui-view></div>
+        <div class="main-body__bottom--visibility-mask" ng-class="{'visible': doneNav}">
+            <div class="main-body__bottom" ui-view></div>
+        </div>
         <!---->
     </div>
 </div>

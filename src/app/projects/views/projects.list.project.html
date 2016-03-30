@@ -25,14 +25,14 @@
                 </div>
             </div>
             <div hb-s-row hb-s-pt="2">
-                <span hb-c-text="mono" hb-t-font="p">{{activeProject.subtitle}}</span>
+                <span hb-c-text="mono" hb-t-font="lead">{{activeProject.subtitle}}</span>
             </div>
         </div>
     </div>
     <!---->
     <!--BODY-->
-    <div class="project__body">
-        <div hb-s-row hb-s-pt="8" ng-if="activeProject.software.length">
+    <div class="project__body" hb-s-pt="8">
+        <div hb-s-row ng-if="activeProject.software.length">
             <span hb-t-font="h5 semi-bold small-caps" hb-s-pr="3">Core technologies used:</span>
         <span ng-repeat="software in activeProject.software" hb-c-text="mono" hb-t-font="h6 small-caps semi-bold">
             {{software}}<span ng-if="!$last">, </span>
@@ -63,7 +63,7 @@
 
         <div hb-s-row ng-if="activeProject.bodyTexts.length" hb-s-pt="8">
             <div hb-s-row hb-s-pb="4" ng-repeat="bodyText in activeProject.bodyTexts">
-                <span hb-c-text="mono" hb-t-font="p">{{bodyText}}</span>
+                <span hb-t-font="p">{{bodyText}}</span>
             </div>
         </div>
     </div>

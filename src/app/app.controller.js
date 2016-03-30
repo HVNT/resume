@@ -69,6 +69,7 @@ angular.module('hb.app')
             };
 
             var DELAY_FINAL = $scope.delayHelloMsg + 2000;
+            $scope.delayMainBottom = DELAY_FINAL + 150;
 
 
             $scope.navs = [
@@ -95,7 +96,7 @@ angular.module('hb.app')
 
             $timeout(function () {
                 $scope.doneNav = true;
-            }, DELAY_FINAL + 150);
+            }, $scope.delayMainBottom);
 
             $scope.$state = $state;
 

@@ -24,9 +24,9 @@ angular.module('hb.app')
                     title: 'Visualizations'
                 },
                 analytics: {
-                    key: 'analytics',
-                    state: 'analytics',
-                    title: 'Analytics Reports'
+                    key: 'reports',
+                    state: 'reports',
+                    title: 'Reports'
                 },
                 'asset-manager': {
                     key: 'assetManager',
@@ -71,7 +71,7 @@ angular.module('hb.app')
             };
 
             $scope.projects = [
-                projectsNav['analytics'],
+                projectsNav['reports'],
                 projectsNav['visualizations'],
                 projectsNav['asset-manager'],
                 projectsNav['toma'],
