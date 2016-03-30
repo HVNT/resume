@@ -12,9 +12,9 @@
             </div>
             <div hb-s-col="3" hb-s-pt="1.5">
                     <span hb-s-pull="right" hb-c-text="mono"
-                          hb-t-font="small">
+                          hb-t-font="small small-caps">
                         <span>{{activeProject.dateBegin | date:'MMM yyyy'}}</span>
-                        <span ng-if="activeProject.dateEnd.length"> -
+                        <span> -
                             {{activeProject.dateEnd.length
                             ? (activeProject.dateEnd | date:'MMM yyyy')
                             : 'Present'}}</span>
@@ -31,26 +31,26 @@
 <!--BODY-->
 <div class="project__body" hb-s-pl="4" hb-s-pr="6">
     <div hb-s-row hb-s-pt="2" ng-if="activeProject.software.length">
-        <span hb-t-font="h5 semi-bold small-caps" hb-s-pr="3">Primary technologies used:</span>
+        <span hb-t-font="h6 semi-bold small-caps" hb-s-pr="3">Primary technologies used:</span>
         <span ng-repeat="software in activeProject.software">
             <span hb-c-text="mono" hb-t-font="h6 small-caps semi-bold">{{software}}<span ng-if="!$last"
                                                                                          hb-s-pr="1">,</span></span>
         </span>
     </div>
     <div hb-s-row hb-s-pt="2">
-        <span hb-t-font="h5 semi-bold small-caps" hb-s-pr="3">Currently active:
-        <span hb-c-text="{{activeProject.isActive
+        <span hb-t-font="h6 semi-bold small-caps">Currently active:
+        <span hb-s-pl="3" hb-c-text="{{activeProject.isActive
                 ? 'success' : 'danger'}}">{{activeProject.isActive ? 'yes' : 'no'}}</span></span>
     </div>
     <div hb-s-row hb-s-pt="2">
-        <span hb-t-font="h5 semi-bold small-caps" hb-s-pr="3">Repository URL:</span>
+        <span hb-t-font="h6 semi-bold small-caps" hb-s-pr="3">Repository URL:</span>
         <span ng-if="activeProject.repoUrl"
               hb-t-font="link"
               hb-c-text="primary"
               ng-click="goUrl(activeProject.repoUrl)">
             {{activeProject.repoUrl}}
         </span>
-        <span hb-c-text="danger" hb-t-font="h5 small-caps bold"
+        <span hb-c-text="danger" hb-t-font="h6 small-caps semi-bold"
               ng-if="!activeProject.repoUrl">private</span><span hb-s-pl="2"
                                                                  hb-s-pb="1"
                                                                  style="position: relative; top: -2px;"
