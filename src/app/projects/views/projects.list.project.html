@@ -31,7 +31,7 @@
 <!--BODY-->
 <div class="project__body" hb-s-pl="4" hb-s-pr="6">
     <div hb-s-pt="2" ng-if="activeProject.software.length">
-        <span hb-t-font="h5 semi-bold small-caps">Technologies used: </span>
+        <span hb-t-font="h5 semi-bold small-caps" hb-s-pr="2">Technologies used: </span>
         <span ng-repeat="software in activeProject.software">
             <span hb-c-text="mono" hb-t-font="h6 small-caps semi-bold">{{software}}<span ng-if="!$last" hb-s-pr="1">,</span></span>
         </span>

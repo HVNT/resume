@@ -18,7 +18,7 @@
         <!--PRIMARY NAV-->
         <div class="main-body__top">
             <div ng-show="helloMsgDone && firstGlitchDone">
-                <div hb-s-row hb-s-pt="4" ng-init="isHoveringNav = {};">
+                <div hb-s-row hb-s-pt="4" ng-init="isHoveringNav = {};" style="max-width: 1200px;">
                     <div class="inline-block" ng-repeat="nav in navs" hb-s-col="3">
                         <div hb-s-row hb-c-text="mono" hb-t-font="h5 small-caps" hb-s-pl="4">
                             <div hb-s-col="2" hb-s-pr="2">
@@ -60,7 +60,7 @@
 <!--GREETING MASK-->
 <div ng-if="!helloMsgDone">
     <div class="greeting-mask">
-        <div hb-s-row>
+        <div hb-s-row hb-s-pt="16">
             <div hb-s-col-offset="3" hb-s-col="4">
                 <h1 typewrite
                     type-delay="60" blink-cursor="false"

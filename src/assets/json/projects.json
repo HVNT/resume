@@ -63,7 +63,7 @@
     "key": "mentalDisorders",
     "title": "Mental Disorders",
     "subtitle": "",
-    "software": [],
+    "software": ["stripe"],
     "repoUrl": "",
     "for": "mentaldisorders.com",
     "forUrl": "http://www.mentaldisorders.com",
