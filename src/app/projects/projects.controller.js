@@ -106,9 +106,9 @@ angular.module('hb.app')
             }
 
 
-            $scope.goForUrl = function () {
-                if ($scope.activeProject) {
-                    $window.open($scope.activeProject.forUrl, '_blank')
+            $scope.goUrl = function (url) {
+                if (url && url.length) {
+                    $window.open(url, '_blank')
                 }
-            }
+            };
         });
