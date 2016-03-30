@@ -11,6 +11,8 @@ $projects-left-width: 220px;
 $project-header-height: 120px;
 $project-header-left-width: 60px;
 
+$main-max-width: 1200px;
+
 
 
 .container {
@@ -18,7 +20,8 @@ $project-header-left-width: 60px;
   top: 0;
   left: 0;
   right: 0;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   bottom: 0;
 }
 
@@ -94,6 +97,7 @@ $project-header-left-width: 60px;
   right: 0;
   height: $main-header-height;
   bottom: 0;
+  max-width: $main-max-width;
 }
 
 .main-body {
@@ -104,6 +108,7 @@ $project-header-left-width: 60px;
   width: 100%;
   bottom: 0;
   overflow: auto;
+  max-width: $main-max-width;
 
   .main-body__top {
     position: absolute;
@@ -277,6 +282,5 @@ $project-header-left-width: 60px;
   left: 0;
   right: 0;
   overflow-y: auto;
-  max-width: 900px;
   //@include box-shadow($inset-z1-shadow);
 }
