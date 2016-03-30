@@ -4,6 +4,7 @@ $main-body-left-width: 300px;
 $main-body-top-height: 69px;
 
 $bio-left-width: 220px;
+$bio-top-height: 230px;
 
 $projects-left-width: 220px;
 $project-header-left-width: 60px;
@@ -175,12 +176,31 @@ $project-header-left-width: 60px;
   height: 100%;
   width: 100%;
 
+  .bio__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $bio-top-height;
+  }
+
+  .bio__body {
+    position: absolute;
+    top: $bio-top-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: $base-spacing-unit * 4;
+    padding-left: $base-spacing-unit * 16;
+    padding-right: $base-spacing-unit * 8;
+  }
+
   .bio__left {
     position: absolute;
     top: 0;
     left: 0;
     width: $bio-left-width;
-    padding-top: $base-spacing-unit * 4;
+    padding-top: $base-spacing-unit * 12;
     padding-left: $base-spacing-unit * 4;
     padding-right: $base-spacing-unit * 4;
   }
@@ -190,7 +210,7 @@ $project-header-left-width: 60px;
     top: 0;
     left: $bio-left-width;
     right: 0;
-    padding-top: $base-spacing-unit * 4;
+    padding-top: $base-spacing-unit * 12;
     padding-left: $base-spacing-unit * 4;
     padding-right: $base-spacing-unit * 8;
   }
