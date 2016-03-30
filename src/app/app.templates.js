@@ -7,7 +7,7 @@ angular.module('hb.app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('/app/bio/views/bio.html',
-    "<div>BIO</div>"
+    "<div class=bio><div class=bio__left><img ng-src=/assets/img/me.png hb-s-pull=right width=120px></div><div class=bio__right><div hb-s-row hb-s-pt=2 hb-s-pb=4><h2 hb-t-font=h2>My name is Hunter Brennick and I am currently a senior at Georgia Institute of Technology pursuing a degree in Computer Science.</h2></div><div hb-s-row hb-s-py=4><span hb-t-font=p>The past few years, while I have been pursuing a degree in Computer Science, I have been working at various startups - from consulting to co-founding. Today, I work at a marketing automation company called Landing Lion that I co-founded with a team made up of primarily Georgia Tech graduates.</span></div><div hb-s-row><span hb-t-font=p>I currently have a strong passion in data info-visualizations and analytics. I strive to allow people to look at data and analytical information in new, creative, and complex ways which have yet to be discovered. I value hard work, am dedicated to my role contributing to a better business society, and find joy in my ability to incorporate computer science applications into the lives of many.</span></div></div></div>"
   );
 
 
@@ -17,12 +17,12 @@ angular.module('hb.app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('/app/projects/views/projects.list.html',
-    "<div class=projects__left><div hb-s-row hb-s-pr=4 hb-s-pl=8 hb-s-py=8><div hb-s-row hb-s-pb=4><h5 hb-t-font=\"h5 small-caps\" hb-s-pb=3>Work</h5><div hb-s-row ng-repeat=\"project in projects\" hb-s-pl=1 hb-s-pb=2><h6 ng-click=goProject(project) hb-c-text=mono ng-class=\"{'nav__title--active': activeProjectNav.state === project.state}\" hb-t-font=\"link h6 small-caps\">{{::project.title}}</h6></div></div><div hb-s-row><h5 hb-t-font=\"h5 small-caps\" hb-s-pb=3>School</h5><div hb-s-row ng-repeat=\"schoolProject in schoolProjects\" hb-s-pl=1 hb-s-pb=2><h6 ng-click=goProject(schoolProject) hb-c-text=mono ng-class=\"{'nav__title--active': activeProjectNav.state === schoolProject.state}\" hb-t-font=\"link h6 small-caps\">{{::schoolProject.title}}</h6></div></div></div></div><div class=projects__right><div ui-view></div></div>"
+    "<div class=projects__left><div hb-s-row hb-s-pr=4 hb-s-pl=8 hb-s-py=5><div hb-s-row hb-s-pb=4><h5 hb-t-font=\"h5 small-caps\" hb-s-pb=3>Work</h5><div hb-s-row ng-repeat=\"project in projects\" hb-s-pl=1 hb-s-pb=2><h6 ng-click=goProject(project) hb-c-text=mono ng-class=\"{'nav__title--active': activeProjectNav.state === project.state}\" hb-t-font=\"link h6 small-caps\">{{::project.title}}</h6></div></div><div hb-s-row><h5 hb-t-font=\"h5 small-caps\" hb-s-pb=3>School</h5><div hb-s-row ng-repeat=\"schoolProject in schoolProjects\" hb-s-pl=1 hb-s-pb=2><h6 ng-click=goProject(schoolProject) hb-c-text=mono ng-class=\"{'nav__title--active': activeProjectNav.state === schoolProject.state}\" hb-t-font=\"link h6 small-caps\">{{::schoolProject.title}}</h6></div></div></div></div><div class=projects__right><div ui-view></div></div>"
   );
 
 
   $templateCache.put('/app/projects/views/projects.list.project.html',
-    "<div hb-s-row hb-s-pxy=8><div hb-s-row><div class=project></div><div hb-s-pull=left><img class=inline-block ng-src={{activeProject.forLogoUrl}} width=60px hb-s-pr=3 hb-s-pt=1></div><div hb-s-pull=left hb-s-px=2><div hb-s-row hb-s-py=.5><h4 hb-t-font=h4>{{activeProject.title}}</h4></div><div hb-s-row><h6 hb-c-text=mono hb-t-font=h6>{{activeProject.subtitle}}</h6></div></div></div><div hb-s-row></div></div>"
+    "<div hb-s-row hb-s-px=8><div hb-s-row><div class=project__header-left hb-s-pt=4.5><img hb-t-font=interact ng-click=goForUrl(activeProject) ng-src={{activeProject.forLogoUrl}} width=60px></div><div class=project__header-right hb-s-pxy=4><div hb-s-row hb-s-py=.5><div hb-s-col=9><h4 hb-t-font=h4>{{activeProject.title}}</h4></div><div hb-s-col=3 hb-s-pt=1.5><span hb-s-pull=right hb-c-text=mono hb-t-font=small><span>{{activeProject.dateBegin | date:'MMM yyyy'}}</span> <span ng-if=activeProject.dateEnd.length>- {{activeProject.dateEnd.length ? (activeProject.dateEnd | date:'MMM yyyy') : 'Present'}}</span></span></div></div><div hb-s-row><h6 hb-c-text=mono hb-t-font=h6>{{activeProject.subtitle}}</h6></div></div></div><div hb-s-row></div></div>"
   );
 
 

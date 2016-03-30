@@ -8,7 +8,8 @@
 angular.module('hb.app')
     .config(function ($urlRouterProvider, $stateProvider) {
         $urlRouterProvider
-            .when('/app/projects/', '/app/projects');
+            .when('/app/projects/', '/app/projects/analytics')
+            .when('/app/projects', '/app/projects/analytics');
 
         $stateProvider
             .state('app.projects', {

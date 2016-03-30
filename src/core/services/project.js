@@ -11,10 +11,11 @@ angular.module('hb.core')
             data = data || {};
 
             this.key = data.key || null;
-            this.title = data.title || 'Untitle Project';
+            this.title = data.title || 'Untitled Project';
             this.subtitle = data.subtitle || '';
             this.body = data.body || '';
             this.for = data.for || '';
+            this.forUrl = data.forUrl || '';
             this.forLogoUrl = data.forLogoUrl || '';
             this.involved = data.involved || '';
             this.dateBegin = data.dateBegin || '';

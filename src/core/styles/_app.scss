@@ -3,10 +3,14 @@ $main-header-height: 160px;
 $main-body-left-width: 300px;
 $main-body-top-height: 69px;
 
-$projects-left-width: 220px;
-$project-header-left-width: 100px;
+$bio-left-width: 220px;
 
-//MASKS
+$projects-left-width: 220px;
+$project-header-left-width: 60px;
+
+
+
+// MASKS
 .greeting-mask {
   position: fixed;
   top: $main-header-height;
@@ -48,7 +52,29 @@ $project-header-left-width: 100px;
   }
 }
 
+.canvas-mask-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: $main-header-height;
+  opacity: .9;
+  background: WHITE;
+}
 
+.canvas-mask-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: $main-header-height;
+  opacity: .9;
+  background: WHITE;
+}
+
+
+
+// MAIN
 .main-header {
   position: absolute;
   top: 0;
@@ -100,36 +126,6 @@ $project-header-left-width: 100px;
   }
 }
 
-
-
-.projects__left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: $projects-left-width;
-  bottom: 0;
-  overflow-y: auto;
-}
-
-.projects__right {
-  position: absolute;
-  top: 0;
-  left: $projects-left-width;
-  right: 0;
-  bottom: 0;
-  overflow-y: auto;
-}
-
-.project__header-left {
-
-}
-
-.project__header-right {
-
-}
-
-
-
 .main-nav {
   position: relative;
   top: $main-header-height;
@@ -156,6 +152,7 @@ $project-header-left-width: 100px;
   color: $brand-primary !important;
 }
 
+
 .main-header__canvas {
   opacity: 0;
 
@@ -166,23 +163,70 @@ $project-header-left-width: 100px;
   @include transition(opacity 1s ease-out);
 }
 
-.canvas-mask-left {
-  position: absolute;
-  left: 0;
+
+
+// BIO
+.bio {
+  position: relative;
   top: 0;
-  width: 30px;
-  height: $main-header-height;
-  opacity: .9;
-  background: WHITE;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+
+  .bio__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $bio-left-width;
+    padding-top: $base-spacing-unit * 4;
+    padding-left: $base-spacing-unit * 4;
+    padding-right: $base-spacing-unit * 4;
+  }
+
+  .bio__right {
+    position: absolute;
+    top: 0;
+    left: $bio-left-width;
+    right: 0;
+    padding-top: $base-spacing-unit * 4;
+    padding-left: $base-spacing-unit * 4;
+    padding-right: $base-spacing-unit * 8;
+  }
 }
 
 
-.canvas-mask-right {
+
+//PROJECTS
+.projects__left {
   position: absolute;
-  right: 0;
   top: 0;
-  width: 30px;
-  height: $main-header-height;
-  opacity: .9;
-  background: WHITE;
+  left: 0;
+  width: $projects-left-width;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.projects__right {
+  position: absolute;
+  top: 0;
+  left: $projects-left-width;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.project__header-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $project-header-left-width;
+}
+
+.project__header-right {
+  position: absolute;
+  top: 0;
+  left: $project-header-left-width;
+  right: 0;
 }

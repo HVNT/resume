@@ -105,10 +105,15 @@ angular.module('hb.app')
 
         })
     .controller('ProjectsListProjectCtrl',
-        function ($scope, $stateParams) {
+        function ($scope, $window, $stateParams) {
             if (!$scope.activeProject) {
                 $scope.setActiveProject($stateParams.projectState);
             }
 
 
+            $scope.goForUrl = function () {
+                if ($scope.activeProject) {
+                    $window.open($scope.activeProject.forUrl, '_blank')
+                }
+            }
         });
