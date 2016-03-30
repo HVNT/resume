@@ -1,6 +1,6 @@
 [
   {
-    "key": "analytics",
+    "key": "reports",
     "title": "Reports",
     "subtitle": "Landing Lion's clients' need to make informed decisions on their marketing campaigns quickly. These reports empower our clients' with that ability.",
     "software": ["d3JS", "angularJS", "expressJS", "yeomen", "grunt", "npm", "bower", "git"],

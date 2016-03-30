@@ -110,5 +110,4 @@ angular.module('hb.app')
             if (!$scope.activeProject) {
                 $scope.setActiveProject($stateParams.projectState);
             }
-
         });
