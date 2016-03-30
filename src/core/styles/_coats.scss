@@ -1,0 +1,529 @@
+// Fills
+
+[#{$ns}c-fill~="inverse"],
+.#{$ns}fill-inverse {
+  background: $mono-dark !important;
+}
+
+[#{$ns}c-fill~="white"],
+.#{$ns}fill-white {
+  background: $white !important;
+}
+
+[#{$ns}c-fill~="mono-lighter"],
+.#{$ns}fill-mono-lighter {
+  background: $mono-lighter !important;
+}
+
+[#{$ns}c-fill~="mono-light"],
+.#{$ns}fill-mono-light {
+  background: $mono-light !important;
+}
+
+[#{$ns}c-fill~="mono"],
+.#{$ns}fill-mono {
+  background: $mono !important;
+}
+
+[#{$ns}c-fill~="mono-blend"],
+.#{$ns}fill-mono-blend {
+  @include gradient-horizontal($mono, desaturate(adjust_hue(lighten($mono, 10%), -15%), 10%));
+}
+
+[#{$ns}c-fill~="mono-dark"],
+.#{$ns}fill-mono-dark {
+  background: $mono-dark !important;
+}
+
+[#{$ns}c-fill~="mono-dark-blend"],
+.#{$ns}fill-mono-dark-blend {
+  @include gradient-horizontal($mono-dark, desaturate(adjust_hue(lighten($mono-dark, 10%), -15%), 10%));
+}
+
+[#{$ns}c-fill~="mono-darker"],
+.#{$ns}fill-mono-darker {
+  background: $mono-darker !important;
+}
+
+[#{$ns}c-fill~="primary"],
+.#{$ns}fill-primary {
+  background: $brand-primary !important;
+}
+
+[#{$ns}c-fill~="primary-blend"],
+.#{$ns}fill-primary-blend {
+  @include gradient-horizontal($brand-primary, desaturate(adjust_hue(lighten($brand-primary, 10%), -15%), 10%));
+}
+
+[#{$ns}c-fill~="accent"],
+.#{$ns}fill-accent {
+  background: $brand-accent !important;
+}
+
+[#{$ns}c-fill~="accent-shadow"],
+.#{$ns}fill-accent-shadow {
+  background: $brand-accent-shadow !important;
+}
+
+[#{$ns}c-fill~="accent-blend"],
+.#{$ns}fill-accent-blend {
+  @include gradient-horizontal($brand-accent, desaturate(adjust_hue(lighten($brand-accent, 10%), -15%), 10%));
+}
+
+[#{$ns}c-fill~="success"],
+.#{$ns}fill-success {
+  background: $brand-success !important;
+}
+
+[#{$ns}c-fill~="success-blend"],
+.#{$ns}fill-success-blend {
+  @include gradient-horizontal($brand-success, desaturate(adjust_hue(lighten($brand-success, 10%), -15%), 10%));
+}
+
+[#{$ns}c-fill~="alert"],
+.#{$ns}fill-alert {
+  background: $brand-alert !important;
+}
+
+[#{$ns}c-fill~="alert-blend"],
+.#{$ns}fill-alert-blend {
+  @include gradient-horizontal($brand-alert, desaturate(adjust_hue(lighten($brand-alert, 10%), -15%), 10%));
+}
+
+[#{$ns}c-fill~="warning"],
+.#{$ns}fill-warning {
+  background: $brand-warning !important;
+}
+
+[#{$ns}c-fill~="pink"],
+.#{$ns}fill-pink {
+  background: $brand-pink !important;
+}
+
+[#{$ns}c-fill~="danger"],
+.#{$ns}fill-danger {
+  background: $brand-danger !important;
+}
+
+[#{$ns}c-fill~="info"],
+.#{$ns}fill-info {
+  background: $brand-info !important;
+}
+
+// Text
+[#{$ns}c-fill~="i1"] {
+  background: $inverse-text-primary !important;
+}
+
+[#{$ns}c-fill~="i2"] {
+  background: $inverse-text-secondary !important;
+}
+
+[#{$ns}c-fill~="i3"] {
+  background: $inverse-text-disabled !important;
+}
+
+[#{$ns}c-fill~="i4"] {
+  background: $inverse-text-dividers !important;
+}
+
+[#{$ns}c-fill~="1"] {
+  background: $text-primary !important;
+}
+
+[#{$ns}c-fill~="2"] {
+  background: $text-secondary !important;
+}
+
+[#{$ns}c-fill~="3"] {
+  background: $text-disabled !important;
+}
+
+[#{$ns}c-fill~="4"] {
+  background: $text-dividers !important;
+}
+
+[#{$ns}c-fill~="secondary"],
+.#{$ns}fill-secondary {
+  background: $brand-secondary !important;
+}
+
+[#{$ns}c-fill~="secondary-highlight"],
+.#{$ns}fill-secondary-highlight {
+  background: $brand-secondary-highlight !important;
+}
+
+
+// Borders
+[#{$ns}c-border] {
+  border-width: $base-border-width;
+  border-style: solid;
+}
+
+[#{$ns}c-border~="thick"] {
+  border-width: $base-border-width*2;
+}
+
+[#{$ns}c-border~="dashed"],
+.#{$ns}border-dashed {
+  border-style: dashed !important;
+}
+
+[#{$ns}c-border~="mono-lighter"],
+.#{$ns}border-mono-lighter {
+  border-color: $mono-lighter !important;
+}
+
+[#{$ns}c-border~="mono-light"],
+.#{$ns}border-mono-light {
+  border-color: $mono-light !important;
+}
+
+[#{$ns}c-border~="mono"],
+.#{$ns}border-mono {
+  border-color: $mono !important;
+}
+
+[#{$ns}c-border~="primary"],
+.#{$ns}border-primary {
+  border-color: $brand-primary-shadow !important;
+}
+
+[#{$ns}c-border~="accent"],
+.#{$ns}border-accent {
+  border-color: $brand-accent-shadow !important;
+}
+
+[#{$ns}c-border~="success"],
+.#{$ns}border-success {
+  border-color: $brand-success-shadow !important;
+}
+
+[#{$ns}c-border~="warning"],
+.#{$ns}border-warning {
+  border-color: $brand-warning-shadow !important;
+}
+
+[#{$ns}c-border~="danger"],
+.#{$ns}border-danger {
+  border-color: $brand-danger-shadow !important;
+}
+
+[#{$ns}c-border~="secondary"],
+.#{$ns}border-secondary {
+  border-color: $brand-secondary !important;
+}
+
+[#{$ns}c-border~="secondary-highlight"],
+.#{$ns}border-secondary-shadow {
+  border-color: $brand-secondary-highlight !important;
+}
+
+// Text
+[#{$ns}c-text~="i1"] {
+  color: $inverse-text-primary !important;
+}
+
+[#{$ns}c-text~="i2"] {
+  color: $inverse-text-secondary !important;
+}
+
+[#{$ns}c-text~="i3"] {
+  color: $inverse-text-disabled !important;
+}
+
+[#{$ns}c-text~="i4"] {
+  color: $inverse-text-dividers !important;
+}
+
+[#{$ns}c-text~="1"] {
+  color: $text-primary !important;
+}
+
+[#{$ns}c-text~="2"] {
+  color: $text-secondary !important;
+}
+
+[#{$ns}c-text~="3"] {
+  color: $text-disabled !important;
+}
+
+[#{$ns}c-text~="4"] {
+  color: $text-dividers !important;
+}
+
+[#{$ns}c-text~="muted"],
+[#{$ns}c-text~="mono-light"],
+.#{$ns}text-muted {
+  color: $mono-light !important;
+}
+
+[#{$ns}c-text~="mono"],
+.#{$ns}text-mono {
+  color: $mono !important;
+}
+
+[#{$ns}c-text~="mono-dark"],
+.#{$ns}text-mono-dark {
+  color: $mono-dark !important;
+}
+
+[#{$ns}c-text~="white"],
+.#{$ns}text-white {
+  color: $white !important;
+}
+
+[#{$ns}c-text~="primary"],
+.#{$ns}text-primary {
+  color: $brand-primary !important;
+}
+
+[#{$ns}c-text~="accent"],
+.#{$ns}text-accent {
+  color: $brand-accent !important;
+}
+
+[#{$ns}c-text~="success"],
+.#{$ns}text-success {
+  color: $brand-success !important;
+}
+
+[#{$ns}c-text~="warning"],
+.#{$ns}text-warning {
+  color: $brand-warning !important;
+}
+
+[#{$ns}c-text~="danger"],
+.#{$ns}text-danger {
+  color: $brand-danger !important;
+}
+
+[#{$ns}c-text~="info"],
+.#{$ns}text-info {
+  color: $brand-info !important;
+}
+
+[#{$ns}c-text~="primary-shadow"],
+.#{$ns}text-primary-shadow {
+  color: $brand-primary-shadow !important;
+}
+
+[#{$ns}c-text~="success-shadow"],
+.#{$ns}text-success-shadow {
+  color: $brand-success-shadow !important;
+}
+
+[#{$ns}c-text~="warning-shadow"],
+.#{$ns}text-warning-shadow {
+  color: $brand-warning-shadow !important;
+}
+
+[#{$ns}c-text~="danger-shadow"],
+.#{$ns}text-danger-shadow {
+  color: $brand-danger-shadow !important;
+}
+
+[#{$ns}c-text~="info-shadow"],
+.#{$ns}text-info-shadow {
+  color: $brand-info-shadow !important;
+}
+
+[#{$ns}c-text~="secondary"],
+.#{$ns}text-secondary {
+  color: $brand-secondary !important;
+}
+
+[#{$ns}c-text~="secondary-highlight"],
+.#{$ns}text-secondary-highlight {
+  color: $brand-secondary-highlight !important;
+}
+
+[#{$ns}c-skin~="inverse"],
+.#{$ns}skin-danger {
+  @extend .#{$ns}fill-inverse;
+  @extend .#{$ns}text-white;
+}
+
+[#{$ns}c-skin~="selected"],
+[#{$ns}c-skin~="primary"],
+.#{$ns}skin-primary,
+.#{$ns}skin-selected {
+  @extend .#{$ns}fill-primary;
+  @extend .#{$ns}text-primary;
+  @extend .#{$ns}border-primary;
+}
+
+[#{$ns}c-skin~="success"],
+.#{$ns}skin-success {
+  @extend .#{$ns}fill-success;
+  @extend .#{$ns}text-success;
+}
+
+[#{$ns}c-skin~="warning"],
+.#{$ns}skin-warning {
+  @extend .#{$ns}fill-warning;
+  @extend .#{$ns}text-warning;
+}
+
+[#{$ns}c-skin~="danger"],
+.#{$ns}skin-danger {
+  @extend .#{$ns}fill-danger;
+  @extend .#{$ns}text-danger;
+}
+
+[#{$ns}c-skin~="inverse"],
+.#{$ns}skin-danger {
+  @extend .#{$ns}fill-inverse;
+  @extend .#{$ns}text-white;
+}
+
+[#{$ns}c-skin~="selected"],
+[#{$ns}c-skin~="primary"],
+.#{$ns}skin-primary,
+.#{$ns}skin-selected {
+  @extend .#{$ns}fill-primary;
+  @extend .#{$ns}text-primary;
+  @extend .#{$ns}border-primary;
+}
+
+[#{$ns}c-skin~="success"],
+.#{$ns}skin-success {
+  @extend .#{$ns}fill-success;
+  @extend .#{$ns}text-success;
+}
+
+[#{$ns}c-skin~="warning"],
+.#{$ns}skin-warning {
+  @extend .#{$ns}fill-warning;
+  @extend .#{$ns}text-warning;
+}
+
+[#{$ns}c-skin~="danger"],
+.#{$ns}skin-danger {
+  @extend .#{$ns}fill-danger;
+  @extend .#{$ns}text-danger;
+}
+
+/* VS QUALITITATIVE COLORS */
+//////////////
+//light colors
+[#{$ns}c-fill~="vs-light-1"],
+.#{$ns}fill-vs-light-1 {
+  background: #8dd3c7;
+}
+
+[#{$ns}c-fill~="vs-light-2"],
+.#{$ns}fill-vs-light-2 {
+  background: #ffffb3;
+}
+
+[#{$ns}c-fill~="vs-light-3"],
+.#{$ns}fill-vs-light-3 {
+  background: #bebada;
+}
+
+[#{$ns}c-fill~="vs-light-4"],
+.#{$ns}fill-vs-light-4 {
+  background: #fb8072;
+}
+
+[#{$ns}c-fill~="vs-light-5"],
+.#{$ns}fill-vs-light-5 {
+  background: #80b1d3;
+}
+
+[#{$ns}c-fill~="vs-light-6"],
+.#{$ns}fill-vs-light-6 {
+  background: #fdb462;
+}
+
+[#{$ns}c-fill~="vs-light-7"],
+.#{$ns}fill-vs-light-7 {
+  background: #b3de69;
+}
+
+[#{$ns}c-fill~="vs-light-8"],
+.#{$ns}fill-vs-light-8 {
+  background: #fccde5;
+}
+
+[#{$ns}c-fill~="vs-light-9"],
+.#{$ns}fill-vs-light-9 {
+  background: #d9d9d9;
+}
+
+[#{$ns}c-fill~="vs-light-10"],
+.#{$ns}fill-vs-light-10 {
+  background: #bc80bd;
+}
+
+[#{$ns}c-fill~="vs-light-11"],
+.#{$ns}fill-vs-light-11 {
+  background: #ccebc5;
+}
+
+[#{$ns}c-fill~="vs-light-12"],
+.#{$ns}fill-vs-light-12 {
+  background: #ffed6f;
+}
+/////////////
+//dark colors
+[#{$ns}c-fill~="vs-dark-1"],
+.#{$ns}fill-vs-dark-1 {
+  background: #a6cee3;
+}
+
+[#{$ns}c-fill~="vs-dark-2"],
+.#{$ns}fill-vs-dark-2 {
+  background: #1f78b4;
+}
+
+[#{$ns}c-fill~="vs-dark-3"],
+.#{$ns}fill-vs-dark-3 {
+  background: #b2df8a;
+}
+
+[#{$ns}c-fill~="vs-dark-4"],
+.#{$ns}fill-vs-dark-4 {
+  background: #33a02c;
+}
+
+[#{$ns}c-fill~="vs-dark-5"],
+.#{$ns}fill-vs-dark-5 {
+  background: #fb9a99;
+}
+
+[#{$ns}c-fill~="vs-dark-6"],
+.#{$ns}fill-vs-dark-6 {
+  background: #e31a1c;
+}
+
+[#{$ns}c-fill~="vs-dark-7"],
+.#{$ns}fill-vs-dark-7 {
+  background: #fdbf6f;
+}
+
+[#{$ns}c-fill~="vs-dark-8"],
+.#{$ns}fill-vs-dark-8 {
+  background: #ff7f00;
+}
+
+[#{$ns}c-fill~="vs-dark-9"],
+.#{$ns}fill-vs-dark-9 {
+  background: #cab2d6;
+}
+
+[#{$ns}c-fill~="vs-dark-10"],
+.#{$ns}fill-vs-dark-10 {
+  background: #6a3d9a;
+}
+
+[#{$ns}c-fill~="vs-dark-11"],
+.#{$ns}fill-vs-dark-11 {
+  background: #ffff99;
+}
+
+[#{$ns}c-fill~="vs-dark-12"],
+.#{$ns}fill-vs-dark-12 {
+  background: #b15928;
+}

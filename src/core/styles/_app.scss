@@ -1,0 +1,288 @@
+$main-left: 100px;
+$main-header-height: 100px;
+$main-body-left-width: 300px;
+$main-body-top-height: 44px;
+
+$bio-left-width: 220px;
+$bio-top-height: 230px;
+
+$projects-left-width: 220px;
+
+$project-header-height: 120px;
+$project-header-left-width: 75px;
+
+$main-max-width: 1200px;
+
+
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  bottom: 0;
+}
+
+// MASKS
+.greeting-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  background: WHITE;
+
+  &.finished {
+    opacity: 0;
+  }
+
+  .main__img {
+    opacity: 0;
+
+    &.visible {
+      opacity: 1;
+    }
+
+    @include transition(opacity 1s ease-out);
+  }
+
+  @include transition(opacity 1s ease-out);
+}
+
+.glitch-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: darken($mono-darker, 8%);
+  color: $white;
+
+  .glitch-mask-bar {
+    display: inline-block;
+    position: relative;
+    margin-right: -0.5%;
+  }
+}
+
+.canvas-mask-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: $main-header-height;
+  opacity: .9;
+  background: WHITE;
+}
+
+.canvas-mask-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: $main-header-height;
+  opacity: .9;
+  background: WHITE;
+}
+
+
+
+// MAIN
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $main-header-height;
+  bottom: 0;
+  max-width: $main-max-width;
+}
+
+.main-body {
+  position: absolute;
+  top: $main-header-height;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0;
+  overflow: auto;
+
+  .main-body__top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $main-body-top-height;
+    //@include box-shadow($z0-shadow);
+  }
+
+  .main-body__bottom {
+    position: absolute;
+    top: $main-body-top-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    max-width: $main-max-width;
+  }
+
+  .main-body__left {
+    position: absolute;
+    top: $main-body-top-height;
+    left: 0;
+    width: $main-body-left-width;
+    bottom: 0;
+  }
+
+  .main-body__right {
+    position: absolute;
+    top: $main-body-top-height;
+    left: $main-body-left-width;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+  }
+}
+
+.main-nav {
+  position: relative;
+  top: $main-header-height;
+}
+
+.nav-anchor {
+  opacity: 0;
+
+  &.visible {
+    opacity: 1;
+  }
+
+  @include transition(opacity 1s ease-out);
+}
+
+.nav__title {
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+.nav__title--active {
+  @extend .semi-bold;
+  color: $brand-primary !important;
+}
+
+
+.main-header__canvas {
+  opacity: 0;
+
+  &.visible {
+    opacity: 1;
+  }
+
+  @include transition(opacity 1s ease-out);
+}
+
+
+
+// BIO
+.bio {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+
+  .bio__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $bio-top-height;
+  }
+
+  .bio__body {
+    position: absolute;
+    top: $bio-top-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: $base-spacing-unit * 4;
+    padding-left: $base-spacing-unit * 16;
+    padding-right: $base-spacing-unit * 8;
+  }
+
+  .bio__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $bio-left-width;
+    padding-top: $base-spacing-unit * 12;
+    padding-left: $base-spacing-unit * 4;
+    padding-right: $base-spacing-unit * 4;
+  }
+
+  .bio__right {
+    position: absolute;
+    top: 0;
+    left: $bio-left-width;
+    right: 0;
+    padding-top: $base-spacing-unit * 12;
+    padding-left: $base-spacing-unit * 4;
+    padding-right: $base-spacing-unit * 8;
+  }
+}
+
+
+
+//PROJECTS
+.projects__left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $projects-left-width;
+  bottom: 0;
+}
+
+.projects__right {
+  position: absolute;
+  top: 0;
+  left: $projects-left-width;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+.project__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $project-header-height;
+
+  .project__header-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $project-header-left-width;
+  }
+
+  .project__header-right {
+    position: absolute;
+    top: 0;
+    left: $project-header-left-width;
+    right: 0;
+  }
+}
+
+.project__body {
+  position: absolute;
+  top: $project-header-height;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  //@include box-shadow($inset-z1-shadow);
+}

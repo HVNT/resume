@@ -1,0 +1,272 @@
+%noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+%grab, %cursor-grab {
+  cursor: pointer;
+  cursor: hand !important;
+  cursor: grab !important;
+  cursor: -webkit-grab !important;
+
+  &:active {
+    cursor: grabbing !important;
+    cursor: -webkit-grabbing !important;
+  }
+}
+
+%cursor-text {
+  cursor: text !important;
+
+  &:active {
+    cursor: text !important;
+  }
+}
+
+%cursor-move {
+  cursor: move !important;
+}
+
+%cursor-col-resize {
+  cursor: col-resize !important;
+}
+
+%view {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+// Typography placeholders
+
+%p {
+  font-size: $paragraph;
+  font-weight: normal;
+  line-height: $base-line-height;
+}
+
+%small {
+  font-size: $small;
+  line-height: $small-line-height;
+}
+
+%lead {
+  font-weight: 300;
+  font-size: $paragraph-lead;
+  line-height: $paragraph-lead * 1.5;
+}
+
+%a {
+  font-weight: inherit;
+  text-decoration: none;
+  color: inherit;
+  font-family: $base-font-family;
+
+  &:active {
+    text-decoration: none;
+  }
+}
+
+%link {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+%underline {
+  text-decoration: underline;
+}
+
+%h1 {
+  font-size: $h1;
+  line-height: $h1-line-height;
+}
+
+%h2 {
+  font-size: $h2;
+  line-height: $h2-line-height;
+
+  &%small-caps {
+    font-size: $h2-small-caps;
+    line-height: $h2-small-caps-line-height;
+  }
+}
+
+%h3 {
+  font-size: $h3;
+  line-height: $h3-line-height;
+
+  &%small-caps {
+    font-size: $h3-small-caps;
+    line-height: $h3-small-caps-line-height;
+  }
+}
+
+%h4 {
+  font-size: $h4;
+  line-height: $h4-line-height;
+
+  &%small-caps {
+    font-size: $h4-small-caps;
+    line-height: $h4-small-caps-line-height;
+  }
+}
+
+%h5 {
+  font-size: $h5;
+  line-height: $h5-line-height;
+
+  &%small-caps {
+    font-size: $h5-small-caps;
+    line-height: $h5-small-caps-line-height;
+  }
+}
+
+%h6 {
+  font-size: $h6;
+  line-height: $h6-line-height;
+
+  &%small-caps {
+    font-size: $h6-small-caps;
+    line-height: $h6-small-caps-line-height;
+  }
+}
+
+%h1, %h2, %h3, %h4, %h5, %h6 {
+  &%small-caps {
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+}
+
+%italic {
+  font-style: italic !important;
+}
+
+%extra-bold {
+  font-weight: 800 !important;
+}
+
+%bold {
+  font-weight: 700 !important;
+}
+
+%semi-bold {
+  font-weight: 600 !important;
+}
+
+%light {
+  font-weight: 300 !important;
+}
+
+%normal {
+  font-weight: 400 !important;
+}
+
+%sm-heading-caps {
+  @extend %h6;
+  @extend %small-caps;
+  @extend %bold;
+}
+
+%md-heading-caps {
+  @extend %h5;
+  @extend %small-caps;
+  @extend %bold;
+}
+
+%lg-heading-caps {
+  @extend %h4;
+  @extend %small-caps;
+  @extend %bold;
+}
+
+%sm-heading {
+  @extend %h6;
+  @extend %bold;
+}
+
+%md-heading {
+  @extend %h5;
+  @extend %bold;
+}
+
+%lg-heading {
+  @extend %h4;
+  @extend %bold;
+}
+
+%sm-paragraph {
+  font-size: $paragraph;
+  font-weight: 300;
+  line-height: $base-line-height;
+}
+
+%md-paragraph {
+  font-size: $paragraph * 1.25;
+  font-weight: 300;
+  line-height: $paragraph * 1.25 * 1.5;
+}
+
+%lg-paragraph {
+  font-size: $paragraph * 1.5;
+  font-weight: 300;
+  line-height: $paragraph * 1.5 * 1.5;
+}
+
+%text-center {
+  text-align: center;
+}
+
+%text-right {
+  text-align: right;
+}
+
+%text-left {
+  text-align: left;
+}
+
+%text-top {
+  vertical-align: top !important;
+}
+
+%text-middle {
+  vertical-align: middle !important;
+}
+
+%text-interact {
+  cursor: pointer;
+
+  &:hover {
+    color: darken($mono-dark, 10%);
+  }
+}
+
+%text-ellipsis {
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%base {
+  font-family: $base-font-family;
+}
+
+%heading {
+  font-family: $heading-font-family;
+}
+
+%sup {
+  vertical-align: super;
+  font-size: smaller;
+}

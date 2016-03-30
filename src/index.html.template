@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" xmlns:ng="http://angularjs.org" xmlns:app="ignored"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" xmlns:ng="http://angularjs.org" xmlns:app="ignored"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" xmlns:ng="http://angularjs.org" xmlns:app="ignored"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" xmlns:ng="http://angularjs.org" xmlns:app="ignored"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>_hunter</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta http-equiv="pragma" content="no-cache" /><!-- Latest compiled and minified CSS -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,700,600,800,400' rel='stylesheet' type='text/css'>
+
+    <!--favicon-->
+    <link rel="icon" type="image/png" href="/assets/img/favicons/favicon.ico">
+
+    <!-- ClickJacking Defense end -->
+    <base href="/">
+</head>
+<body>
+
+<!-- build:css(src) /assets/css/build.css -->
+<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/angular-hotkeys/build/hotkeys.min.css"/>
+<link rel="stylesheet" href="/vendor/angular-loading-bar/build/loading-bar.css"/>
+<link rel="stylesheet" href="/core/styles/styles.css"/>
+<!--<link rel="stylesheet" href="/styles/core/core.css"/>-->
+
+<!--/TODO-->
+<!--<link rel="stylesheet" href="/styles/app/campaigns.css"/>-->
+
+<!-- endbuild -->
+
+<div ui-view class="view a-fade">
+    <div loader></div>
+</div>
+
+
+
+<!-- build:js(src) /assets/js/build.js -->
+<!--Vendor-->
+<script src="/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/vendor/jquery-ui/ui/minified/core.min.js"></script>
+<script src="/vendor/jquery-ui/ui/minified/widget.min.js"></script>
+<script src="/vendor/jquery-ui/ui/minified/mouse.min.js"></script>
+<script src="/vendor/lz-string/libs/lz-string.min.js"></script>
+<script src="/vendor/angular/angular.js"></script>
+<script src="/vendor/angular-animate/angular-animate.min.js"></script>
+<script src="/vendor/angular-messages/angular-messages.min.js"></script>
+<script src="/vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="/vendor/angular-loading-bar/build/loading-bar.js"></script>
+<script src="/vendor/ngstorage/ngstorage.min.js"></script>
+<script src="/vendor/greensock/src/minified/TweenMax.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/ScrollToPlugin.min.js"></script>
+<script src="/vendor/angular-sweetalert/SweetAlert.min.js"></script>
+<script src="/vendor/angular-hotkeys/build/hotkeys.min.js"></script>
+<script src="/vendor/lodash/dist/lodash.js"></script>
+
+<!-- @if ENV == 'mock' -->
+<!--<script src="/vendor/Faker/build/build/faker.js"></script>-->
+<script src="/vendor/angular-mocks/angular-mocks.js"></script>
+<!-- @endif -->
+
+<!--CORE-->
+<script src="/core/core.js"></script>
+<script src="/core/services/services.js"></script>
+<script src="/core/services/project.js"></script>
+<script src="/core/directives/directives.js"></script>
+<script src="/core/filters/filters.js"></script>
+<script src="/core/animations/animations.js"></script>
+
+
+<!--APP-->
+<script src="/app/app.js"></script>
+<script src="/app/app.controller.js"></script>
+<script src="/app/app.config.js"></script>
+<script src="/app/app.templates.js"></script>
+
+<!--APP/bio-->
+<script src="/app/bio/bio.config.js"></script>
+<script src="/app/bio/bio.controller.js"></script>
+
+<!--APP/projects-->
+<script src="/app/projects/projects.config.js"></script>
+<script src="/app/projects/projects.controller.js"></script>
+
+
+<!--ENVIRONMENT-->
+<!-- @if ENV == 'local' -->
+<script src="/environment/env.local.js"></script>
+<!-- @endif -->
+<!-- @if ENV == 'mock' -->
+<script src="/environment/env.mock.js"></script>
+<!-- @endif -->
+<!-- @if ENV == 'development' -->
+<script src="/environment/env.develop.js"></script>
+<!-- @endif -->
+<!-- @if ENV == 'test' -->
+<script src="/environment/env.testing.js"></script>
+<!-- @endif -->
+<!-- @if ENV == 'stage' -->
+<script src="/environment/env.stage.js"></script>
+<!-- @endif -->
+<!-- @if ENV == 'production' -->
+<script src="/environment/env.prod.js"></script>
+<!-- @endif -->
+
+<!-- @if ENV == 'mock' -->
+<script src="/vendor/angular-mocks/angular-mocks.js"></script>
+<script src="/app/mock.js"></script>
+<!-- @endif -->
+<!-- @if ENV != 'mock' -->
+<script src="/app/bootstrap.js"></script>
+<!-- @endif -->
+<!-- endbuild -->
+
+
+<!-- GOOGLE ANALYTICS-->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39754055-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>
