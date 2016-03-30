@@ -362,6 +362,7 @@ $project-header-left-width: 110px;
     top: 0;
     left: 0;
     width: $project-header-left-width;
+    height: $project-header-height;
   }
 
   .project__header-right {
@@ -370,6 +371,7 @@ $project-header-left-width: 110px;
     left: $project-header-left-width;
     right: 0;
     padding-left: $base-spacing-unit * 2;
+    height: $project-header-height;
   }
 }
 

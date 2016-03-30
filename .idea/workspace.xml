@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d75133b5-c512-4d46-91f9-d4b6950fe349" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resume-build.zip" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.controller.js" afterPath="$PROJECT_DIR$/src/app/app.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.html" afterPath="$PROJECT_DIR$/src/app/app.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.templates.js" afterPath="$PROJECT_DIR$/src/app/app.templates.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/projects/projects.controller.js" afterPath="$PROJECT_DIR$/src/app/projects/projects.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/projects/views/projects.list.project.html" afterPath="$PROJECT_DIR$/src/app/projects/views/projects.list.project.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/styles/_app.scss" afterPath="$PROJECT_DIR$/src/core/styles/_app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/styles/_variables.scss" afterPath="$PROJECT_DIR$/src/core/styles/_variables.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/styles/styles.css" afterPath="$PROJECT_DIR$/src/core/styles/styles.css" />
     </list>
     <ignored path="resume.iws" />
@@ -134,8 +127,8 @@
           <file leaf-file-name="_app.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/core/styles/_app.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.20345141">
-                  <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+                <state vertical-scroll-proportion="0.66575843">
+                  <caret line="366" column="0" selection-start-line="366" selection-start-column="0" selection-end-line="366" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -145,11 +138,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="projects.list.project.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="projects.list.project.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/app/projects/views/projects.list.project.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.37511355">
-                  <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+                <state vertical-scroll-proportion="-18.44">
+                  <caret line="37" column="54" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
                   <folding>
                     <element signature="n#style#0;n#span#1;n#span#2;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
                   </folding>
@@ -209,11 +202,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="projects.controller.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="projects.controller.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/app/projects/projects.controller.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+                <state vertical-scroll-proportion="0.28419182">
+                  <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
                   <folding>
                     <element signature="e#0#90#0" expanded="false" />
                   </folding>
@@ -327,11 +320,11 @@
         <option value="$PROJECT_DIR$/src/app/bio/views/bio.html" />
         <option value="$PROJECT_DIR$/src/app/projects/views/projects.list.html" />
         <option value="$PROJECT_DIR$/src/app/app.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/projects/projects.controller.js" />
         <option value="$PROJECT_DIR$/src/app/app.html" />
         <option value="$PROJECT_DIR$/src/core/styles/_variables.scss" />
-        <option value="$PROJECT_DIR$/src/core/styles/_app.scss" />
         <option value="$PROJECT_DIR$/src/app/projects/views/projects.list.project.html" />
+        <option value="$PROJECT_DIR$/src/core/styles/_app.scss" />
+        <option value="$PROJECT_DIR$/src/app/projects/projects.controller.js" />
       </list>
     </option>
   </component>
@@ -986,10 +979,10 @@
         <state vertical-scroll-proportion="0.08409987">
           <caret line="4" column="1978" selection-start-line="4" selection-start-column="1978" selection-end-line="4" selection-end-column="1978" />
           <folding>
-            <marker date="1459381011000" expanded="true" signature="564:581" placeholder="..." />
-            <marker date="1459381011000" expanded="true" signature="950:971" placeholder="..." />
-            <marker date="1459381011000" expanded="true" signature="2469:2487" placeholder="..." />
-            <marker date="1459381011000" expanded="true" signature="6334:6363" placeholder="..." />
+            <marker date="1459381094000" expanded="true" signature="564:581" placeholder="..." />
+            <marker date="1459381094000" expanded="true" signature="950:971" placeholder="..." />
+            <marker date="1459381094000" expanded="true" signature="2469:2487" placeholder="..." />
+            <marker date="1459381094000" expanded="true" signature="6334:6363" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1081,16 +1074,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/projects/projects.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#90#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/styles/_typography.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.0">
@@ -1109,18 +1092,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/styles/_app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20345141">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.66575843">
+          <caret line="366" column="0" selection-start-line="366" selection-start-column="0" selection-end-line="366" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/projects/views/projects.list.project.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37511355">
-          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+        <state vertical-scroll-proportion="-18.44">
+          <caret line="37" column="54" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
           <folding>
             <element signature="n#style#0;n#span#1;n#span#2;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/projects/projects.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28419182">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#90#0" expanded="false" />
           </folding>
         </state>
       </provider>

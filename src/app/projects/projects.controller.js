@@ -23,7 +23,7 @@ angular.module('hb.app')
                     state: 'visualizations',
                     title: 'Visualizations'
                 },
-                analytics: {
+                reports: {
                     key: 'reports',
                     state: 'reports',
                     title: 'Reports'
