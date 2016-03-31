@@ -276,6 +276,8 @@ $project-header-left-width: 110px;
   bottom: 0;
   height: 100%;
   width: 100%;
+  max-width: $reading-width + 200;
+  margin: 0 auto;
 
   .bio__header {
     position: absolute;
@@ -293,8 +295,6 @@ $project-header-left-width: 110px;
     bottom: 0;
     padding-top: $base-spacing-unit * 4;
     padding-bottom: $base-spacing-unit * 4;
-    padding-left: $base-spacing-unit * 16;
-    padding-right: $base-spacing-unit * 8;
   }
 
   .bio__left {
@@ -303,8 +303,6 @@ $project-header-left-width: 110px;
     left: 0;
     width: $bio-left-width;
     padding-top: $base-spacing-unit * 11;
-    padding-left: $base-spacing-unit * 4;
-    padding-right: $base-spacing-unit * 4;
   }
 
   .bio__right {
@@ -314,7 +312,6 @@ $project-header-left-width: 110px;
     right: 0;
     padding-top: $base-spacing-unit * 10;
     padding-left: $base-spacing-unit * 4;
-    padding-right: $base-spacing-unit * 8;
   }
 }
 
