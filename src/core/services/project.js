@@ -17,8 +17,8 @@ angular.module('hb.core')
             this.software = data.software || [];
             this.for = data.for || '';
             this.forUrl = data.forUrl || '';
-            this.bodyImgUrl = data.bodyImgUrl || '';
-            this.bodyImgCaption = data.bodyImgCaption || '';
+            this.bodyImgUrls = data.bodyImgUrls || [];
+            this.bodyTexts = data.bodyTexts || [];
             this.forLogoUrl = data.forLogoUrl || '';
             this.involved = data.involved || [];
             this.dateBegin = data.dateBegin || '';

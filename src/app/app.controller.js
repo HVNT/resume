@@ -10,9 +10,15 @@ angular.module('hb.app')
         function ($scope, $state, $window, $document, $timeout, $rootScope, $filter, $location, hotkeys,
                   BioStates, ProjectsStates, Projects) {
 
+            $scope.modelDebounce = {
+                debounce: 250,
+                updateOn: 'blur default'
+            };
+
             $scope.Projects = Projects;
-            $scope.isIphone = (navigator.platform.indexOf("iPhone") != -1) ||
-                (navigator.platform.indexOf("iPod") != -1);
+            $scope.isIphone =
+                navigator.platform.indexOf("iPhone") != -1 ||
+                navigator.platform.indexOf("iPod") != -1;
 
             $scope.hello = {
                 me: 'Hi, I\'m Hunter.',
@@ -20,30 +26,16 @@ angular.module('hb.app')
                 msg: 'I am a Software Engineer that specializes in designing and building products for the web.'
             };
 
-            $scope.glitching = false;
+            $scope.isGlitching = false;
+            $scope.doneGlitchFirst = false;
+            $scope.doneHelloMe = false;
+            $scope.doneHelloMsg = false;
+            $scope.doneNav = false;
 
-            $scope.helloMeDone = false;
-            $scope.helloMsgDone = false;
-            $scope.firstGlitchDone = false;
-
-            var baseTransDelay = 500;
-            var helloMeDelay = ($scope.hello.me.length * 60) + baseTransDelay;
-            var helloMsgDelay = (2000 + $scope.hello.msg.length * 30) + baseTransDelay * 3;
-            var firstGlitchDelay = helloMsgDelay + 200;
-
-            $timeout(function () {
-                $scope.helloMeDone = true;
-            }, helloMeDelay);
-
-            $timeout(function () {
-                $scope.helloMsgDone = true;
-                $scope.glitching = true;
-            }, helloMsgDelay);
-
-            $timeout(function () {
-                $scope.glitching = false;
-                $scope.firstGlitchDone = true;
-            }, firstGlitchDelay);
+            var DELAY_TRANS_BASE = 500;
+            $scope.delayHelloMe = ($scope.hello.me.length * 60) + DELAY_TRANS_BASE;
+            $scope.delayHelloMsg = (2000 + $scope.hello.msg.length * 30) + DELAY_TRANS_BASE * 3;
+            $scope.delayGlitchFirst = $scope.delayHelloMsg + 200;
 
             var navStates = {
                 bio: {
@@ -52,7 +44,7 @@ angular.module('hb.app')
                     navigate: function () {
                         $state.go(this.state);
                     },
-                    initialDelay: helloMsgDelay + 550
+                    initialDelay: $scope.delayHelloMsg + 550
                 },
                 projects: {
                     title: 'Projects',
@@ -60,22 +52,51 @@ angular.module('hb.app')
                     navigate: function () {
                         $state.go(this.state);
                     },
-                    initialDelay: helloMsgDelay + 700
+                    initialDelay: $scope.delayHelloMsg + 700
                 },
                 resume: {
                     title: 'Resume',
                     state: null,
                     href: 'assets/resume.pdf',
                     download: 'resume_hunterbrennick.pdf',
-                    initialDelay: helloMsgDelay + 1100
+                    initialDelay: $scope.delayHelloMsg + 1100
                 },
                 contact: {
                     title: 'Contact',
                     state: null,
-                    href: 'mailto:hunterbrennick@gmail.com',
-                    initialDelay: helloMsgDelay + 1500
+                    href: 'mailto:hunterbrennick@gmail.com'
                 }
             };
+
+            var DELAY_FINAL = $scope.delayHelloMsg + 2000;
+            $scope.delayMainBottom = DELAY_FINAL + 150;
+
+
+            $scope.navs = [
+                navStates.bio,
+                navStates.projects,
+                navStates.resume
+            ];
+
+            $scope.navContact = navStates.contact;
+
+            $timeout(function () {
+                $scope.doneHelloMe = true;
+            }, $scope.delayHelloMe);
+
+            $timeout(function () {
+                $scope.doneHelloMsg = true;
+                $scope.isGlitching = true;
+            }, $scope.delayHelloMsg);
+
+            $timeout(function () {
+                $scope.isGlitching = false;
+                $scope.doneGlitchFirst = true;
+            }, $scope.delayGlitchFirst);
+
+            $timeout(function () {
+                $scope.doneNav = true;
+            }, $scope.delayMainBottom);
 
             $scope.$state = $state;
 
@@ -83,30 +104,17 @@ angular.module('hb.app')
                 evt.preventDefault();
             };
 
-            $scope.modelDebounce = {
-                debounce: 250,
-                updateOn: 'blur default'
-            };
-
-            $scope.mainLogo = {};
-
-            $scope.navs = [
-                navStates.bio,
-                navStates.projects,
-                navStates.resume,
-                navStates.contact
-            ];
-
             $scope.setActiveNav = function (navKey) {
                 $scope.activeNav = (navKey && navStates[navKey])
                     ? navStates[navKey]
                     : $scope.activeNav;
-                console.log(navKey, $scope.activeNav);
             };
 
-
-
-
+            $scope.goUrl = function (url) {
+                if (url && url.length) {
+                    $window.open(url, '_blank')
+                }
+            };
 
             /* Canvas */
             //TODO beafin up directive version then gut this shit
@@ -129,20 +137,16 @@ angular.module('hb.app')
             var circle_radius = 100;
             var line_opacity = 1;
 
+            //$scope.$watch(function () {
+            //    return $(canvas).parent().width()
+            //}, function () {
+            //    ctx.canvas.width = $(canvas).parent().width();
+            //});
 
-            $scope.$watch(function () {
-                return $(canvas).parent().width()
-            }, function () {
-                ctx.canvas.width = $(canvas).parent().width();
-            });
-
-            $timeout(function () {
-                ctx.canvas.width = $(canvas).parent().width(); // -40 for padding
-            }, firstGlitchDelay);
 
             $timeout(function () {
                 $scope.canvasPrepped = true;
-            }, firstGlitchDelay + 2000);
+            }, DELAY_FINAL);
 
 
             /* Init nodes */

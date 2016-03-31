@@ -23,7 +23,7 @@ $mono: #7d7a78;
 $mono-light: #cfccca;
 $mono-lighter: #e8e7e6;
 
-$text-primary: rgba(0,0,0,0.87);
+$text-primary: rgba(0,0,0,0.8);
 $text-secondary: rgba(0,0,0,0.54);
 $text-disabled: rgba(0,0,0,0.26);
 $text-dividers: rgba(0,0,0,0.12);
@@ -54,10 +54,10 @@ $small-caps-multiplier: .75;
 
 // Font Sizes
 
-$h1: 35px;
-$h2: 28px;
-$h3: 24px;
-$h4: 21px;
+$h1: 47px;
+$h2: 41px;
+$h3: 36px;
+$h4: 24px;
 $h5: 18px;
 $h6: 14px;
 
@@ -67,30 +67,32 @@ $h4-small-caps: floor($h4 * $small-caps-multiplier);
 $h5-small-caps: floor($h5 * $small-caps-multiplier);
 $h6-small-caps: floor($h6 * $small-caps-multiplier);
 
-$paragraph: 14px;
-$paragraph-lead: 18px;
+$paragraph: 16px;
+$paragraph-lead: 20px;
 
 $base-font-size: $paragraph;
 $base-type-unit: $base-font-size / 2;
+$base-line-height-factor: 1.58;
+$base-line-height-factor--h: 1.15;
 
-$small: floor($paragraph * .75);
+$small: floor($paragraph * .7);
 
 // Line Heights
 
-$base-line-height: floor($paragraph * 1.5);
+$base-line-height: floor($paragraph * $base-line-height-factor);
 
-$h1-line-height: floor($h1 * 1.5);
-$h2-line-height: floor($h2 * 1.5);
-$h3-line-height: floor($h3 * 1.5);
-$h4-line-height: floor($h4 * 1.5);
-$h5-line-height: floor($h5 * 1.5);
-$h6-line-height: floor($h6 * 1.5);
+$h1-line-height: floor($h1 * $base-line-height-factor--h);
+$h2-line-height: floor($h2 * $base-line-height-factor--h);
+$h3-line-height: floor($h3 * $base-line-height-factor--h);
+$h4-line-height: floor($h4 * $base-line-height-factor--h);
+$h5-line-height: floor($h5 * $base-line-height-factor--h);
+$h6-line-height: floor($h6 * $base-line-height-factor--h);
 
-$h2-small-caps-line-height: floor($h2-small-caps * 1.5);
-$h3-small-caps-line-height: floor($h3-small-caps * 1.5);
-$h4-small-caps-line-height: floor($h4-small-caps * 1.5);
-$h5-small-caps-line-height: floor($h5-small-caps * 1.5);
-$h6-small-caps-line-height: floor($h6-small-caps * 1.5);
+$h2-small-caps-line-height: floor($h2-small-caps * $base-line-height-factor--h);
+$h3-small-caps-line-height: floor($h3-small-caps * $base-line-height-factor--h);
+$h4-small-caps-line-height: floor($h4-small-caps * $base-line-height-factor--h);
+$h5-small-caps-line-height: floor($h5-small-caps * $base-line-height-factor--h);
+$h6-small-caps-line-height: floor($h6-small-caps * $base-line-height-factor--h);
 
 $small-line-height: floor($base-line-height * .75);
 

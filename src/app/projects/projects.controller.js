@@ -23,10 +23,10 @@ angular.module('hb.app')
                     state: 'visualizations',
                     title: 'Visualizations'
                 },
-                analytics: {
-                    key: 'analytics',
-                    state: 'analytics',
-                    title: 'Analytics Reports'
+                reports: {
+                    key: 'reports',
+                    state: 'reports',
+                    title: 'Reports'
                 },
                 'asset-manager': {
                     key: 'assetManager',
@@ -71,7 +71,7 @@ angular.module('hb.app')
             };
 
             $scope.projects = [
-                projectsNav['analytics'],
+                projectsNav['reports'],
                 projectsNav['visualizations'],
                 projectsNav['asset-manager'],
                 projectsNav['toma'],
@@ -110,11 +110,4 @@ angular.module('hb.app')
             if (!$scope.activeProject) {
                 $scope.setActiveProject($stateParams.projectState);
             }
-
-
-            $scope.goUrl = function (url) {
-                if (url && url.length) {
-                    $window.open(url, '_blank')
-                }
-            };
         });

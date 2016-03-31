@@ -54,6 +54,45 @@ angular.module('hb.directives', [])
             }
         }
     })
+    .directive('transitionMask', function ($timeout, $animate, $state) {
+        return {
+            link: function (scope, element, attrs) {
+                var options = scope.$eval(attrs.transitionMask);
+                var maskEl = angular.element('<div class="transition-mask a-fade"></div>');
+                maskEl.addClass(options.background || 'bg-textured-primary');
+
+                element.prepend(maskEl);
+                function show () {
+                    $animate.removeClass(maskEl, 'ng-hide', {
+                        tempClasses: 'ng-hide-animate'
+                    });
+                }
+
+                function hide () {
+                    $timeout(function () {
+                        $animate.addClass(maskEl, 'ng-hide', {
+                            tempClasses: 'ng-hide-animate'
+                        });
+                    }, options.delay);
+                }
+
+                if (!element.hasClass('contain')) {
+                    element.addClass('contain');
+                }
+
+                // TODO: make this fade on condition
+                if (options.showOn) {
+                    scope.$on(options.showOn, show)
+                }
+
+                if (options.hideOn) {
+                    scope.$on(options.hideOn, hide)
+                }
+
+                hide();
+            }
+        };
+    })
     .directive('urlBackground', function () {
         return {
             link: function (scope, element, attrs) {
