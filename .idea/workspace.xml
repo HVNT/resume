@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d75133b5-c512-4d46-91f9-d4b6950fe349" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.html" afterPath="$PROJECT_DIR$/src/app/app.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.templates.js" afterPath="$PROJECT_DIR$/src/app/app.templates.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/projects/views/projects.list.project.html" afterPath="$PROJECT_DIR$/src/app/projects/views/projects.list.project.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/bio/views/bio.html" afterPath="$PROJECT_DIR$/src/app/bio/views/bio.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/styles/_app.scss" afterPath="$PROJECT_DIR$/src/core/styles/_app.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/styles/styles.css" afterPath="$PROJECT_DIR$/src/core/styles/styles.css" />
     </list>
@@ -29,11 +30,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.4546875">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="app.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="app.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/app/app.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-37.0">
-                  <caret line="95" column="35" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="40" />
+                <state vertical-scroll-proportion="0.462307">
+                  <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -110,8 +111,8 @@
           <file leaf-file-name="bio.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/app/bio/views/bio.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-21.12">
-                  <caret line="33" column="77" selection-start-line="33" selection-start-column="77" selection-end-line="33" selection-end-column="77" />
+                <state vertical-scroll-proportion="-19.84">
+                  <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
                   <folding>
                     <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                   </folding>
@@ -129,11 +130,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_app.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="_app.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/core/styles/_app.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.24432334">
-                  <caret line="337" column="17" selection-start-line="337" selection-start-column="17" selection-end-line="337" selection-end-column="17" />
+                <state vertical-scroll-proportion="-15.4">
+                  <caret line="278" column="31" selection-start-line="278" selection-start-column="31" selection-end-line="278" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
@@ -146,8 +147,8 @@
           <file leaf-file-name="projects.list.project.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/app/projects/views/projects.list.project.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.88374203">
-                  <caret line="69" column="42" selection-start-line="69" selection-start-column="42" selection-end-line="73" selection-end-column="18" />
+                <state vertical-scroll-proportion="0.31698456">
+                  <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
                   <folding>
                     <element signature="n#style#0;n#span#1;n#span#2;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
                   </folding>
@@ -320,16 +321,16 @@
         <option value="$PROJECT_DIR$/src/core/directives/directives.js" />
         <option value="$PROJECT_DIR$/src/core/styles/_structure.scss" />
         <option value="$PROJECT_DIR$/src/index.html.template" />
-        <option value="$PROJECT_DIR$/src/app/bio/views/bio.html" />
         <option value="$PROJECT_DIR$/src/app/projects/views/projects.list.html" />
         <option value="$PROJECT_DIR$/src/app/app.controller.js" />
         <option value="$PROJECT_DIR$/src/core/styles/_variables.scss" />
         <option value="$PROJECT_DIR$/src/app/projects/projects.config.js" />
         <option value="$PROJECT_DIR$/src/app/projects/projects.controller.js" />
         <option value="$PROJECT_DIR$/src/assets/json/projects.json" />
-        <option value="$PROJECT_DIR$/src/app/app.html" />
         <option value="$PROJECT_DIR$/src/app/projects/views/projects.list.project.html" />
         <option value="$PROJECT_DIR$/src/core/styles/_app.scss" />
+        <option value="$PROJECT_DIR$/src/app/bio/views/bio.html" />
+        <option value="$PROJECT_DIR$/src/app/app.html" />
       </list>
     </option>
   </component>
@@ -655,9 +656,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16666667" sideWeight="0.49696445" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16666667" sideWeight="0.49696445" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31656548" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -921,10 +922,10 @@
         <state vertical-scroll-proportion="0.08409987">
           <caret line="4" column="1978" selection-start-line="4" selection-start-column="1978" selection-end-line="4" selection-end-column="1978" />
           <folding>
-            <marker date="1459383057000" expanded="true" signature="564:581" placeholder="..." />
-            <marker date="1459383057000" expanded="true" signature="950:971" placeholder="..." />
-            <marker date="1459383057000" expanded="true" signature="2469:2487" placeholder="..." />
-            <marker date="1459383057000" expanded="true" signature="6334:6363" placeholder="..." />
+            <marker date="1459384498000" expanded="true" signature="564:581" placeholder="..." />
+            <marker date="1459384498000" expanded="true" signature="950:971" placeholder="..." />
+            <marker date="1459384498000" expanded="true" signature="2469:2487" placeholder="..." />
+            <marker date="1459384498000" expanded="true" signature="6334:6363" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -966,16 +967,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/bio/views/bio.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.12">
-          <caret line="33" column="77" selection-start-line="33" selection-start-column="77" selection-end-line="33" selection-end-column="77" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1040,23 +1031,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-37.0">
-          <caret line="95" column="35" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/projects/projects.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="92" column="53" selection-start-line="92" selection-start-column="53" selection-end-line="92" selection-end-column="53" />
           <folding>
             <element signature="e#0#90#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/styles/_app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.4">
+          <caret line="278" column="31" selection-start-line="278" selection-start-column="31" selection-end-line="278" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/bio/views/bio.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.84">
+          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1071,11 +1069,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/styles/_app.scss">
+    <entry file="file://$PROJECT_DIR$/src/app/app.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24432334">
-          <caret line="337" column="17" selection-start-line="337" selection-start-column="17" selection-end-line="337" selection-end-column="17" />
-          <folding />
+        <state vertical-scroll-proportion="0.462307">
+          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
