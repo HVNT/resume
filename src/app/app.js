@@ -12,7 +12,6 @@ if (!window.console.log) window.console.log = function () {
 angular.module('hb.app', [
     'ngAnimate',
     'ngMessages',
-    'ngStorage',
     'cfp.hotkeys',
     'chieffancypants.loadingBar',
     'ui.router',
